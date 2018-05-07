@@ -32,7 +32,10 @@ if($respuesta){
     if (password_verify($pass, $hash) ){
         echo "correcto";
     }else{
+        //echo "fallo";
         echo "<script>alert('Usuario o ontraseña incorrectos');window.location.href='index.php'</script>";
     }
+}else{
+    echo "<script>alert('Usuario o ontraseña incorrectos');window.location.href='index.php'</script>";
 }
 ?>
