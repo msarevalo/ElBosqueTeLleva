@@ -17,6 +17,11 @@
 </head>
 <body onload="noVolver()">
 <div>
+    <button id="login" class="btn waves-effect waves-light">Login</button>
+</div>
+<div class="login-popup">
+    <i class="fa fa-times-circle close-icon" aria-hidden="true">X</i>
+    <div class="form-body">
         <form method="post" action="validar.php">
             <div class="card">
                 <img src="../img/Unbosque.jpg" style="width: 45%;" alt="UnBosque" class="img-logo">
@@ -34,10 +39,11 @@
                         <img src="../img/eye.png" style="width: 8%; opacity: 0.5;" id="eye">
                         <label id="mostrar" style="opacity: 0.5;">  Ver Contraseña</label><br><br>
                     </div>
-                    <button type="submit">Entrar</button>
-
+                    <button id="entrar" type="submit">Entrar</button>
                 </div>
             </div>
-
         </form>
+    </div>
 </div>
+</body>
+</html>

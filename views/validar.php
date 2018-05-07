@@ -31,6 +31,7 @@ if($respuesta){
     $hash = $respuesta[0][5];
     if (password_verify($pass, $hash) ){
         echo "correcto";
+        echo "<br><a href='index.php'>Salir</a>";
     }else{
         //echo "fallo";
         echo "<script>alert('Usuario o ontraseña incorrectos');window.location.href='index.php'</script>";

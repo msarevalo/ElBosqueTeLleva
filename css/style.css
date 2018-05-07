@@ -2,7 +2,7 @@ body{
     text-align:center;
 }
 
-button{
+#entrar{
     background:#ff9800;
     color:#fff;
     border:none;
@@ -16,11 +16,11 @@ button{
     outline:none;
 
 }
-button:hover{
+#entrar:hover{
     background:#fff;
     color:#ff9800;
 }
-button:before,button:after{
+#entrar:before,#entrar:after{
     content:'';
     position:absolute;
     top:0;
@@ -30,13 +30,13 @@ button:before,button:after{
     background: #ff9800;
     transition:400ms ease all;
 }
-button:after{
+#entrar:after{
     right:inherit;
     top:inherit;
     left:0;
     bottom:0;
 }
-button:hover:before,button:hover:after{
+#entrar:hover:before,#entrar:hover:after{
     width:100%;
     transition:800ms ease all;
 }
@@ -225,4 +225,79 @@ button:hover:before,button:hover:after{
 .form-group input:focus ~ .bar::before {
     width: 100%;
     left: 0;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+}
+.welcoming {
+    min-height: 500px;
+}
+.prefix {
+    font-size: 1.4rem !important;
+    top: 14px;
+    left: 0;
+}
+.btn-block {
+    width: 100%;
+}
+.login-popup {
+    display: none;
+    background: rgba(33, 33, 33, .5);
+    position: absolute;
+    z-index: 99999;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    min-height: 500px;
+    padding: 50px 0 0;}
+
+.close-icon {
+    color: #fffbff;
+    position: absolute;
+    z-index: 999999;
+    top: 110px;
+    right: 550px;
+    cursor: pointer;
+    display: table-cell;
+    text-align: center;
+    font-size:20px;
+    border-radius: 60%;
+    background: #c4c6b9;
+    height: 27px;
+    width: 27px;
+    opacity: 0.5;
+    font-style: normal;
+    font-weight: bold;
+}
+.login-popup__form {
+    background: #FFF;
+    height: 440px;
+    width: 360px;
+    border-radius: 8px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;}
+
+.corp-logo {
+    background: #26A69A;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-radius: 8px 8px 0 0;
+    color: #FFF;}
+.corp-logo__heading {
+    font-size: 26px;
+    margin: 0 auto;
+}
+
+.form-body {
+    padding: 0 20px 10px;
+    width: 100%;}
+
+.welcoming-section {
+    color: #777;
 }
