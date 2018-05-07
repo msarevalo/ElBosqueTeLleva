@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login | EL Bosque Te LLeva</title>
+    <title>EL Bosque Te LLeva</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="application-name" content="Sistema de Reservas Universidad del Bosque">
@@ -15,10 +15,44 @@
     <link rel="shortcut icon" type="image/x-icon" href="../img/icon-small.png">
 
 </head>
-<body onload="noVolver()">
+<body>
 <div>
-    <button id="login" class="btn waves-effect waves-light">Login</button>
+    <div class="main-container">
+        <header class="block">
+            <a href="index.php"><img id="logo" src="../img/Unbosque.jpg"></a>
+            <ul class="header-menu horizontal-list">
+                <li>
+                    <a class="header-menu-tab Setting" href="#" ><span class="icon entypo-cog scnd-font-color"></span>Horarios</a>
+
+                </li>
+                <li>
+                    <a class="header-menu-tab" href="#"><span class="icon fontawesome-user scnd-font-color"></span>Rutas</a>
+                </li>
+                <li>
+                    <a class="header-menu-tab" href="#"><span class="icon fontawesome-envelope scnd-font-color"></span>Reservas</a>
+                    <!--<a class="header-menu-number" href="#">5</a>-->
+                </li>
+                <li>
+                    <a class="header-menu-tab" href="#"><span class="icon fontawesome-star-empty scnd-font-color"></span>Pagos</a>
+                </li>
+                <li>
+                    <a class="header-menu-tab" href="#"><span class="icon fontawesome-star-empty scnd-font-color"></span>Noticias y     Novedades</a>
+                </li>
+            </ul>
+            <div class="profile-menu">
+                <button id="login" class="btn waves-effect waves-light">Login</button>
+            </div>
 </div>
+    <div id="slider">
+        <a href="#" class="control_next">></a>
+        <a href="#" class="control_prev"><</a>
+        <ul>
+            <li><img src="../img/slider1.png"></li>
+            <li><img src="../img/slider2.png"></li>
+            <li><img src="../img/slider3.png"></li>
+            <li><img src="../img/slider4.png"></li>
+        </ul>
+    </div>
 <div class="login-popup">
     <i class="fa fa-times-circle close-icon" aria-hidden="true">X</i>
     <div class="form-body">
