@@ -10,7 +10,8 @@ session_start();
 $con = mysqli_connect("localhost", "reservas","ninguna123.", "dbreservas");
 
 if (!$con){
-    $_SESSION['conect']= $con;
+    echo "<script>alert('Algo ha ocurrido'); window.location.href='index.php'</script>";
+    //header("Location: index.php");
 }
 
 ?>
