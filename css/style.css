@@ -408,6 +408,8 @@ header {
     font-size: 17px;
     -webkit-transition: background .3s;
     transition: background .3s;
+    text-decoration: none;
+    color: #447d44;
 }
 .header-menu-tab:hover {
     background: #eee;
@@ -465,7 +467,7 @@ header {
 
 #logo{
     width: 7%;
-    margin-left: -146px;
+    margin-left: -120px;
     margin-top: -11px;
     position: absolute;
 }
@@ -502,7 +504,7 @@ header {
     margin: 0;
     padding: 0;
     width: 1200px;
-    height: 300px;
+    height: 400px;
     background: #ccc;
     text-align: center;
     line-height: 300px;

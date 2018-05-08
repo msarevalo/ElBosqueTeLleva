@@ -76,7 +76,7 @@ $(document).ready(function () {
 
 $(document).ready(function ($) {
 
-    setInterval(function () {moveRight();}, 3000);
+    setInterval(function () {moveRight();}, 6500);
 
     var slideCount = $('#slider ul li').length;
     var slideWidth = $('#slider ul li').width();
@@ -92,7 +92,7 @@ $(document).ready(function ($) {
     function moveLeft() {
         $('#slider ul').animate({
             left: + slideWidth
-        }, 1500, function () {
+        }, 500, function () {
             $('#slider ul li:last-child').prependTo('#slider ul');
             $('#slider ul').css('left', '');
         });

@@ -23,7 +23,6 @@
             <ul class="header-menu horizontal-list">
                 <li>
                     <a class="header-menu-tab Setting" href="#" ><span class="icon entypo-cog scnd-font-color"></span>Horarios</a>
-
                 </li>
                 <li>
                     <a class="header-menu-tab" href="#"><span class="icon fontawesome-user scnd-font-color"></span>Rutas</a>
@@ -47,10 +46,22 @@
         <a href="#" class="control_next">></a>
         <a href="#" class="control_prev"><</a>
         <ul>
+            <!--<li><img src="../img/slider0.png"></li>
             <li><img src="../img/slider1.png"></li>
             <li><img src="../img/slider2.png"></li>
             <li><img src="../img/slider3.png"></li>
-            <li><img src="../img/slider4.png"></li>
+            <li><img src="../img/slider4.png"></li>-->
+            <?php
+            include ('conection.php');
+            $result = mysqli_query($con,"SELECT * FROM imagenes WHERE activo='1';");
+            while ($row=mysqli_fetch_array($result))
+            {
+                /*almacenamos el nombre de la ruta en la variable $ruta_img*/
+                //echo  $row["ruta_imagen"] . $row['nombre_img'] . '<br>';
+                echo "<li><img src='.." . $row["ruta_imagen"] . $row['nombre_img'] . "'></li>";
+            }
+            ?>
+
         </ul>
     </div>
 <div class="login-popup">
