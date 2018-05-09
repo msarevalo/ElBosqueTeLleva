@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>EL Bosque Te LLeva</title>
+    <title>Rutas | El Bosque Te LLeva</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="application-name" content="Sistema de Reservas Universidad del Bosque">
@@ -50,6 +50,7 @@
             <div class="profile-menu">
                 <button id="login" class="btn waves-effect waves-light">Login</button>
             </div>
+        </header>
     </div>
 <div id="map"></div>
 <script>

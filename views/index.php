@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>EL Bosque Te LLeva</title>
+    <title>Home | El Bosque Te LLeva</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="application-name" content="Sistema de Reservas Universidad del Bosque">
@@ -19,6 +19,7 @@
 <div>
     <div class="main-container">
         <header class="block">
+            <nav class="prueba">
             <a href="index.php"><img id="logo" src="../img/Unbosque.jpg"></a>
             <ul class="header-menu horizontal-list">
                 <li>
@@ -41,6 +42,8 @@
             <div class="profile-menu">
                 <button id="login" class="btn waves-effect waves-light">Login</button>
             </div>
+            </nav>
+        </header>
 </div>
     <div id="slider">
         <a href="#" class="control_next">></a>
@@ -53,7 +56,7 @@
             <li><img src="../img/slider4.png"></li>-->
             <?php
             include ('conection.php');
-            $result = mysqli_query($con,"SELECT * FROM imagenes WHERE activo='1';");
+            $result = mysqli_query($con,"SELECT * FROM banners WHERE activo='1';");
             while ($row=mysqli_fetch_array($result))
             {
                 /*almacenamos el nombre de la ruta en la variable $ruta_img*/

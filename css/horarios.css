@@ -1,6 +1,6 @@
 #bus{
     width: 8%;
-    margin-left: -50px;
+    margin-left: 10px;
     cursor: pointer;
 }
 
@@ -17,7 +17,7 @@
     width: 47%;
     height: 10%;
     margin-top: 40px;
-    margin-left: 25%;
+    margin-left: 27%;
 }
 
 #listado header{
@@ -80,4 +80,8 @@
     color: #404c81;
     padding: 7px 50px;
     font-size: 14px;
+}
+
+#texto{
+    font-family: "Helvetica";
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>EL Bosque Te LLeva</title>
+    <title>Horarios | El Bosque Te LLeva</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="application-name" content="Sistema de Reservas Universidad del Bosque">
@@ -43,8 +43,10 @@
             <div class="profile-menu">
                 <button id="login" class="btn waves-effect waves-light">Login</button>
             </div>
+        </header>
     </div>
     <div>
+        <label id="texto">Para filtrar por servicio, dale click a la opcion que desees</label><br><br>
         <img src="../img/bus-icon.png" id="bus">
         <img src="../img/tren-icon.png" id="tren">
     </div>
@@ -155,7 +157,18 @@
                                     if ($lconsulta[$i] == '5'){
                                         echo "<td>Viernes</td>";
                                     }else {
-                                        echo "<td>" . $lconsulta[$i] . "</td>";
+                                        if (strcmp($lconsulta[$i],"bus")==0){
+                                            //  echo "<td id='bus-url' style='cursor: pointer'>" . $lconsulta[$i] . "</td>";
+                                            echo "<td class='bus-url' style='cursor: pointer'><img src='../img/bus-icon.png' style='width: 50%'><br>Bus</td>";
+                                        }else{
+                                            if (strcmp($lconsulta[$i],"tren")==0){
+                                                //echo "<td id='tren-url' style='cursor: pointer'>" . $lconsulta[$i] . "</td>";
+                                                echo "<td class='tren-url' style='cursor: pointer'><img src='../img/tren-icon.png' style='width: 50%'>Tren</td>";
+                                            }else{
+                                                echo "<td>" . $lconsulta[$i] . "</td>";
+                                            }
+                                        }
+
                                     }
                                 }
                             }
