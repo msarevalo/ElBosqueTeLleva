@@ -30,8 +30,11 @@ $respuesta = mysqli_fetch_all($resultado);
 if($respuesta){
     $hash = $respuesta[0][5];
     if (password_verify($pass, $hash) ){
-        echo "correcto";
-        echo "<br><a href='index.php'>Salir</a>";
+        /*echo "correcto";
+        echo "<br><a href='index.php'>Salir</a>";*/
+        $_SESSION['username']=$respuesta[0][2];
+        $actualizar = mysqli_query($con, "UPDATE 'usuarios' SET 'conexion'='1' WHERE 'Login'='" . $_SESSION['username'] . "'");
+        header("Location: index.php");
     }else{
         //echo "fallo";
         echo "<script>alert('Usuario o ontraseña incorrectos');window.location.href='index.php'</script>";

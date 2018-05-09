@@ -48,7 +48,15 @@
                 </li>
             </ul>
             <div class="profile-menu">
-                <button id="login" class="btn waves-effect waves-light">Login</button>
+                <?php
+                include ('conection.php');
+                //$_SESSION['sesion'] = null;
+                if ($_SESSION['sesion']==null){
+                    echo "<button id='login' class='btn waves-effect waves-light'>Login</button>";
+                }else{
+                    echo "<label style='cursor: pointer'>" . $_SESSION['username'] . "</label>";
+                }
+                ?>
             </div>
         </header>
     </div>

@@ -525,6 +525,7 @@ a.control_prev, a.control_next {
     font-size: 18px;
     opacity: 0.8;
     cursor: pointer;
+    font-size: 40px;
 }
 
 a.control_prev:hover, a.control_next:hover {

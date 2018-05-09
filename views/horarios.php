@@ -24,24 +24,29 @@
             <a href="index.php"><img id="logo" src="../img/Unbosque.jpg"></a>
             <ul class="header-menu horizontal-list">
                 <li>
-                    <a class="header-menu-tab Setting" href="horarios.php" style="border-bottom: 4px solid #11a8ab;"><span class="icon entypo-cog scnd-font-color"></span>Horarios</a>
+                    <a class="header-menu-tab Setting" href="horarios.php"
+                       style="border-bottom: 4px solid #11a8ab;"><span class="icon entypo-cog scnd-font-color"></span>Horarios</a>
                 </li>
                 <li>
-                    <a class="header-menu-tab" href="rutas.php"><span class="icon fontawesome-user scnd-font-color"></span>Rutas</a>
+                    <a class="header-menu-tab" href="rutas.php"><span
+                                class="icon fontawesome-user scnd-font-color"></span>Rutas</a>
                 </li>
                 <li>
                     <a class="header-menu-tab" href="#"><span class="icon fontawesome-envelope scnd-font-color"></span>Reservas</a>
                     <!--<a class="header-menu-number" href="#">5</a>-->
                 </li>
                 <li>
-                    <a class="header-menu-tab" href="#"><span class="icon fontawesome-star-empty scnd-font-color"></span>Pagos</a>
+                    <a class="header-menu-tab" href="#"><span
+                                class="icon fontawesome-star-empty scnd-font-color"></span>Pagos</a>
                 </li>
                 <li>
-                    <a class="header-menu-tab" href="#"><span class="icon fontawesome-star-empty scnd-font-color"></span>Noticias y     Novedades</a>
+                    <a class="header-menu-tab" href="#"><span
+                                class="icon fontawesome-star-empty scnd-font-color"></span>Noticias y Novedades</a>
                 </li>
             </ul>
             <div class="profile-menu">
-                <button id="login" class="btn waves-effect waves-light">Login</button>
+
+
             </div>
         </header>
     </div>
@@ -51,135 +56,18 @@
         <img src="../img/tren-icon.png" id="tren">
     </div>
     <div id="horariosBus" style="display: none">
-        <?php
-            include ('conection.php');
-            echo "<div id=\"listado\" name=\"listado\">
-    <header>Horarios Bus</header>";
-            $consulta = mysqli_query($con,"SELECT `dia`, `Hora` FROM `horarios` WHERE `servicio`='bus' ORDER BY `dia`, `Hora`;");
-            /*$lconsulta = mysqli_fetch_array($consulta);
-            $long = count($lconsulta);*/
-            echo "<table id='horarios-bus'><thead><tr><th>Día</th><th>Hora</th></tr></thead>";
-            while ($lconsulta = mysqli_fetch_array($consulta)){
-                echo "<tr>";
-                for ($i = 0; $i <= 1; $i++){
-                    if ($lconsulta[$i] == '1'){
-                        echo "<td>Lunes</td>";
-                    }else{
-                        if ($lconsulta[$i] == '2'){
-                            echo "<td>Martes</td>";
-                        }else{
-                            if ($lconsulta[$i] == '3'){
-                                echo "<td>Miercoles</td>";
-                            }else{
-                                if ($lconsulta[$i] == '4'){
-                                    echo "<td>Jueves</td>";
-                                }else{
-                                    if ($lconsulta[$i] == '5'){
-                                        echo "<td>Viernes</td>";
-                                    }else {
-                                        echo "<td>" . $lconsulta[$i] . "</td>";
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                echo "</tr>";
-            }
-            echo "</table>
-        </div>";
-        ?>
+
+
     </div>
 
     <div id="horariosTren" style="display: none">
-        <?php
-            echo "<div id=\"listado\" name=\"listado\">
-    <header>Horarios Tren</header>";
-            $consulta = mysqli_query($con,"SELECT `dia`, `Hora` FROM `horarios` WHERE `servicio`='tren' ORDER BY `dia`, `Hora`;");
-            /*$lconsulta = mysqli_fetch_array($consulta);
-            $long = count($lconsulta);*/
-            echo "<table id='horarios-bus'><thead><tr><th>Día</th><th>Hora</th></tr></thead>";
-            while ($lconsulta = mysqli_fetch_array($consulta)){
-                echo "<tr>";
-                for ($i = 0; $i <= 1; $i++){
-                    if ($lconsulta[$i] == '1'){
-                        echo "<td>Lunes</td>";
-                    }else{
-                        if ($lconsulta[$i] == '2'){
-                            echo "<td>Martes</td>";
-                        }else{
-                            if ($lconsulta[$i] == '3'){
-                                echo "<td>Miercoles</td>";
-                            }else{
-                                if ($lconsulta[$i] == '4'){
-                                    echo "<td>Jueves</td>";
-                                }else{
-                                    if ($lconsulta[$i] == '5'){
-                                        echo "<td>Viernes</td>";
-                                    }else {
-                                        echo "<td>" . $lconsulta[$i] . "</td>";
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                echo "</tr>";
-            }
-            echo "</table>
-        </div>";
-        ?>
+
+
     </div>
 
     <div id="horarios">
-        <?php
-            echo "<div id=\"listado\" name=\"listado\">
-    <header>Horarios</header>";
-            $consulta = mysqli_query($con,"SELECT `dia`, `Hora`, `Servicio` FROM `horarios` ORDER BY `dia`, `Hora`;");
-            /*$lconsulta = mysqli_fetch_array($consulta);
-            $long = count($lconsulta);*/
-            echo "<table id='horarios-bus'><thead><tr><th>Día</th><th>Hora</th><th>Servicio</th></tr></thead>";
-            while ($lconsulta = mysqli_fetch_array($consulta)){
-                echo "<tr>";
-                for ($i = 0; $i <= 2; $i++){
-                    if ($lconsulta[$i] == '1'){
-                        echo "<td>Lunes</td>";
-                    }else{
-                        if ($lconsulta[$i] == '2'){
-                            echo "<td>Martes</td>";
-                        }else{
-                            if ($lconsulta[$i] == '3'){
-                                echo "<td>Miercoles</td>";
-                            }else{
-                                if ($lconsulta[$i] == '4'){
-                                    echo "<td>Jueves</td>";
-                                }else{
-                                    if ($lconsulta[$i] == '5'){
-                                        echo "<td>Viernes</td>";
-                                    }else {
-                                        if (strcmp($lconsulta[$i],"bus")==0){
-                                            //  echo "<td id='bus-url' style='cursor: pointer'>" . $lconsulta[$i] . "</td>";
-                                            echo "<td class='bus-url' style='cursor: pointer'><img src='../img/bus-icon.png' style='width: 50%'><br>Bus</td>";
-                                        }else{
-                                            if (strcmp($lconsulta[$i],"tren")==0){
-                                                //echo "<td id='tren-url' style='cursor: pointer'>" . $lconsulta[$i] . "</td>";
-                                                echo "<td class='tren-url' style='cursor: pointer'><img src='../img/tren-icon.png' style='width: 50%'>Tren</td>";
-                                            }else{
-                                                echo "<td>" . $lconsulta[$i] . "</td>";
-                                            }
-                                        }
 
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                echo "</tr>";
-            }
-            echo "</table>
-        </div>";
-        ?>
+
     </div>
 
     <div class="login-popup">
@@ -195,12 +83,12 @@
                             <label for="input" class="control-label">Usuario</label><i class="bar"></i>
                         </div>
                         <div class="form-group">
-                            <input type="password" id="pass" name="pass" required="required" />
+                            <input type="password" id="pass" name="pass" required="required"/>
                             <label for="input" class="control-label">Contraseña</label><i class="bar"></i>
                         </div>
                         <div>
                             <img src="../img/eye.png" style="width: 8%; opacity: 0.5;" id="eye">
-                            <label id="mostrar" style="opacity: 0.5;">  Ver Contraseña</label><br><br>
+                            <label id="mostrar" style="opacity: 0.5;"> Ver Contraseña</label><br><br>
                         </div>
                         <button id="entrar" type="submit">Entrar</button>
                     </div>
