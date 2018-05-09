@@ -22,10 +22,10 @@
             <a href="index.php"><img id="logo" src="../img/Unbosque.jpg"></a>
             <ul class="header-menu horizontal-list">
                 <li>
-                    <a class="header-menu-tab Setting" href="#" ><span class="icon entypo-cog scnd-font-color"></span>Horarios</a>
+                    <a class="header-menu-tab Setting" href="horarios.php" ><span class="icon entypo-cog scnd-font-color"></span>Horarios</a>
                 </li>
                 <li>
-                    <a class="header-menu-tab" href="#"><span class="icon fontawesome-user scnd-font-color"></span>Rutas</a>
+                    <a class="header-menu-tab" href="rutas.php"><span class="icon fontawesome-user scnd-font-color"></span>Rutas</a>
                 </li>
                 <li>
                     <a class="header-menu-tab" href="#"><span class="icon fontawesome-envelope scnd-font-color"></span>Reservas</a>
@@ -89,6 +89,7 @@
             </div>
         </form>
     </div>
+</div>
 </div>
 </body>
 </html>

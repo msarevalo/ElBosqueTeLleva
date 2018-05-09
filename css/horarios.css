@@ -1,0 +1,83 @@
+#bus{
+    width: 8%;
+    margin-left: -50px;
+    cursor: pointer;
+}
+
+#tren{
+    width: 8%;
+    margin-left: 300px;
+    cursor: pointer;
+}
+
+#listado{
+    left: 23%;
+    background-color: #dddddd;
+    border-radius: 25px;
+    width: 47%;
+    height: 10%;
+    margin-top: 40px;
+    margin-left: 25%;
+}
+
+#listado header{
+    background-color: #3a7999;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 25px 25px 0px 0px;
+}
+
+#horarios-bus{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    /*background: #fff;*/
+    width: 480px;
+    border-collapse: collapse;
+    text-align: left;
+    margin: 20px;
+    margin-left: 13%;
+}
+
+#horarios-bus tr{
+    border-bottom: 1px solid #ddd;
+}
+
+#horarios-bus thead{
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+    text-transform: uppercase;
+}
+
+#horarios-bus th{
+    font-size: 14px;
+    font-weight: normal;
+    color: #039;
+    border-bottom: 2px solid #6678b1;
+    padding: 10px 48px;
+    text-align: center;
+}
+
+#horarios-bus tbody{
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+#horarios-bus tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+#horarios-bus td {
+    border-bottom: 1px solid grey;
+    color: #404c81;
+    padding: 7px 50px;
+    font-size: 14px;
+}
