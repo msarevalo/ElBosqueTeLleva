@@ -6,7 +6,7 @@
  * Time: 2:48 PM
  */
 ?>
-<form action="cargarImagen.php" enctype="multipart/form-data" method="post">
+<form action="../back/cargarImagen.php" enctype="multipart/form-data" method="post">
     <label for="imagen">Imagen:</label>
     <input id="imagen" name="imagen" size="30" type="file" /><br><br>
     <output id="list"></output>

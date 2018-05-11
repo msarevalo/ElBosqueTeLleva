@@ -6,7 +6,7 @@
  * Time: 6:16 PM
  */
 
-include ("conection.php");
+include("conection.php");
 //session_start();
 
 $usuario = null;
@@ -34,7 +34,7 @@ if($respuesta){
         echo "<br><a href='index.php'>Salir</a>";*/
         $_SESSION['username']=$respuesta[0][2];
         $actualizar = mysqli_query($con, "UPDATE 'usuarios' SET 'conexion'='1' WHERE 'Login'='" . $_SESSION['username'] . "'");
-        header("Location: index.php");
+        header("Location: ../views/index.php");
     }else{
         //echo "fallo";
         echo "<script>alert('Usuario o ontraseña incorrectos');window.location.href='index.php'</script>";

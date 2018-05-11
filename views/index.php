@@ -46,18 +46,18 @@
                 </ul>
                 <div class="profile-menu">
                   <?php
-                include ('conection.php');
-                //echo "<label>" . $_SESSION['sesion'] . "</label>";
-                $consulta = mysqli_query($con, "SELECT 'conexion' FROM 'usuarios' WHERE 'login' LIKE '" . $usuario . "'");
-                try{
-                if ($_SESSION['username']==null){
-                    echo "<button id='login' class='btn waves-effect waves-light'>Login</button>";
-                }else{
-                    echo "<label style='cursor: pointer'>" . $_SESSION['username'] . " </label>";
-                    echo "<a href='cerrar.php'><img src='../img/logout.png' style='width: 10%; margin-top: 5px'></a>";
-                }}catch (Exception $e){
-                    echo "<button id='login' class='btn waves-effect waves-light'>Login</button>";
-                }
+                  //session_start();
+                  include('../back/conection.php');
+                  //$_SESSION['username'] = null;
+                  if(isset($_SESSION['username'])){
+                      if($_SESSION['username']!= null){
+                      echo "<label style='cursor: pointer'>" . $_SESSION['username'] . "</label>";
+                      }else {
+                          echo "<button id='login' class='btn waves-effect waves-light'>Login</button>";
+                      }
+                  }else{
+                      echo "<button id='login' class='btn waves-effect waves-light'>Login</button>";
+                  }
                 ?>
                 </div>
             </nav>
@@ -73,6 +73,7 @@
             <li><img src="../img/slider3.png"></li>
             <li><img src="../img/slider4.png"></li>-->
             <?php
+            //include('../back/conection.php');
             $result = mysqli_query($con, "SELECT * FROM banners WHERE activo='1';");
             while ($row = mysqli_fetch_array($result)) {
                 /*almacenamos el nombre de la ruta en la variable $ruta_img*/
@@ -86,7 +87,7 @@
     <div class="login-popup">
         <i class="fa fa-times-circle close-icon" aria-hidden="true">X</i>
         <div class="form-body">
-            <form method="post" action="validar.php">
+            <form method="post" action="../back/validar.php">
                 <div class="card">
                     <img src="../img/Unbosque.jpg" style="width: 45%;" alt="UnBosque" class="img-logo">
                     <div class="field">

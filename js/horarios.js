@@ -63,7 +63,7 @@ $(document).ready(function () {
 });
 
 $(document).ready(function(){
-    $('.bus-url').click(function(){
+    $('.bus-img').click(function(){
         if(i == 0 && j == 0) {
             $('#tren').css('opacity', '0.4');
             $('#bus').css('opacity', '1');
@@ -94,7 +94,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function () {
-    $('.tren-url').click(function () {
+    $('.tren-img').click(function () {
         if(i == 0 && j == 0){
             $('#bus').css('opacity', '0.4');
             $('#tren').css('opacity', '1');

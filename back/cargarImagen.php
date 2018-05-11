@@ -5,7 +5,7 @@
  * Date: 8/05/2018
  * Time: 2:46 PM
  */
-include ('conection.php');
+include('conection.php');
 
 $nombre_img = $_FILES['imagen']['name'];
 $tipo = $_FILES['imagen']['type'];
@@ -46,7 +46,7 @@ $sql = "INSERT INTO `imagenes`( `nombre_img`, `ruta_imagen`, `activo`) VALUES ('
 $result = mysqli_query($con, $sql);
 if($result){
     echo "se cargo correctamente";
-    echo "<a href='banners.php'>Volver</a>";
+    echo "<a href='../views/banners.php'>Volver</a>";
 }else{
     echo "fallo";
 }

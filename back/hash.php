@@ -5,7 +5,7 @@
  * Date: 4/05/2018
  * Time: 7:15 PM
  */
-include ("conection.php");
+include("conection.php");
 
 $id = 10;
 $nueva = "ninguna123.";

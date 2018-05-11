@@ -45,7 +45,9 @@
                 </li>
             </ul>
             <div class="profile-menu">
-
+                <?php
+                echo "<button id='login' class='btn waves-effect waves-light'>Login</button>";
+                ?>
 
             </div>
         </header>
@@ -56,24 +58,137 @@
         <img src="../img/tren-icon.png" id="tren">
     </div>
     <div id="horariosBus" style="display: none">
-
-
+        <?php
+            include('../back/conection.php');
+            echo "<div id=\"listado\" name=\"listado\">
+            <header>Horarios Bus</header>";
+            $consulta = mysqli_query($con,"SELECT `dia`, `Hora` FROM `horarios` WHERE `servicio`='bus' ORDER BY `dia`, `Hora`;");
+            /*$lconsulta = mysqli_fetch_array($consulta);
+            $long = count($lconsulta);*/
+            echo "<table id='horarios-bus'><thead><tr><th>Día</th><th>Hora</th></tr></thead>";
+            while ($lconsulta = mysqli_fetch_array($consulta)){
+                echo "<tr>";
+                for ($i = 0; $i <= 1; $i++){
+                    if ($lconsulta[$i] == '1'){
+                        echo "<td>Lunes</td>";
+                    }else{
+                        if ($lconsulta[$i] == '2'){
+                            echo "<td>Martes</td>";
+                        }else{
+                            if ($lconsulta[$i] == '3'){
+                                echo "<td>Miercoles</td>";
+                            }else{
+                                if ($lconsulta[$i] == '4'){
+                                    echo "<td>Jueves</td>";
+                                }else{
+                                    if ($lconsulta[$i] == '5'){
+                                        echo "<td>Viernes</td>";
+                                    }else {
+                                        echo "<td>" . $lconsulta[$i] . "</td>";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                echo "</tr>";
+            }
+            echo "</table>
+            </div>";
+            ?>
     </div>
-
     <div id="horariosTren" style="display: none">
-
-
+        <?php
+        echo "<div id=\"listado\" name=\"listado\">
+        <header>Horarios Tren</header>";
+        $consulta = mysqli_query($con,"SELECT `dia`, `Hora` FROM `horarios` WHERE `servicio`='tren' ORDER BY `dia`, `Hora`;");
+        /*$lconsulta = mysqli_fetch_array($consulta);
+        $long = count($lconsulta);*/
+        echo "<table id='horarios-bus'><thead><tr><th>Día</th><th>Hora</th></tr></thead>";
+        while ($lconsulta = mysqli_fetch_array($consulta)){
+            echo "<tr>";
+            for ($i = 0; $i <= 1; $i++){
+                if ($lconsulta[$i] == '1'){
+                    echo "<td>Lunes</td>";
+                }else{
+                    if ($lconsulta[$i] == '2'){
+                        echo "<td>Martes</td>";
+                    }else{
+                        if ($lconsulta[$i] == '3'){
+                            echo "<td>Miercoles</td>";
+                        }else{
+                            if ($lconsulta[$i] == '4'){
+                                echo "<td>Jueves</td>";
+                            }else{
+                                if ($lconsulta[$i] == '5'){
+                                    echo "<td>Viernes</td>";
+                                }else {
+                                    echo "<td>" . $lconsulta[$i] . "</td>";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            echo "</tr>";
+        }
+        echo "</table>
+        </div>";
+        ?>
     </div>
-
     <div id="horarios">
+        <?php
+        echo "<div id=\"listado\" name=\"listado\">
+        <header>Horarios</header>";
+        $consulta = mysqli_query($con,"SELECT `dia`, `Hora`, `Servicio` FROM `horarios` ORDER BY `dia`, `Hora`;");
+        /*$lconsulta = mysqli_fetch_array($consulta);
+        $long = count($lconsulta);*/
+        echo "<table id='horarios-bus'><thead><tr><th>Día</th><th>Hora</th><th>Servicio</th></tr></thead>";
+        while ($lconsulta = mysqli_fetch_array($consulta)){
+            echo "<tr>";
+            for ($i = 0; $i <= 2; $i++){
+                if ($lconsulta[$i] == '1'){
+                    echo "<td>Lunes</td>";
+                }else{
+                    if ($lconsulta[$i] == '2'){
+                        echo "<td>Martes</td>";
+                    }else{
+                        if ($lconsulta[$i] == '3'){
+                            echo "<td>Miercoles</td>";
+                        }else{
+                            if ($lconsulta[$i] == '4'){
+                                echo "<td>Jueves</td>";
+                            }else{
+                                if ($lconsulta[$i] == '5'){
+                                    echo "<td>Viernes</td>";
+                                }else {
+                                    if ($lconsulta[$i] == "bus"){
+                                        echo "<td class='bus-img' style='cursor: pointer'><img src='../img/bus-icon.png' style='width: 50%;'><br>Bus</td>";
+                                    }else{
+                                        if ($lconsulta[$i] == "tren"){
+                                            echo "<td class='tren-img' style='cursor: pointer'><img src='../img/tren-icon.png' style='width: 50%;'><br>Tren</td>";
+                                        }else{
+                                            echo "<td>" . $lconsulta[$i] . "</td>";
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
-
+            echo "</tr>";
+        }
+        echo "</table>
+        </div>";
+        ?>
     </div>
 
     <div class="login-popup">
         <i class="fa fa-times-circle close-icon" aria-hidden="true">X</i>
         <div class="form-body">
-            <form method="post" action="validar.php">
+            <form method="post" action="../back/validar.php">
                 <div class="card">
                     <img src="../img/Unbosque.jpg" style="width: 45%;" alt="UnBosque" class="img-logo">
                     <div class="field">

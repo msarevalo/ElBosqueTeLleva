@@ -49,13 +49,13 @@
             </ul>
             <div class="profile-menu">
                 <?php
-                include ('conection.php');
+                include('../back/conection.php');
                 //$_SESSION['sesion'] = null;
-                if ($_SESSION['sesion']==null){
+                //if ($_SESSION['username']==null){
                     echo "<button id='login' class='btn waves-effect waves-light'>Login</button>";
-                }else{
-                    echo "<label style='cursor: pointer'>" . $_SESSION['username'] . "</label>";
-                }
+                //}else{
+                    //echo "<label style='cursor: pointer'>" . $_SESSION['username'] . "</label>";
+                //}
                 ?>
             </div>
         </header>
@@ -63,7 +63,7 @@
 <div id="map"></div>
 <script>
     function initMap() {
-        var uluru = {lat: 4.6817907, lng: -74.0454666};
+        var uluru = {lat: 4.711422, lng: -74.032368};
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 4,
             center: uluru
@@ -81,7 +81,7 @@
     <div class="login-popup">
         <i class="fa fa-times-circle close-icon" aria-hidden="true">X</i>
         <div class="form-body">
-            <form method="post" action="validar.php">
+            <form method="post" action="../back/validar.php">
                 <div class="card">
                     <img src="../img/Unbosque.jpg" style="width: 45%;" alt="UnBosque" class="img-logo">
                     <div class="field">
