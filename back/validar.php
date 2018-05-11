@@ -33,6 +33,7 @@ if($respuesta){
         /*echo "correcto";
         echo "<br><a href='index.php'>Salir</a>";*/
         $_SESSION['username']=$respuesta[0][2];
+        $_SESSION['perfil']=$respuesta[0][10];
         header("Location: ../views/index.php");
     }else{
         //echo "fallo";

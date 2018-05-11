@@ -27,8 +27,27 @@ include('../back/conection.php');
             <a href="index.php"><img id="logo" src="../img/Unbosque.jpg"></a>
             <ul class="header-menu horizontal-list">
                 <li>
-                    <a class="header-menu-tab Setting" href="horarios.php"
-                       style="border-bottom: 4px solid #11a8ab;"><span class="icon entypo-cog scnd-font-color"></span>Horarios</a>
+                    <?php
+                    if (isset($_SESSION['username'])){
+                        if ($_SESSION['perfil']=="estudiante"){
+                            echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
+                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                        }else{
+                            if ($_SESSION['perfil']=="admin"){
+                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios-admin.php\"><span
+                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                            }else{
+                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
+                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                            }
+
+                        }
+                    }else {
+                        echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
+                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                    }
+                    ?>
+
                 </li>
                 <li>
                     <a class="header-menu-tab" href="rutas.php"><span
@@ -218,7 +237,7 @@ include('../back/conection.php');
         <div class="form-body">
             <form method="post" action="../back/validar.php">
                 <div class="card">
-                    <img src="../img/Unbosque.jpg" style="width: 45%;" alt="UnBosque" class="img-logo">
+                    <a href="index.php"><img src="../img/Unbosque.jpg" style="width: 45%;" alt="UnBosque" class="img-logo"></a>
                     <div class="field">
                         <span class="header">El bosque te lleva</span>
                         <div class="form-group">

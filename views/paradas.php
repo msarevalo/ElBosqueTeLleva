@@ -57,7 +57,7 @@ include('../back/conection.php');
 
                 </li>
                 <li>
-                    <a class="header-menu-tab" href="rutas.php"><span class="icon fontawesome-user scnd-font-color"></span>Rutas</a>
+                    <a class="header-menu-tab" href="rutas.php" style="border-bottom: 4px solid #11a8ab;"><span class="icon fontawesome-user scnd-font-color"></span>Rutas</a>
                 </li>
                 <li>
                     <?php
@@ -83,7 +83,7 @@ include('../back/conection.php');
                     ?>
                 </li>
                 <li>
-                    <a class="header-menu-tab" href="news.php" style="border-bottom: 4px solid #11a8ab;"><span class="icon fontawesome-star-empty scnd-font-color"></span>Noticias y     Novedades</a>
+                    <a class="header-menu-tab" href="news.php"><span class="icon fontawesome-star-empty scnd-font-color"></span>Noticias y     Novedades</a>
                 </li>
             </ul>
             <div class="profile-menu">
@@ -130,4 +130,3 @@ include('../back/conection.php');
             </form>
         </div>
     </div>
-</div>

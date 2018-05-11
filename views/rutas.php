@@ -34,7 +34,27 @@ include('../back/conection.php');
             <a href="index.php"><img id="logo" src="../img/Unbosque.jpg"></a>
             <ul class="header-menu horizontal-list">
                 <li>
-                    <a class="header-menu-tab Setting" href="horarios.php"><span class="icon entypo-cog scnd-font-color"></span>Horarios</a>
+                    <?php
+                    if (isset($_SESSION['username'])){
+                        if ($_SESSION['perfil']=="estudiante"){
+                            echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
+                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                        }else{
+                            if ($_SESSION['perfil']=="admin"){
+                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios-admin.php\"><span
+                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                            }else{
+                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
+                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                            }
+
+                        }
+                    }else {
+                        echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
+                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                    }
+                    ?>
+
                 </li>
                 <li>
                     <a class="header-menu-tab" href="rutas.php" style="border-bottom: 4px solid #11a8ab;"><span class="icon fontawesome-user scnd-font-color"></span>Rutas</a>
@@ -89,7 +109,7 @@ include('../back/conection.php');
     function initMap() {
         var uluru = {lat: 4.711422, lng: -74.032368};
         var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 4,
+            zoom: 13,
             center: uluru
         });
         var marker = new google.maps.Marker({
@@ -101,13 +121,15 @@ include('../back/conection.php');
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCt1omiOFwL5HrtlC0T1ZlZFzOf9OXmEaI&callback=initMap">
 </script>
-
+<div>
+    <br><a href="paradas.php"><button id="entrar">Ver Paradas</button></a>
+</div>
     <div class="login-popup">
         <i class="fa fa-times-circle close-icon" aria-hidden="true">X</i>
         <div class="form-body">
             <form method="post" action="../back/validar.php">
                 <div class="card">
-                    <img src="../img/Unbosque.jpg" style="width: 45%;" alt="UnBosque" class="img-logo">
+                    <a href="index.php"><img src="../img/Unbosque.jpg" style="width: 45%;" alt="UnBosque" class="img-logo"></a>
                     <div class="field">
                         <span class="header">El bosque te lleva</span>
                         <div class="form-group">
@@ -128,5 +150,6 @@ include('../back/conection.php');
             </form>
         </div>
     </div>
+</div>
 </body>
 </html>

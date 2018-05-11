@@ -41,7 +41,7 @@ include('../back/conection.php');
                                     class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
                         }else{
                             if ($_SESSION['perfil']=="admin"){
-                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios-admin.php\"><span
+                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios-admin.php\" style=\"border-bottom: 4px solid #11a8ab;\"><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
                             }else{
                                 echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
@@ -83,7 +83,7 @@ include('../back/conection.php');
                     ?>
                 </li>
                 <li>
-                    <a class="header-menu-tab" href="news.php" style="border-bottom: 4px solid #11a8ab;"><span class="icon fontawesome-star-empty scnd-font-color"></span>Noticias y     Novedades</a>
+                    <a class="header-menu-tab" href="news.php"><span class="icon fontawesome-star-empty scnd-font-color"></span>Noticias y     Novedades</a>
                 </li>
             </ul>
             <div class="profile-menu">
@@ -104,30 +104,3 @@ include('../back/conection.php');
             </div>
         </header>
     </div>
-    <div class="login-popup">
-        <i class="fa fa-times-circle close-icon" aria-hidden="true">X</i>
-        <div class="form-body">
-            <form method="post" action="../back/validar.php">
-                <div class="card">
-                    <a href="index.php"><img src="../img/Unbosque.jpg" style="width: 45%;" alt="UnBosque" class="img-logo"></a>
-                    <div class="field">
-                        <span class="header">El bosque te lleva</span>
-                        <div class="form-group">
-                            <input type="text" required="required" name="usuario"/>
-                            <label for="input" class="control-label">Usuario</label><i class="bar"></i>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" id="pass" name="pass" required="required" />
-                            <label for="input" class="control-label">Contraseña</label><i class="bar"></i>
-                        </div>
-                        <div>
-                            <img src="../img/eye.png" style="width: 8%; opacity: 0.5;" id="eye">
-                            <label id="mostrar" style="opacity: 0.5;">  Ver Contraseña</label><br><br>
-                        </div>
-                        <button id="entrar" type="submit">Entrar</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
