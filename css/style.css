@@ -548,3 +548,13 @@ a.control_next {
     width: 160px;
     font-size: 18px;
 }
+
+.header-menu li > ul {
+    position: absolute;
+    background: #dddddd;
+    display: none;
+}
+
+.header-menu li:hover > ul {
+    display: block;
+}

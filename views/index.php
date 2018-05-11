@@ -22,7 +22,7 @@ include('../back/conection.php');
 <div>
     <div class="main-container">
         <header class="block">
-            <nav class="prueba">
+            <nav>
                 <a href="index.php"><img id="logo" src="../img/Unbosque.jpg"></a>
                 <ul class="header-menu horizontal-list">
                     <li>
@@ -51,6 +51,10 @@ include('../back/conection.php');
                     <li>
                         <a class="header-menu-tab" href="rutas.php"><span
                                     class="icon fontawesome-user scnd-font-color"></span>Rutas</a>
+                        <ul>
+                            <li class="aparte"><a href="#">Ver</a></li>
+                            <li class="aparte"><a href="#">Crear</a></li>
+                        </ul>
                     </li>
                     <li>
                         <?php

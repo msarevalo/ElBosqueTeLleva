@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Rutas | El Bosque Te LLeva</title>
+    <title>Noticias | El Bosque Te LLeva</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="application-name" content="Sistema de Reservas Universidad del Bosque">
