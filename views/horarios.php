@@ -18,6 +18,9 @@
 
 </head>
 <body>
+<?php
+include('../back/conection.php');
+?>
 <div>
     <div class="main-container">
         <header class="block">
@@ -32,23 +35,48 @@
                                 class="icon fontawesome-user scnd-font-color"></span>Rutas</a>
                 </li>
                 <li>
-                    <a class="header-menu-tab" href="#"><span class="icon fontawesome-envelope scnd-font-color"></span>Reservas</a>
-                    <!--<a class="header-menu-number" href="#">5</a>-->
+                    <?php
+                    if (isset($_SESSION['username'])){
+                        echo "<a class=\"header-menu-tab\" href=\"reservas.php\"><span
+                                    class=\"icon fontawesome-envelope scnd-font-color\"></span>Reservas</a>";
+                    }else{
+                        echo "<a class=\"header-menu-tab\" style='cursor: pointer;' onclick='sinLogueo()'><span
+                                    class=\"icon fontawesome-envelope scnd-font-color\"></span>Reservas</a>";
+                    }
+                    ?>
+
                 </li>
                 <li>
-                    <a class="header-menu-tab" href="#"><span
-                                class="icon fontawesome-star-empty scnd-font-color"></span>Pagos</a>
+                    <?php
+                    if (isset($_SESSION['username'])){
+                        echo "<a class=\"header-menu-tab\" href=\"pagos.php\"><span
+                                    class=\"icon fontawesome-envelope scnd-font-color\"></span>Pagos</a>";
+                    }else{
+                        echo "<a class=\"header-menu-tab\" style='cursor: pointer;' onclick='sinLogueo()'><span
+                                    class=\"icon fontawesome-envelope scnd-font-color\"></span>Pagos</a>";
+                    }
+                    ?>
                 </li>
                 <li>
-                    <a class="header-menu-tab" href="#"><span
+                    <a class="header-menu-tab" href="news.php"><span
                                 class="icon fontawesome-star-empty scnd-font-color"></span>Noticias y Novedades</a>
                 </li>
             </ul>
             <div class="profile-menu">
                 <?php
-                echo "<button id='login' class='btn waves-effect waves-light'>Login</button>";
+                //session_start();
+                //$_SESSION['username'] = null;
+                if(isset($_SESSION['username'])){
+                    if($_SESSION['username']!= null){
+                        echo "<label style='cursor: pointer'>" . $_SESSION['username'] . "</label> 
+                        <a href='../back/cerrar.php'><img src='../img/logout.png' style='width: 10%'></a>";
+                    }else {
+                        echo "<button id='login' class='btn waves-effect waves-light'>Login</button>";
+                    }
+                }else{
+                    echo "<button id='login' class='btn waves-effect waves-light'>Login</button>";
+                }
                 ?>
-
             </div>
         </header>
     </div>
@@ -59,7 +87,7 @@
     </div>
     <div id="horariosBus" style="display: none">
         <?php
-            include('../back/conection.php');
+            //include('../back/conection.php');
             echo "<div id=\"listado\" name=\"listado\">
             <header>Horarios Bus</header>";
             $consulta = mysqli_query($con,"SELECT `dia`, `Hora` FROM `horarios` WHERE `servicio`='bus' ORDER BY `dia`, `Hora`;");
@@ -140,7 +168,7 @@
         <?php
         echo "<div id=\"listado\" name=\"listado\">
         <header>Horarios</header>";
-        $consulta = mysqli_query($con,"SELECT `dia`, `Hora`, `Servicio` FROM `horarios` ORDER BY `dia`, `Hora`;");
+        $consulta = mysqli_query($con,"SELECT `dia`, `Hora`, `servicio` FROM `horarios` ORDER BY `dia`, `Hora`;");
         /*$lconsulta = mysqli_fetch_array($consulta);
         $long = count($lconsulta);*/
         echo "<table id='horarios-bus'><thead><tr><th>Día</th><th>Hora</th><th>Servicio</th></tr></thead>";
@@ -163,10 +191,10 @@
                                     echo "<td>Viernes</td>";
                                 }else {
                                     if ($lconsulta[$i] == "bus"){
-                                        echo "<td class='bus-img' style='cursor: pointer'><img src='../img/bus-icon.png' style='width: 50%;'><br>Bus</td>";
+                                        echo "<td class='bus-img' style='cursor: pointer'><img src='../img/bus-icon.png' style='width: 60%;'><br><label style='margin-left: 10px'>Bus</label></td>";
                                     }else{
                                         if ($lconsulta[$i] == "tren"){
-                                            echo "<td class='tren-img' style='cursor: pointer'><img src='../img/tren-icon.png' style='width: 50%;'><br>Tren</td>";
+                                            echo "<td class='tren-img' style='cursor: pointer'><img src='../img/tren-icon.png' style='width: 60%;'><br><label style='margin-left: 8px'>Tren</label></td>";
                                         }else{
                                             echo "<td>" . $lconsulta[$i] . "</td>";
                                         }

@@ -116,3 +116,7 @@ $(document).ready(function ($) {
     });
 
 });
+
+function sinLogueo() {
+    $('.login-popup').fadeIn('fast');
+};

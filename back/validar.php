@@ -33,7 +33,6 @@ if($respuesta){
         /*echo "correcto";
         echo "<br><a href='index.php'>Salir</a>";*/
         $_SESSION['username']=$respuesta[0][2];
-        $actualizar = mysqli_query($con, "UPDATE 'usuarios' SET 'conexion'='1' WHERE 'Login'='" . $_SESSION['username'] . "'");
         header("Location: ../views/index.php");
     }else{
         //echo "fallo";

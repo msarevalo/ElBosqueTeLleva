@@ -25,6 +25,9 @@
     </style>
 </head>
 <body>
+<?php
+include('../back/conection.php');
+?>
 <div>
     <div class="main-container">
         <header class="block">
@@ -37,25 +40,46 @@
                     <a class="header-menu-tab" href="rutas.php" style="border-bottom: 4px solid #11a8ab;"><span class="icon fontawesome-user scnd-font-color"></span>Rutas</a>
                 </li>
                 <li>
-                    <a class="header-menu-tab" href="#"><span class="icon fontawesome-envelope scnd-font-color"></span>Reservas</a>
-                    <!--<a class="header-menu-number" href="#">5</a>-->
+                    <?php
+                    if (isset($_SESSION['username'])){
+                        echo "<a class=\"header-menu-tab\" href=\"reservas.php\"><span
+                                    class=\"icon fontawesome-envelope scnd-font-color\"></span>Reservas</a>";
+                    }else{
+                        echo "<a class=\"header-menu-tab\" style='cursor: pointer;' onclick='sinLogueo()'><span
+                                    class=\"icon fontawesome-envelope scnd-font-color\"></span>Reservas</a>";
+                    }
+                    ?>
+
                 </li>
                 <li>
-                    <a class="header-menu-tab" href="#"><span class="icon fontawesome-star-empty scnd-font-color"></span>Pagos</a>
+                    <?php
+                    if (isset($_SESSION['username'])){
+                        echo "<a class=\"header-menu-tab\" href=\"pagos.php\"><span
+                                    class=\"icon fontawesome-envelope scnd-font-color\"></span>Pagos</a>";
+                    }else{
+                        echo "<a class=\"header-menu-tab\" style='cursor: pointer;' onclick='sinLogueo()'><span
+                                    class=\"icon fontawesome-envelope scnd-font-color\"></span>Pagos</a>";
+                    }
+                    ?>
                 </li>
                 <li>
-                    <a class="header-menu-tab" href="#"><span class="icon fontawesome-star-empty scnd-font-color"></span>Noticias y     Novedades</a>
+                    <a class="header-menu-tab" href="news.php"><span class="icon fontawesome-star-empty scnd-font-color"></span>Noticias y     Novedades</a>
                 </li>
             </ul>
             <div class="profile-menu">
                 <?php
-                include('../back/conection.php');
-                //$_SESSION['sesion'] = null;
-                //if ($_SESSION['username']==null){
+                //session_start();
+                //$_SESSION['username'] = null;
+                if(isset($_SESSION['username'])){
+                    if($_SESSION['username']!= null){
+                        echo "<label style='cursor: pointer'>" . $_SESSION['username'] . "</label> 
+                        <a href='../back/cerrar.php'><img src='../img/logout.png' style='width: 10%'></a>";
+                    }else {
+                        echo "<button id='login' class='btn waves-effect waves-light'>Login</button>";
+                    }
+                }else{
                     echo "<button id='login' class='btn waves-effect waves-light'>Login</button>";
-                //}else{
-                    //echo "<label style='cursor: pointer'>" . $_SESSION['username'] . "</label>";
-                //}
+                }
                 ?>
             </div>
         </header>

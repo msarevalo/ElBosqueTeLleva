@@ -14,6 +14,16 @@ if (!$con){
     //header("Location: index.php");
 }
 
+if (!isset($_SESSION['tiempo'])) {
+    $_SESSION['tiempo']=time();
+}
+else if (time() - $_SESSION['tiempo'] > 150) {
+    session_destroy();
+    header("Location: ../views/index.php");
+    die();
+}
+$_SESSION['tiempo']=time();
+
 ?>
 
 
