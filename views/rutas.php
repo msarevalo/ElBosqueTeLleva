@@ -83,7 +83,28 @@ include('../back/conection.php');
                     ?>
                 </li>
                 <li>
-                    <a class="header-menu-tab" href="news.php"><span class="icon fontawesome-star-empty scnd-font-color"></span>Noticias y     Novedades</a>
+                    <?php
+                    if (isset($_SESSION['username'])){
+                        if ($_SESSION['perfil']=="estudiante"){
+                            echo "<a class=\"header-menu-tab Setting\" href=\"news.php\"><span
+                                    class=\"icon entypo-cog scnd-font-color\"></span>Noticias y Novedades</a>";
+                        }else{
+                            if ($_SESSION['perfil']=="admin"){
+                                echo "<a class=\"header-menu-tab Setting\" href=\"contenido-admin.php\"><span
+                                    class=\"icon entypo-cog scnd-font-color\"></span>Contenido</a>";
+                            }else{
+                                echo "<a class=\"header-menu-tab Setting\" href=\"news.php\"><span
+                                    class=\"icon entypo-cog scnd-font-color\"></span>Noticias y Novedades</a>";
+                            }
+
+                        }
+                    }else {
+                        echo "<a class=\"header-menu-tab Setting\" href=\"news.php\"><span
+                                    class=\"icon entypo-cog scnd-font-color\"></span>Noticias y Novedades</a>";
+                    }
+                    ?>
+                    <!--<a class="header-menu-tab" href="news.php"><span
+                                class="icon fontawesome-star-empty scnd-font-color"></span>Noticias y Novedades</a>-->
                 </li>
             </ul>
             <div class="profile-menu">

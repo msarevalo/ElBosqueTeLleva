@@ -42,7 +42,7 @@ else
     echo "no se cargo imagen";
 }
 
-$sql = "INSERT INTO `imagenes`( `nombre_img`, `ruta_imagen`, `activo`) VALUES ('".$nom_temp."','" . $ruta . "',1)";
+$sql = "INSERT INTO `banners`( `nombre_img`, `ruta_imagen`, `activo`) VALUES ('".$nom_temp."','" . $ruta . "',1)";
 $result = mysqli_query($con, $sql);
 if($result){
     echo "se cargo correctamente";

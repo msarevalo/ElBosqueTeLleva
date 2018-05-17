@@ -51,10 +51,6 @@ include('../back/conection.php');
                     <li>
                         <a class="header-menu-tab" href="rutas.php"><span
                                     class="icon fontawesome-user scnd-font-color"></span>Rutas</a>
-                        <ul>
-                            <li class="aparte"><a href="#">Ver</a></li>
-                            <li class="aparte"><a href="#">Crear</a></li>
-                        </ul>
                     </li>
                     <li>
                         <?php
@@ -80,8 +76,28 @@ include('../back/conection.php');
                         ?>
                     </li>
                     <li>
-                        <a class="header-menu-tab" href="news.php"><span
-                                    class="icon fontawesome-star-empty scnd-font-color"></span>Noticias y Novedades</a>
+                        <?php
+                        if (isset($_SESSION['username'])){
+                            if ($_SESSION['perfil']=="estudiante"){
+                                echo "<a class=\"header-menu-tab Setting\" href=\"news.php\"><span
+                                    class=\"icon entypo-cog scnd-font-color\"></span>Noticias y Novedades</a>";
+                            }else{
+                                if ($_SESSION['perfil']=="admin"){
+                                    echo "<a class=\"header-menu-tab Setting\" href=\"contenido-admin.php\"><span
+                                    class=\"icon entypo-cog scnd-font-color\"></span>Contenido</a>";
+                                }else{
+                                    echo "<a class=\"header-menu-tab Setting\" href=\"news.php\"><span
+                                    class=\"icon entypo-cog scnd-font-color\"></span>Noticias y Novedades</a>";
+                                }
+
+                            }
+                        }else {
+                            echo "<a class=\"header-menu-tab Setting\" href=\"news.php\"><span
+                                    class=\"icon entypo-cog scnd-font-color\"></span>Noticias y Novedades</a>";
+                        }
+                        ?>
+                        <!--<a class="header-menu-tab" href="news.php"><span
+                                    class="icon fontawesome-star-empty scnd-font-color"></span>Noticias y Novedades</a>-->
                     </li>
                 </ul>
                 <div class="profile-menu">
@@ -91,7 +107,7 @@ include('../back/conection.php');
                   //$_SESSION['username'] = null;
                   if(isset($_SESSION['username'])){
                       if($_SESSION['username']!= null){
-                      echo "<a><label style='cursor: pointer'>" . $_SESSION['perfil'] . "</label></a>
+                      echo "<a><label style='cursor: pointer'>" . $_SESSION['username'] . "</label></a>
                         <a href='../back/cerrar.php'><img src='../img/logout.png' style='width: 10%'></a>";
                       }else {
                           echo "<button id='login' class='btn waves-effect waves-light'>Login</button>";
@@ -115,7 +131,7 @@ include('../back/conection.php');
             <li><img src="../img/slider4.png"></li>-->
             <?php
             //include('../back/conection.php');
-            $result = mysqli_query($con, "SELECT * FROM banners WHERE activo='1';");
+            $result = mysqli_query($con, "SELECT * FROM banners WHERE activo='1' ORDER BY orden;");
             while ($row = mysqli_fetch_array($result)) {
                 /*almacenamos el nombre de la ruta en la variable $ruta_img*/
                 //echo  $row["ruta_imagen"] . $row['nombre_img'] . '<br>';
