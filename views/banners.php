@@ -1,14 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: SOPORTE COLOMBIA
- * Date: 8/05/2018
- * Time: 2:48 PM
- */
+include('../back/conection.php');
 ?>
+<div>
 <form action="../back/cargarImagen.php" enctype="multipart/form-data" method="post">
     <label for="imagen">Imagen:</label>
-    <input id="imagen" name="imagen" size="30" type="file" /><br><br>
+    <input id="imagen" name="imagen" size="30" type="file" /><br>
+    <label for="orden">Orden</label>
+    <input id="orden" name="orden" type="number" placeholder="orden"><br>
     <output id="list"></output>
 
     <script>
@@ -37,5 +35,9 @@
 
         document.getElementById('imagen').addEventListener('change', archivo, false);
     </script><br>
+    <?php
+    $_SESSION['tipoImg']="banners";
+    ?>
     <input type="submit" value="Enviar" />
 </form>
+</div>

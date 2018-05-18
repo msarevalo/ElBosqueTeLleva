@@ -37,21 +37,18 @@ include('../back/conection.php');
                     <?php
                     if (isset($_SESSION['username'])){
                         if ($_SESSION['perfil']=="estudiante"){
-                            echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
-                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                            Header("Location: index.php");
                         }else{
                             if ($_SESSION['perfil']=="admin"){
                                 echo "<a class=\"header-menu-tab Setting\" href=\"horarios-admin.php\" style=\"border-bottom: 4px solid #11a8ab;\"><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
                             }else{
-                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
-                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                                Header("Location: index.php");
                             }
 
                         }
                     }else {
-                        echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
-                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                        Header("Location: index.php");
                     }
                     ?>
 

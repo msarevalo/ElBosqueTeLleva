@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: SOPORTE COLOMBIA
- * Date: 4/05/2018
- * Time: 6:16 PM
- */
 
 include("conection.php");
 //session_start();
