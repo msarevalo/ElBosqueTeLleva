@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8f90e52-8638-4f3c-8d5e-82e0211e276b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/cargarImagen.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/cargarImagen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/cerrar.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/cerrar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/conection.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/conection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/hash.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/hash.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/validar.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/validar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/banners.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/banners.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/contenido-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/contenido-admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/horarios-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/horarios-admin.php" afterDir="false" />
-    </list>
+    <list default="true" id="f8f90e52-8638-4f3c-8d5e-82e0211e276b" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,114 +24,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="16" selection-end-column="7" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#a#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="horarios-admin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/horarios-admin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="45" column="62" selection-start-line="45" selection-start-column="62" selection-end-line="45" selection-end-column="62" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reservas.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/reservas.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1700">
-              <caret line="100" column="82" selection-start-line="100" selection-start-column="82" selection-end-line="100" selection-end-column="82" />
-              <folding>
-                <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rutas.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/rutas.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1615">
-              <caret line="95" column="90" selection-start-line="95" selection-start-column="90" selection-end-line="95" selection-end-column="90" />
-              <folding>
-                <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contenido-admin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/contenido-admin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cargarImagen.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/back/cargarImagen.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cerrar.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/back/cerrar.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="conection.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/back/conection.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hash.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/back/hash.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="validar.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/back/validar.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -234,7 +117,7 @@
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -352,16 +235,15 @@
       <workItem from="1525961908136" duration="31000" />
       <workItem from="1525963029250" duration="25460000" />
       <workItem from="1526594881364" duration="3408000" />
-      <workItem from="1526655399570" duration="7274000" />
+      <workItem from="1526655399570" duration="7819000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117754000" />
+    <option name="totallyTimeSpent" value="118299000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="12" />
@@ -400,7 +282,7 @@
           <line>25</line>
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -592,13 +474,6 @@
     <entry file="das://302920ad-334d-40de-95f8-a4d48241c54e/schema/dbreservas/table/vehiculos" />
     <entry file="file://$PROJECT_DIR$/views/filtro.php" />
     <entry file="file://$PROJECT_DIR$/views/login.php" />
-    <entry file="file://$PROJECT_DIR$/css/horarios.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="85" column="29" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/horarios.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="785">
@@ -617,92 +492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="482" column="19" selection-start-line="482" selection-start-column="19" selection-end-line="482" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/horarios.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="89" column="90" selection-start-line="89" selection-start-column="90" selection-end-line="89" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/news.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="101" column="82" selection-start-line="101" selection-start-column="82" selection-end-line="101" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/pagos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="95" column="90" selection-start-line="95" selection-start-column="90" selection-end-line="95" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/paradas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="95" column="90" selection-start-line="95" selection-start-column="90" selection-end-line="95" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/banners.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="16" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/horarios-admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="62" selection-start-line="45" selection-start-column="62" selection-end-line="45" selection-end-column="62" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/reservas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="100" column="82" selection-start-line="100" selection-start-column="82" selection-end-line="100" selection-end-column="82" />
-          <folding>
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/rutas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="95" column="90" selection-start-line="95" selection-start-column="90" selection-end-line="95" selection-end-column="90" />
-          <folding>
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/contenido-admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
@@ -738,6 +527,112 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/horarios.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="85" column="29" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/banners.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/contenido-admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/horarios.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1513">
+          <caret line="89" column="90" selection-start-line="89" selection-start-column="90" selection-end-line="89" selection-end-column="90" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/horarios-admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="62" selection-start-line="45" selection-start-column="62" selection-end-line="45" selection-end-column="62" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="16" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/news.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1717">
+          <caret line="101" column="82" selection-start-line="101" selection-start-column="82" selection-end-line="101" selection-end-column="82" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pagos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1615">
+          <caret line="95" column="90" selection-start-line="95" selection-start-column="90" selection-end-line="95" selection-end-column="90" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/paradas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1615">
+          <caret line="95" column="90" selection-start-line="95" selection-start-column="90" selection-end-line="95" selection-end-column="90" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/reservas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1700">
+          <caret line="100" column="82" selection-start-line="100" selection-start-column="82" selection-end-line="100" selection-end-column="82" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/rutas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1615">
+          <caret line="95" column="90" selection-start-line="95" selection-start-column="90" selection-end-line="95" selection-end-column="90" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
