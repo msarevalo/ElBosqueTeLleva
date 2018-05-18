@@ -27,6 +27,19 @@
 <body>
 <?php
 include('../back/conection.php');
+
+if (isset($_GET['id'])){
+    $idHorario = $_GET['id'];
+}
+
+$consulta = mysqli_query($con,"SELECT * FROM `horarios` WHERE IdHorario='" . $idHorario . "';");
+$prueba = mysqli_fetch_array($consulta);
+
+    for ($i=0; $i<=3; $i++){
+        echo $prueba[$i] . "<br>";
+    }
+
+
 ?>
 <div>
     <div class="main-container">
@@ -123,37 +136,79 @@ include('../back/conection.php');
         </header>
     </div>
     <div>
-<?php
-        echo "<div id=\"listado-admin\" name=\"listado-admin\">
-        <header>Horarios</header>";
-        $consulta = mysqli_query($con,"SELECT `IdHorario`, `dia`, `Hora`, `servicio` FROM `horarios` ORDER BY `dia`, `Hora`;");
-        /*$lconsulta = mysqli_fetch_array($consulta);
-        $long = count($lconsulta);*/
-        echo "<table id='horarios-bus'><thead><tr><th>Día</th><th>Hora</th><th>Servicio</th><th>Acciones</th></tr></thead>";
-        while ($lconsulta = mysqli_fetch_array($consulta)){
-            $contador = 0;
-            echo "<tr>";
-            for ($i = 1; $i <= 3; $i++){
-
-                                    if ($lconsulta[$i] == "bus"){
-                                        echo "<td><label style='margin-left: 10px'>Bus</label></td>
-                                        <td><a href='editar-horario.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 45%'></a>
-                                        <a href='?'><img src='../img/delete.png' style='width: 35%'></a></td>";
+        <form method="post" action="../back/editarHorario.php">
+            <label for="dias">Día</label>
+            <select id="dias" name="dias">
+                <?php
+                    $_SESSION['idHorario']=$prueba[0];
+                    if ($prueba[1] == "Lunes"){
+                        echo "<option value=\"Lunes\" selected>Lunes</option>
+                                <option value=\"Martes\">Martes</option>
+                                <option value=\"Miercoles\">Miercoles</option>
+                                <option value=\"Jueves\">Jueves</option>
+                                <option value=\"Viernes\">Viernes</option>";
+                    }else{
+                        if ($prueba[1] == "Martes"){
+                            echo "<option value=\"Lunes\">Lunes</option>
+                                <option value=\"Martes\" selected>Martes</option>
+                                <option value=\"Miercoles\">Miercoles</option>
+                                <option value=\"Jueves\">Jueves</option>
+                                <option value=\"Viernes\">Viernes</option>";
+                        }else{
+                            if ($prueba[1] == "Miercoles"){
+                                echo "<option value=\"Lunes\">Lunes</option>
+                                <option value=\"Martes\">Martes</option>
+                                <option value=\"Miercoles\" selected>Miercoles</option>
+                                <option value=\"Jueves\">Jueves</option>
+                                <option value=\"Viernes\">Viernes</option>";
+                            }else{
+                                if ($prueba[1] == "Jueves"){
+                                    echo "<option value=\"Lunes\">Lunes</option>
+                                    <option value=\"Martes\">Martes</option>
+                                    <option value=\"Miercoles\" >Miercoles</option>
+                                    <option value=\"Jueves\" selected>Jueves</option>
+                                    <option value=\"Viernes\">Viernes</option>";
                                     }else{
-                                        if ($lconsulta[$i] == "tren"){
-                                            echo "<td><label style='margin-left: 8px'>Tren</label></td>
-                                            <td><a href='editar-horario.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 45%'></a>
-                                            <a href='?'><img src='../img/delete.png' style='width: 35%'></a></td>";
-                                        }else{
-                                            echo "<td>" . $lconsulta[$i] . "</td>";
-                                        }
+                                    if ($prueba[1] == "Viernes"){
+                                        echo "<option value=\"Lunes\">Lunes</option>
+                                    <option value=\"Martes\">Martes</option>
+                                    <option value=\"Miercoles\" >Miercoles</option>
+                                    <option value=\"Jueves\">Jueves</option>
+                                    <option value=\"Viernes\" selected>Viernes</option>";
+                                    }else{
+                                        echo "<option value=\"Lunes\">Lunes</option>
+                                        <option value=\"Martes\">Martes</option>
+                                        <option value=\"Miercoles\" >Miercoles</option>
+                                        <option value=\"Jueves\">Jueves</option>
+                                        <option value=\"Viernes\">Viernes</option>";
                                     }
                                 }
-                                $contador++;
-        }
-
-            echo "</tr>";
-        echo "</table>
-        </div>";?><br>
-        <a href="#">Crear horario</a>
+                            }
+                        }
+                    }
+                ?>
+            </select>
+            <br>
+            <label for="hora">Hora</label>
+            <?php
+            echo "<input required type='time' name='hora' id='hora' value='" . $prueba[2] . "'>";
+            ?>
+            <br>
+            <label for="tipo">Tipo de servicio</label>
+            <select id="tipo" name="tipo" required>
+                <?php
+                if ($prueba[3] == "bus"){
+                    echo "<option value='bus' selected>Bus</option>
+                    <option value='tren'>Tren</option>";
+                }else{
+                    echo "<option value='bus'>Bus</option>
+                    <option value='tren' selected>Tren</option>";
+                }
+                ?>
+            </select>
+            <br>
+            <input type="submit">
+        </form>
     </div>
+
+

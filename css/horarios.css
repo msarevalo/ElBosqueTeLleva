@@ -14,13 +14,35 @@
     left: 23%;
     background-color: #dddddd;
     border-radius: 25px;
-    width: 47%;
+    width: fit-content;
     height: 10%;
     margin-top: 40px;
-    margin-left: 27%;
+    margin-left: 31%;
+}
+
+#listado-admin{
+    left: 23%;
+    background-color: #dddddd;
+    border-radius: 25px;
+    width: fit-content;
+    height: 10%;
+    margin-top: 40px;
+    margin-left: 25%;
 }
 
 #listado header{
+    background-color: #3a7999;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 25px 25px 0px 0px;
+}
+
+#listado-admin header{
     background-color: #3a7999;
     color: white;
     font-family: sans-serif;
@@ -40,7 +62,6 @@
     border-collapse: collapse;
     text-align: left;
     margin: 20px;
-    margin-left: 13%;
 }
 
 #horarios-bus tr{
