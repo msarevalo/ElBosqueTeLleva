@@ -138,12 +138,12 @@ include('../back/conection.php');
                                     if ($lconsulta[$i] == "bus"){
                                         echo "<td><label style='margin-left: 10px'>Bus</label></td>
                                         <td><a href='editar-horario.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 45%'></a>
-                                        <a href='?'><img src='../img/delete.png' style='width: 35%'></a></td>";
+                                        <a href='../back/eliminarHorario.php?id={$lconsulta[$contador]}'><img src='../img/delete.png' style='width: 35%'></a></td>";
                                     }else{
                                         if ($lconsulta[$i] == "tren"){
                                             echo "<td><label style='margin-left: 8px'>Tren</label></td>
                                             <td><a href='editar-horario.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 45%'></a>
-                                            <a href='?'><img src='../img/delete.png' style='width: 35%'></a></td>";
+                                            <a href='../back/eliminarHorario.php?id={$lconsulta[$contador]}'><img src='../img/delete.png' style='width: 35%'></a></td>";
                                         }else{
                                             echo "<td>" . $lconsulta[$i] . "</td>";
                                         }

@@ -136,6 +136,7 @@ $prueba = mysqli_fetch_array($consulta);
         </header>
     </div>
     <div>
+        <a href="horarios-admin.php">Volver</a>
         <form method="post" action="../back/editarHorario.php">
             <label for="dias">Día</label>
             <select id="dias" name="dias">
