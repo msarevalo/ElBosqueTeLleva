@@ -27,6 +27,7 @@
 <body>
 <?php
 include('../back/conection.php');
+
 ?>
 <div>
     <div class="main-container">
@@ -123,38 +124,26 @@ include('../back/conection.php');
         </header>
     </div>
     <div>
-<?php
-        echo "<div id=\"listado-admin\" name=\"listado-admin\">
-        <header>Horarios</header>";
-        $consulta = mysqli_query($con,"SELECT `IdHorario`, `dia`, `Hora`, `servicio` FROM `horarios` ORDER BY `dia`, `Hora`;");
-        /*$lconsulta = mysqli_fetch_array($consulta);
-        $long = count($lconsulta);*/
-        echo "<table id='horarios-bus'><thead><tr><th>Día</th><th>Hora</th><th>Servicio</th><th>Acciones</th></tr></thead>";
-        while ($lconsulta = mysqli_fetch_array($consulta)){
-            $contador = 0;
-            echo "<tr>";
-            for ($i = 1; $i <= 3; $i++){
-
-                                    if ($lconsulta[$i] == "bus"){
-                                        echo "<td><label style='margin-left: 10px'>Bus</label></td>
-                                        <td><a href='editar-horario.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 45%'></a>
-                                        <a href='../back/eliminarHorario.php?id={$lconsulta[$contador]}'><img src='../img/delete.png' style='width: 35%'></a></td>";
-                                    }else{
-                                        if ($lconsulta[$i] == "tren"){
-                                            echo "<td><label style='margin-left: 8px'>Tren</label></td>
-                                            <td><a href='editar-horario.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 45%'></a>
-                                            <a href='../back/eliminarHorario.php?id={$lconsulta[$contador]}'><img src='../img/delete.png' style='width: 35%'></a></td>";
-                                        }else{
-                                            echo "<td>" . $lconsulta[$i] . "</td>";
-                                        }
-                                    }
-                                }
-                                $contador++;
-        }
-
-            echo "</tr>";
-        echo "</table>
-        </div>";?><br>
-        <a href="crear-horario.php">Crear horario</a><br>
-        <a href="#">Importar Horarios</a>
+        <a href="horarios-admin.php">Volver</a>
+        <form method="post" action="../back/crearHorario.php">
+            <label for="dias">Día</label>
+            <select id="dias" name="dias">
+                <option value="Lunes">Lunes</option>
+                <option value="Martes">Martes</option>
+                <option value="Miercoles">Miercoles</option>
+                <option value="Jueves">Jueves</option>
+                <option value="Viernes">Viernes</option>
+            </select>
+            <br>
+            <label for="hora">Hora</label>
+            <input required type='time' name='hora' id='hora'>
+            <br>
+            <label for="tipo">Tipo de servicio</label>
+            <select id="tipo" name="tipo" required>
+                <option value='bus'>Bus</option>
+                <option value='tren'>Tren</option>
+            </select>
+            <br>
+            <input type="submit">
+        </form>
     </div>
