@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8f90e52-8638-4f3c-8d5e-82e0211e276b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/back/crearHorario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/horarios-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/horarios-admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/horarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/horarios.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="horarios-admin.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="horarios-admin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/horarios-admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="157" column="57" selection-start-line="157" selection-start-column="57" selection-end-line="157" selection-end-column="57" />
+            <state relative-caret-position="414">
+              <caret line="154" column="25" lean-forward="true" selection-start-line="154" selection-start-column="25" selection-end-line="154" selection-end-column="25" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
@@ -136,18 +134,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="horarios.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="horarios.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/horarios.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="239" column="37" lean-forward="true" selection-start-line="231" selection-start-column="35" selection-end-line="239" selection-end-column="37" />
+            <state relative-caret-position="349">
+              <caret line="235" column="142" selection-start-line="235" selection-start-column="142" selection-end-line="235" selection-end-column="142" />
               <folding>
                 <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#td#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#td#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -214,7 +211,6 @@
         <option value="$PROJECT_DIR$/views/cerrar.php" />
         <option value="$PROJECT_DIR$/js/horarios.js" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/views/horarios.php" />
         <option value="$PROJECT_DIR$/views/news.php" />
         <option value="$PROJECT_DIR$/views/pagos.php" />
         <option value="$PROJECT_DIR$/views/paradas.php" />
@@ -236,6 +232,7 @@
         <option value="$PROJECT_DIR$/back/crearHorario.php" />
         <option value="$PROJECT_DIR$/views/crear-horario.php" />
         <option value="$PROJECT_DIR$/views/horarios-admin.php" />
+        <option value="$PROJECT_DIR$/views/horarios.php" />
       </list>
     </option>
   </component>
@@ -370,12 +367,12 @@
       <workItem from="1525961908136" duration="31000" />
       <workItem from="1525963029250" duration="25460000" />
       <workItem from="1526594881364" duration="3408000" />
-      <workItem from="1526655399570" duration="20933000" />
+      <workItem from="1526655399570" duration="21039000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131413000" />
+    <option name="totallyTimeSpent" value="131519000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -726,22 +723,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/horarios.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="239" column="37" lean-forward="true" selection-start-line="231" selection-start-column="35" selection-end-line="239" selection-end-column="37" />
-          <folding>
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/editar-horario.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -789,8 +770,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/horarios-admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="157" column="57" selection-start-line="157" selection-start-column="57" selection-end-line="157" selection-end-column="57" />
+        <state relative-caret-position="414">
+          <caret line="154" column="25" lean-forward="true" selection-start-line="154" selection-start-column="25" selection-end-line="154" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
@@ -801,6 +782,21 @@
             <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#td#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#1;n#td#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/horarios.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="235" column="142" selection-start-line="235" selection-start-column="142" selection-end-line="235" selection-end-column="142" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -230,10 +230,10 @@ include('../back/conection.php');
                                     echo "<td>Viernes</td>";
                                 }else {
                                     if ($lconsulta[$i] == "bus"){
-                                        echo "<td class='bus-img' style='cursor: pointer'><img src='../img/bus-icon.png' style='width: 60%;'><br><label style='margin-left: 10px'>Bus</label></td>";
+                                        echo "<td class='bus-img' style='cursor: pointer'><img src='../img/bus-icon.png' style='width: 80%;'><br><label style='margin-left: 10px'>Bus</label></td>";
                                     }else{
                                         if ($lconsulta[$i] == "tren"){
-                                            echo "<td class='tren-img' style='cursor: pointer'><img src='../img/tren-icon.png' style='width: 60%;'><br><label style='margin-left: 8px'>Tren</label></td>";
+                                            echo "<td class='tren-img' style='cursor: pointer'><img src='../img/tren-icon.png' style='width: 80%;'><br><label style='margin-left: 8px'>Tren</label></td>";
                                         }else{
                                             echo "<td>" . $lconsulta[$i] . "</td>";
                                         }
