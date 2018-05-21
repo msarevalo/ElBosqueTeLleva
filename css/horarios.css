@@ -112,3 +112,43 @@ a{
     text-decoration: none;
     color: #1d5076;
 }
+
+#volver{
+    font-family: "Helvetica";
+    text-decoration: none;
+    color: #1d5076;
+    margin-right: 55%;
+}
+
+#crear-header{
+    background-color: #3a7999;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    height: 40px;
+    width: 800px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 25px 25px 0px 0px;
+    margin-top: 0.5%;
+    margin-left: 250px;
+}
+
+#crear{
+    margin-top: 0.3%;
+    border: 2px solid #103e7c;
+    border-radius: 5px;
+    width: 800px;
+    margin-left: 250px;
+}
+
+.titulos {
+    font-family: "Helvetica";
+    line-height: 45px;
+}
+
+input{
+    font-family: "Helvetica";
+}
+

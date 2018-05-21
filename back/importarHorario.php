@@ -12,7 +12,7 @@ $archivotmp = $_FILES['archivo']['tmp_name'];
 $lineas = file($archivotmp);
 
 //inicializamos variable a 0, esto nos ayudará a indicarle que no lea la primera línea
-//$i=1;
+$i=0;
 
 //Recorremos el bucle para leer línea por línea
 foreach ($lineas as $linea_num => $linea)
@@ -21,8 +21,8 @@ foreach ($lineas as $linea_num => $linea)
     //abrimos bucle
     /*si es diferente a 0 significa que no se encuentra en la primera línea
     (con los títulos de las columnas) y por lo tanto puede leerla*/
-    //if($i != 0)
-    //{
+    if($i != 0)
+    {
         //echo "entro if i";
         //abrimos condición, solo entrará en la condición a partir de la segunda pasada del bucle.
         /* La funcion explode nos ayuda a delimitar los campos, por lo tanto irá
@@ -43,13 +43,30 @@ foreach ($lineas as $linea_num => $linea)
                 if ($dia=="miercoles"){
                     $orden = 3;
                 }else{
-                    if ($orden=="jueves"){
+                    if ($dia=="jueves"){
                         $orden = 4;
                     }else{
-                        $orden = 5;
+                        if ($dia=="viernes"){
+                            $orden = 5;
+                        }else{
+                            if ($dia=="sabado"){
+                                $orden = 6;
+                            }else{
+                                if ($dia=="domingo"){
+                                    $orden = 7;
+                                }else{
+                                    echo "<script>alert('Archivo con dias no permitidos'); window.location.href='../views/horarios-admin.php'</script>";
+                                    break;
+                                }
+                            }
+                        }
                     }
                 }
             }
+        }
+        if ($servicio != "tren" || $servicio != "bus"){
+            echo "<script>alert('Archivo con servicios no permitidos'); window.location.href='../views/horarios-admin.php'</script>";
+            break;
         }
         //guardamos en base de datos la línea leida
         $insersion = mysqli_query($con,"INSERT INTO `horarios` (`dia`, `Hora`, `servicio`, `orden`) VALUES ('" . $dia ."', '" . $hora ."', '" . $servicio . "', '" . $orden . "');");
@@ -59,11 +76,13 @@ foreach ($lineas as $linea_num => $linea)
             echo "<script>alert('Algo ha fallado'); window.location.href='../views/horarios-admin.php'</script>";
         }
         //cerramos condición
-    //}
+    }
 
     /*Cuando pase la primera pasada se incrementará nuestro valor y a la siguiente pasada ya
     entraremos en la condición, de esta manera conseguimos que no lea la primera línea.*/
-    //$i++;
+    $i++;
     //cerramos bucle
 }
 ?>
+
+

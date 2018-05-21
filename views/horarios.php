@@ -129,7 +129,7 @@ include('../back/conection.php');
             //include('../back/conection.php');
             echo "<div id=\"listado\" name=\"listado\">
             <header>Horarios Bus</header>";
-            $consulta = mysqli_query($con,"SELECT `dia`, `Hora` FROM `horarios` WHERE `servicio`='bus' ORDER BY `dia`, `Hora`;");
+            $consulta = mysqli_query($con,"SELECT `dia`, `Hora` FROM `horarios` WHERE `servicio` like '%bus%' ORDER BY `dia`, `Hora`;");
             /*$lconsulta = mysqli_fetch_array($consulta);
             $long = count($lconsulta);*/
             echo "<table id='horarios-bus'><thead><tr><th>Día</th><th>Hora</th></tr></thead>";
@@ -168,7 +168,7 @@ include('../back/conection.php');
         <?php
         echo "<div id=\"listado\" name=\"listado\">
         <header>Horarios Tren</header>";
-        $consulta = mysqli_query($con,"SELECT `dia`, `Hora` FROM `horarios` WHERE `servicio`='tren' ORDER BY `orden`, `Hora`;");
+        $consulta = mysqli_query($con,"SELECT `dia`, `Hora` FROM `horarios` WHERE `servicio` like '%tren%' ORDER BY `orden`, `Hora`;");
         /*$lconsulta = mysqli_fetch_array($consulta);
         $long = count($lconsulta);*/
         echo "<table id='horarios-bus'><thead><tr><th>Día</th><th>Hora</th></tr></thead>";
@@ -207,7 +207,7 @@ include('../back/conection.php');
         <?php
         echo "<div id=\"listado\" name=\"listado\">
         <header>Horarios</header>";
-        $consulta = mysqli_query($con,"SELECT `dia`, `Hora`, `servicio` FROM `horarios` ORDER BY `dia`, `Hora`;");
+        $consulta = mysqli_query($con,"SELECT `dia`, `Hora`, `servicio` FROM `horarios` ORDER BY `orden`, `Hora`;");
         /*$lconsulta = mysqli_fetch_array($consulta);
         $long = count($lconsulta);*/
         echo "<table id='horarios-bus'><thead><tr><th>Día</th><th>Hora</th><th>Servicio</th></tr></thead>";
@@ -230,10 +230,10 @@ include('../back/conection.php');
                                     echo "<td>Viernes</td>";
                                 }else {
                                     if (strpos($lconsulta[$i], 'bus') !== false){
-                                        echo "<td class='bus-img' style='cursor: pointer'><img src='../img/bus-icon.png' style='width: 65%;'><br><label style='margin-left: 10px'>Bus</label></td>";
+                                        echo "<td class='bus-img' style='cursor: pointer'><img src='../img/bus-icon.png' style='width: 80%;'><br><label style='margin-left: 10px'>Bus</label></td>";
                                     }else{
                                         if (strpos($lconsulta[$i], 'tren') !== false){
-                                            echo "<td class='tren-img' style='cursor: pointer'><img src='../img/tren-icon.png' style='width: 65%;'><br><label style='margin-left: 8px'>Tren</label></td>";
+                                            echo "<td class='tren-img' style='cursor: pointer'><img src='../img/tren-icon.png' style='width: 80%;'><br><label style='margin-left: 8px'>Tren</label></td>";
                                         }else{
                                             echo "<td style='text-transform: capitalize'>" . $lconsulta[$i] . "</td>";
                                         }

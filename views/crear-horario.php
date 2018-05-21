@@ -124,26 +124,29 @@ include('../back/conection.php');
         </header>
     </div>
     <div>
-        <a href="horarios-admin.php">Volver</a>
-        <form method="post" action="../back/crearHorario.php">
-            <label for="dias">Día</label>
+        <a href="horarios-admin.php" id="volver">Volver</a>
+        <header id="crear-header">Crear Horario</header>
+        <form method="post" action="../back/crearHorario.php" id="crear">
+            <label for="dias" class="titulos">Día</label>
             <select id="dias" name="dias">
                 <option value="lunes">Lunes</option>
                 <option value="martes">Martes</option>
                 <option value="miercoles">Miercoles</option>
                 <option value="jueves">Jueves</option>
                 <option value="viernes">Viernes</option>
+                <option value="sabado">Sabado</option>
+                <option value="domingo">Domingo</option>
             </select>
             <br>
-            <label for="hora">Hora</label>
+            <label for="hora" class="titulos">Hora</label>
             <input required type='time' name='hora' id='hora'>
             <br>
-            <label for="tipo">Tipo de servicio</label>
+            <label for="tipo" class="titulos">Tipo de servicio</label>
             <select id="tipo" name="tipo" required>
                 <option value='bus'>Bus</option>
                 <option value='tren'>Tren</option>
             </select>
             <br>
-            <input type="submit">
+            <input type="submit" id="entrar"><br><br>
         </form>
     </div>
