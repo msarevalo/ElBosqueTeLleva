@@ -10,9 +10,9 @@ if (isset($_GET['id'])){
 
 $consulta = mysqli_query($con,"DELETE FROM `horarios` WHERE `horarios`.`IdHorario` = '" . $idEliminar . "';");
 if ($consulta){
-    echo "se Eliminó con exito";
+    echo "<script>alert('Se elimino correctamente el horario'); window.location.href='../views/horarios-admin.php'</script>";
 }else{
-    echo "algo fallo";
+    echo "<script>alert('Algo ha fallado'); window.location.href='../views/horarios-admin.php'</script>";
 }
 
 

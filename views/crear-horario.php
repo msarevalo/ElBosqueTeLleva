@@ -128,11 +128,11 @@ include('../back/conection.php');
         <form method="post" action="../back/crearHorario.php">
             <label for="dias">Día</label>
             <select id="dias" name="dias">
-                <option value="Lunes">Lunes</option>
-                <option value="Martes">Martes</option>
-                <option value="Miercoles">Miercoles</option>
-                <option value="Jueves">Jueves</option>
-                <option value="Viernes">Viernes</option>
+                <option value="lunes">Lunes</option>
+                <option value="martes">Martes</option>
+                <option value="miercoles">Miercoles</option>
+                <option value="jueves">Jueves</option>
+                <option value="viernes">Viernes</option>
             </select>
             <br>
             <label for="hora">Hora</label>

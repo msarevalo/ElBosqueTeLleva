@@ -2,6 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8f90e52-8638-4f3c-8d5e-82e0211e276b" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/crearHorario.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/crearHorario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/editarHorario.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/editarHorario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/eliminarHorario.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/eliminarHorario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/horarios.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/horarios.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/crear-horario.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/crear-horario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/editar-horario.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/editar-horario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/horarios-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/horarios-admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/horarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/horarios.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,52 +35,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2054">
-              <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#a#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="horarios-admin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/horarios-admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="154" column="25" lean-forward="true" selection-start-line="154" selection-start-column="25" selection-end-line="154" selection-end-column="25" />
+            <state relative-caret-position="156">
+              <caret line="128" column="117" selection-start-line="128" selection-start-column="117" selection-end-line="128" selection-end-column="117" />
               <folding>
-                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#td#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#1;n#td#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#td#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#1;n#td#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#td#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#1;n#td#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#td#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#1;n#td#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editar-horario.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/editar-horario.php">
+      <file leaf-file-name="importar-horario.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/importar-horario.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="212" column="10" lean-forward="true" selection-end-line="212" selection-end-column="10" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-              </folding>
+            <state>
+              <caret column="73" selection-start-column="73" selection-end-column="73" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="importarHorario.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back/importarHorario.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="601">
+              <caret line="58" column="34" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -80,29 +77,8 @@
       <file leaf-file-name="eliminarHorario.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/back/eliminarHorario.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="crear-horario.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/crear-horario.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="134" column="38" selection-start-line="134" selection-start-column="38" selection-end-line="134" selection-end-column="38" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="crearHorario.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/back/crearHorario.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+            <state relative-caret-position="238">
+              <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -110,42 +86,72 @@
       <file leaf-file-name="editarHorario.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/back/editarHorario.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="1" selection-start-line="21" selection-end-line="27" selection-end-column="1" />
+            <state relative-caret-position="428">
+              <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="validar.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/back/validar.php">
+      <file leaf-file-name="editar-horario.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/editar-horario.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="74">
+              <caret line="183" column="57" selection-start-line="183" selection-start-column="57" selection-end-line="183" selection-end-column="57" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="horarios.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="crear-horario.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/crear-horario.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="142" column="32" lean-forward="true" selection-start-line="142" selection-start-column="32" selection-end-line="142" selection-end-column="32" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="horarios.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/horarios.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-14">
-              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            <state relative-caret-position="462">
+              <caret line="112" column="18" selection-start-line="112" selection-start-column="18" selection-end-line="112" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="horarios.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="crearHorario.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back/crearHorario.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="horarios.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/horarios.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="235" column="142" selection-start-line="235" selection-start-column="142" selection-end-line="235" selection-end-column="142" />
+            <state relative-caret-position="292">
+              <caret line="234" column="84" selection-start-line="234" selection-start-column="84" selection-end-line="234" selection-end-column="84" />
               <folding>
-                <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#td#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#td#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -190,6 +196,7 @@
       <find>conect</find>
       <find>relative</find>
       <find>login</find>
+      <find />
     </findStrings>
     <replaceStrings>
       <replace />
@@ -224,15 +231,17 @@
         <option value="$PROJECT_DIR$/back/conection.php" />
         <option value="$PROJECT_DIR$/back/hash.php" />
         <option value="$PROJECT_DIR$/back/validar.php" />
-        <option value="$PROJECT_DIR$/css/horarios.css" />
         <option value="$PROJECT_DIR$/js/index.js" />
-        <option value="$PROJECT_DIR$/back/editarHorario.php" />
-        <option value="$PROJECT_DIR$/views/editar-horario.php" />
-        <option value="$PROJECT_DIR$/back/eliminarHorario.php" />
-        <option value="$PROJECT_DIR$/back/crearHorario.php" />
+        <option value="$PROJECT_DIR$/views/importar-horario.php" />
         <option value="$PROJECT_DIR$/views/crear-horario.php" />
-        <option value="$PROJECT_DIR$/views/horarios-admin.php" />
+        <option value="$PROJECT_DIR$/views/editar-horario.php" />
         <option value="$PROJECT_DIR$/views/horarios.php" />
+        <option value="$PROJECT_DIR$/views/horarios-admin.php" />
+        <option value="$PROJECT_DIR$/back/editarHorario.php" />
+        <option value="$PROJECT_DIR$/back/crearHorario.php" />
+        <option value="$PROJECT_DIR$/back/eliminarHorario.php" />
+        <option value="$PROJECT_DIR$/back/importarHorario.php" />
+        <option value="$PROJECT_DIR$/css/horarios.css" />
       </list>
     </option>
   </component>
@@ -249,7 +258,7 @@
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -261,6 +270,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -292,7 +302,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -323,26 +332,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.horarios-admin.php">
+  <component name="RunManager" selected="JavaScript Debug.importar-horario.php">
     <configuration name="banners.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/elbosquetelleva/views/banners.php" />
-    <configuration name="cargarImagen.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/elbosquetelleva/back/cargarImagen.php" />
-    <configuration name="hash.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/elbosquetelleva/back/hash.php" />
+    <configuration name="editar-horario.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/elbosquetelleva/views/editar-horario.php" />
     <configuration name="horarios-admin.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/elbosquetelleva/views/horarios-admin.php" />
+    <configuration name="importar-horario.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/elbosquetelleva/views/importar-horario.php" />
     <configuration name="index.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ElBosqueTeLleva/views/index.php" />
     <list>
       <item itemvalue="JavaScript Debug.index.php" />
-      <item itemvalue="JavaScript Debug.hash.php" />
-      <item itemvalue="JavaScript Debug.cargarImagen.php" />
       <item itemvalue="JavaScript Debug.banners.php" />
       <item itemvalue="JavaScript Debug.horarios-admin.php" />
+      <item itemvalue="JavaScript Debug.editar-horario.php" />
+      <item itemvalue="JavaScript Debug.importar-horario.php" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.importar-horario.php" />
+        <item itemvalue="JavaScript Debug.editar-horario.php" />
         <item itemvalue="JavaScript Debug.horarios-admin.php" />
         <item itemvalue="JavaScript Debug.banners.php" />
         <item itemvalue="JavaScript Debug.index.php" />
-        <item itemvalue="JavaScript Debug.cargarImagen.php" />
-        <item itemvalue="JavaScript Debug.hash.php" />
       </list>
     </recent_temporary>
   </component>
@@ -368,11 +377,13 @@
       <workItem from="1525963029250" duration="25460000" />
       <workItem from="1526594881364" duration="3408000" />
       <workItem from="1526655399570" duration="21039000" />
+      <workItem from="1526911202742" duration="327000" />
+      <workItem from="1526911685756" duration="12615000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131519000" />
+    <option name="totallyTimeSpent" value="144461000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -388,6 +399,7 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25475842" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.3290469" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -398,7 +410,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32838285" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,20 +430,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/horarios.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/cargarImagen.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" column="44" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/back/hash.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -598,13 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back/cargarImagen.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/back/cerrar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -626,13 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/banners.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/contenido-admin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -644,9 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1717">
           <caret line="101" column="82" selection-start-line="101" selection-start-column="82" selection-end-line="101" selection-end-column="82" />
-          <folding>
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -654,9 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1615">
           <caret line="95" column="90" selection-start-line="95" selection-start-column="90" selection-end-line="95" selection-end-column="90" />
-          <folding>
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -664,9 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1615">
           <caret line="95" column="90" selection-start-line="95" selection-start-column="90" selection-end-line="95" selection-end-column="90" />
-          <folding>
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -674,9 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1700">
           <caret line="100" column="82" selection-start-line="100" selection-start-column="82" selection-end-line="100" selection-end-column="82" />
-          <folding>
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -684,16 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1615">
           <caret line="95" column="90" selection-start-line="95" selection-start-column="90" selection-end-line="95" selection-end-column="90" />
-          <folding>
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/horarios.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -706,27 +667,89 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2054">
-          <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#a#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="374">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/back/validar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
+        <state relative-caret-position="34">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/banners.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="69" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/cargarImagen.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/crear-horario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="142" column="32" lean-forward="true" selection-start-line="142" selection-start-column="32" selection-end-line="142" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/horarios.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="234" column="84" selection-start-line="234" selection-start-column="84" selection-end-line="234" selection-end-column="84" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/horarios-admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="128" column="117" selection-start-line="128" selection-start-column="117" selection-end-line="128" selection-end-column="117" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#td#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#1;n#td#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#td#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#1;n#td#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/importar-horario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="73" selection-start-column="73" selection-end-column="73" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/editar-horario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="212" column="10" lean-forward="true" selection-end-line="212" selection-end-column="10" />
+        <state relative-caret-position="74">
+          <caret line="183" column="57" selection-start-line="183" selection-start-column="57" selection-end-line="183" selection-end-column="57" />
           <folding>
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
@@ -739,65 +762,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/back/eliminarHorario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        <state relative-caret-position="238">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/back/editarHorario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="1" selection-start-line="21" selection-end-line="27" selection-end-column="1" />
+        <state relative-caret-position="428">
+          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/back/crearHorario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        <state relative-caret-position="462">
+          <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/crear-horario.php">
+    <entry file="file://$PROJECT_DIR$/back/importarHorario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="134" column="38" selection-start-line="134" selection-start-column="38" selection-end-line="134" selection-end-column="38" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="601">
+          <caret line="58" column="34" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/horarios-admin.php">
+    <entry file="file://$PROJECT_DIR$/css/horarios.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="154" column="25" lean-forward="true" selection-start-line="154" selection-start-column="25" selection-end-line="154" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#td#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#1;n#td#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#td#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#1;n#td#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/horarios.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="235" column="142" selection-start-line="235" selection-start-column="142" selection-end-line="235" selection-end-column="142" />
-          <folding>
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="462">
+          <caret line="112" column="18" selection-start-line="112" selection-start-column="18" selection-end-line="112" selection-end-column="18" />
         </state>
       </provider>
     </entry>

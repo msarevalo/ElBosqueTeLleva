@@ -35,9 +35,9 @@ if (isset($_GET['id'])){
 $consulta = mysqli_query($con,"SELECT * FROM `horarios` WHERE IdHorario='" . $idHorario . "';");
 $prueba = mysqli_fetch_array($consulta);
 
-    for ($i=0; $i<=3; $i++){
+    /*for ($i=0; $i<=3; $i++){
         echo $prueba[$i] . "<br>";
-    }
+    }*/
 
 
 ?>
@@ -143,32 +143,32 @@ $prueba = mysqli_fetch_array($consulta);
                 <?php
                     $_SESSION['idHorario']=$prueba[0];
                     if ($prueba[1] == "Lunes"){
-                        echo "<option value=\"Lunes\" selected>Lunes</option>
-                                <option value=\"Martes\">Martes</option>
-                                <option value=\"Miercoles\">Miercoles</option>
-                                <option value=\"Jueves\">Jueves</option>
-                                <option value=\"Viernes\">Viernes</option>";
+                        echo "<option value=\"lunes\" selected>Lunes</option>
+                                <option value=\"martes\">Martes</option>
+                                <option value=\"miercoles\">Miercoles</option>
+                                <option value=\"jueves\">Jueves</option>
+                                <option value=\"viernes\">Viernes</option>";
                     }else{
                         if ($prueba[1] == "Martes"){
-                            echo "<option value=\"Lunes\">Lunes</option>
-                                <option value=\"Martes\" selected>Martes</option>
-                                <option value=\"Miercoles\">Miercoles</option>
-                                <option value=\"Jueves\">Jueves</option>
-                                <option value=\"Viernes\">Viernes</option>";
+                            echo "<option value=\"lunes\">Lunes</option>
+                                <option value=\"martes\" selected>Martes</option>
+                                <option value=\"miercoles\">Miercoles</option>
+                                <option value=\"jueves\">Jueves</option>
+                                <option value=\"viernes\">Viernes</option>";
                         }else{
                             if ($prueba[1] == "Miercoles"){
-                                echo "<option value=\"Lunes\">Lunes</option>
-                                <option value=\"Martes\">Martes</option>
-                                <option value=\"Miercoles\" selected>Miercoles</option>
-                                <option value=\"Jueves\">Jueves</option>
-                                <option value=\"Viernes\">Viernes</option>";
+                                echo "<option value=\"lunes\">Lunes</option>
+                                <option value=\"martes\">Martes</option>
+                                <option value=\"miercoles\" selected>Miercoles</option>
+                                <option value=\"jueves\">Jueves</option>
+                                <option value=\"viernes\">Viernes</option>";
                             }else{
                                 if ($prueba[1] == "Jueves"){
-                                    echo "<option value=\"Lunes\">Lunes</option>
-                                    <option value=\"Martes\">Martes</option>
-                                    <option value=\"Miercoles\" >Miercoles</option>
-                                    <option value=\"Jueves\" selected>Jueves</option>
-                                    <option value=\"Viernes\">Viernes</option>";
+                                    echo "<option value=\"lunes\">Lunes</option>
+                                    <option value=\"martes\">Martes</option>
+                                    <option value=\"miercoles\" >Miercoles</option>
+                                    <option value=\"jueves\" selected>Jueves</option>
+                                    <option value=\"viernes\">Viernes</option>";
                                     }else{
                                     if ($prueba[1] == "Viernes"){
                                         echo "<option value=\"Lunes\">Lunes</option>
@@ -177,11 +177,11 @@ $prueba = mysqli_fetch_array($consulta);
                                     <option value=\"Jueves\">Jueves</option>
                                     <option value=\"Viernes\" selected>Viernes</option>";
                                     }else{
-                                        echo "<option value=\"Lunes\">Lunes</option>
-                                        <option value=\"Martes\">Martes</option>
-                                        <option value=\"Miercoles\" >Miercoles</option>
-                                        <option value=\"Jueves\">Jueves</option>
-                                        <option value=\"Viernes\">Viernes</option>";
+                                        echo "<option value=\"lunes\">Lunes</option>
+                                        <option value=\"martes\">Martes</option>
+                                        <option value=\"miercoles\" >Miercoles</option>
+                                        <option value=\"jueves\">Jueves</option>
+                                        <option value=\"viernes\">Viernes</option>";
                                     }
                                 }
                             }

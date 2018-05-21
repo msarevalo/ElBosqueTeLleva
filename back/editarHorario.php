@@ -5,11 +5,30 @@ include ('conection.php');
 $dia = null;
 $hora = null;
 $servicio = null;
+$orden = null;
+
 if (isset($_SESSION['idHorario'])){
     $id = $_SESSION['idHorario'];
 }
 if (isset($_POST['dias'])){
     $dia = $_POST['dias'];
+    if ($dia=="Lunes"){
+        $orden = 1;
+    }else{
+        if ($dia=="Martes"){
+            $orden = 2;
+        }else{
+            if ($dia=="Miercoles"){
+                $orden = 3;
+            }else{
+                if ($orden=="Jueves"){
+                    $orden = 4;
+                }else{
+                    $orden = 5;
+                }
+            }
+        }
+    }
 }
 if (isset($_POST['hora'])){
     $hora = $_POST['hora'];
@@ -19,11 +38,11 @@ if (isset($_POST['tipo'])){
 }
 
 
-$consulta = mysqli_query($con,"UPDATE `horarios` SET `dia`='" . $dia . "',`Hora`='" . $hora . "',`servicio`='" . $servicio . "' WHERE `IdHorario`='" . $id . "';");
+$consulta = mysqli_query($con,"UPDATE `horarios` SET `dia`='" . $dia . "',`Hora`='" . $hora . "',`servicio`='" . $servicio . "', `orden`='" . $orden . "' WHERE `IdHorario`='" . $id . "';");
 
 if ($consulta){
-    echo "se actualizao con exito";
+    echo "<script>alert('Se edito el horario con exito'); window.location.href='../views/horarios-admin.php'</script>";
 }else{
-    echo "algo fallo";
+    echo "<script>alert('Algo ha fallado'); window.location.href='../views/horarios-admin.php'</script>";
 }
 

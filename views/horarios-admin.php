@@ -126,7 +126,7 @@ include('../back/conection.php');
 <?php
         echo "<div id=\"listado-admin\" name=\"listado-admin\">
         <header>Horarios</header>";
-        $consulta = mysqli_query($con,"SELECT `IdHorario`, `dia`, `Hora`, `servicio` FROM `horarios` ORDER BY `dia`, `Hora`;");
+        $consulta = mysqli_query($con,"SELECT `IdHorario`, `dia`, `Hora`, `servicio` FROM `horarios` ORDER BY `orden`;");
         /*$lconsulta = mysqli_fetch_array($consulta);
         $long = count($lconsulta);*/
         echo "<table id='horarios-bus'><thead><tr><th>Día</th><th>Hora</th><th>Servicio</th><th>Acciones</th></tr></thead>";
@@ -135,17 +135,17 @@ include('../back/conection.php');
             echo "<tr>";
             for ($i = 1; $i <= 3; $i++){
 
-                                    if ($lconsulta[$i] == "bus"){
-                                        echo "<td><label style='margin-left: 10px'>Bus</label></td>
-                                        <td><a href='editar-horario.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 45%'></a>
-                                        <a href='../back/eliminarHorario.php?id={$lconsulta[$contador]}'><img src='../img/delete.png' style='width: 35%'></a></td>";
+                                    if (strpos($lconsulta[$i], 'bus')!==false){
+                                        echo "<td><label style='margin-left: 10px; text-transform: capitalize '>" . $lconsulta[$i] . "</label></td>
+                                        <td><a href='editar-horario.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
+                                        <a href='../back/eliminarHorario.php?id={$lconsulta[$contador]}'><img src='../img/delete.png' style='width: 25%'></a></td>";
                                     }else{
-                                        if ($lconsulta[$i] == "tren"){
-                                            echo "<td><label style='margin-left: 8px'>Tren</label></td>
-                                            <td><a href='editar-horario.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 45%'></a>
-                                            <a href='../back/eliminarHorario.php?id={$lconsulta[$contador]}'><img src='../img/delete.png' style='width: 35%'></a></td>";
+                                        if (strpos($lconsulta[$i], 'tren') !== false){
+                                            echo "<td><label style='margin-left: 8px; text-transform: capitalize ''>Tren</label></td>
+                                            <td><a href='editar-horario.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
+                                            <a href='../back/eliminarHorario.php?id={$lconsulta[$contador]}'><img src='../img/delete.png' style='width: 25%'></a></td>";
                                         }else{
-                                            echo "<td>" . $lconsulta[$i] . "</td>";
+                                            echo "<td style='text-transform: capitalize'>" . $lconsulta[$i] . "</td>";
                                         }
                                     }
                                 }
@@ -156,5 +156,5 @@ include('../back/conection.php');
         echo "</table>
         </div>";?><br>
         <a href="crear-horario.php">Crear horario</a><br>
-        <a href="#">Importar Horarios</a>
+        <a href="importar-horario.php">Importar Horarios</a>
     </div>

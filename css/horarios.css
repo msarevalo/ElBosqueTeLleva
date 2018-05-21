@@ -106,3 +106,9 @@
 #texto{
     font-family: "Helvetica";
 }
+
+a{
+    font-family: "Helvetica";
+    text-decoration: none;
+    color: #1d5076;
+}
