@@ -132,6 +132,6 @@ include('../back/conection.php');
             <label class="file" title="">
                 <input id="archivo" accept=".csv" name="archivo" type="file" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" required/>
             </label><br><br><br>
-            <input name="enviar" type="submit" value="Importar" id="entrar"/><br>
+            <input name="enviar" type="submit" value="Importar" id="btnHorario"/><br>
         </form>
     </div>

@@ -231,7 +231,7 @@ $prueba = mysqli_fetch_array($consulta);
                 ?>
             </select>
             <br>
-            <input type="submit" id="entrar"><br><br>
+            <input type="submit" id="btnHorario"><br><br>
         </form>
     </div>
 

@@ -207,3 +207,25 @@ label.file:after {
     vertical-align:middle;
 }
 
+
+
+#btnHorario {
+    width: 100px;
+    height: 45px;
+    font-family: 'Helvetica';
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #26A69A;
+    background-color: #fff;
+    border-style: solid;
+    border-radius: 15px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+#btnHorario:hover {
+    background-color: #26A69A;
+    color: #fff;
+    transform: translateY(-7px);
+}

@@ -146,7 +146,8 @@ include('../back/conection.php');
                 <option value='bus'>Bus</option>
                 <option value='tren'>Tren</option>
             </select>
-            <br>
-            <input type="submit" id="entrar"><br><br>
+            <br><br>
+            <input type="submit" id="btnHorario"><br><br>
+                <!--<button class="button">Submit</button>-->
         </form>
     </div>
