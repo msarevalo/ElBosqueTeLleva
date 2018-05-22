@@ -155,5 +155,6 @@ include('../back/conection.php');
         echo "</table>
         </div>";?><br>
         <a href="crear-horario.php">Crear horario</a><br>
-        <a href="importar-horario.php">Importar Horarios</a>
+        <a href="importar-horario.php">Importar Horarios</a><!--<br><br>
+        <a href="../back/truncarHorarios.php">Vaciar Horarios</a>-->
     </div>

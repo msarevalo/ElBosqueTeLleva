@@ -13,7 +13,7 @@ $lineas = file($archivotmp);
 
 //inicializamos variable a 0, esto nos ayudará a indicarle que no lea la primera línea
 $i=0;
-
+ini_set('max_execution_time', 6000);
 //Recorremos el bucle para leer línea por línea
 foreach ($lineas as $linea_num => $linea)
 {
@@ -64,7 +64,7 @@ foreach ($lineas as $linea_num => $linea)
                 }
             }
         }
-        if ($servicio != "tren" || $servicio != "bus"){
+        if (strpos($servicio, 'tren') || strpos($servicio, 'bus')){
             echo "<script>alert('Archivo con servicios no permitidos'); window.location.href='../views/horarios-admin.php'</script>";
             break;
         }

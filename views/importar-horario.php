@@ -123,8 +123,15 @@ include('../back/conection.php');
             </div>
         </header>
     </div>
-<form action="../back/importarHorario.php" enctype="multipart/form-data" method="post">
-    <input id="archivo" accept=".csv" name="archivo" type="file" required/>
-    <input name="MAX_FILE_SIZE" type="hidden" value="20000" /><br>
-    <input name="enviar" type="submit" value="Importar" />
-</form>
+
+    <div>
+        <a href="horarios-admin.php" id="volver">Volver</a>
+        <header id="crear-header">Importar Horarios</header>
+        <form action="../back/importarHorario.php" enctype="multipart/form-data" method="post" id="crear" style="padding: 30px">
+            <!--<input id="archivo" accept=".csv" name="archivo" type="file" required/><br><br><br>-->
+            <label class="file" title="">
+                <input id="archivo" accept=".csv" name="archivo" type="file" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" required/>
+            </label><br><br><br>
+            <input name="enviar" type="submit" value="Importar" id="entrar"/><br>
+        </form>
+    </div>
