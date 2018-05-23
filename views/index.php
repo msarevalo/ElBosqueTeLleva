@@ -20,7 +20,7 @@
 include('../back/conection.php');
 ?>
 <div>
-    <div class="main-container">
+    <div class="main-container" style="z-index: 2">
         <header class="block">
             <nav>
                 <a href="index.php"><img id="logo" src="../img/Unbosque.jpg"></a>
@@ -48,9 +48,33 @@ include('../back/conection.php');
                         ?>
 
                     </li>
-                    <li>
-                        <a class="header-menu-tab" href="rutas.php"><span
-                                    class="icon fontawesome-user scnd-font-color"></span>Rutas</a>
+                    <li style="z-index: 2">
+                        <?php
+                        if (isset($_SESSION['username'])){
+                            if ($_SESSION['perfil']=="estudiante"){
+                                echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
+                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
+                            }else{
+                                if ($_SESSION['perfil']=="admin"){
+                                    echo "<a class=\"header-menu-tab\" href=''><span
+                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>
+                                    <ul id='submenu'>
+                                        <li><a href=\"#\">Rutas</a></li><br>
+                                        <li><a href=\"#\">Paradas</a></li>
+                                        <li><a href=\"#\">Vehiculos</a></li>
+                                        <li><a href=\"#\">Conductores</a></li>
+                                    </ul>";
+                                }else{
+                                    echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
+                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
+                                }
+
+                            }
+                        }else {
+                            echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
+                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
+                        }
+                        ?>
                     </li>
                     <li>
                         <?php
@@ -120,7 +144,7 @@ include('../back/conection.php');
             </nav>
         </header>
     </div>
-    <div id="slider">
+    <div id="slider" style="z-index: 1">
         <a href="#" class="control_next">></a>
         <a href="#" class="control_prev"><</a>
         <ul>

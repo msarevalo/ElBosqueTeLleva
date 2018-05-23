@@ -488,6 +488,7 @@ header {
     overflow: hidden;
     margin: 20px auto 0 auto;
     border-radius: 4px;
+    z-index: 1;
 }
 
 #slider ul {
@@ -558,4 +559,23 @@ a.control_next {
 
 .header-menu li:hover > ul {
     display: block;
+}
+
+#submenu{
+    background: #FFFFFF;
+}
+
+#submenu li{
+    margin-left: 20px;
+}
+#submenu li:hover{
+    margin-left: 5px;
+    border-bottom: 4px solid #11a8ab;
+    text-decoration: none;
+}
+
+#submenu a{
+    text-decoration: none;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #5a8c5a;
 }
