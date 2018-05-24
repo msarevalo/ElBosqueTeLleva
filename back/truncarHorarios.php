@@ -3,9 +3,9 @@
 
 include ('../back/conection.php');
 
-$consulta = mysqli_query($con,"SET FOREIGN_KEY_CHECKS=0; TRUNCATE TABLE `horarios`; SET FOREIGN_KEY_CHECKS=1");
+$consulta = mysqli_query($con,"TRUNCATE TABLE `horarios`;");
 if ($consulta){
-    echo "<script>alert('Se elimino correctamente el horario'); window.location.href='../views/horarios-admin.php'</script>";
+    echo "<script>alert('Se eliminaron correctamente los horarios'); window.location.href='../views/horarios-admin.php'</script>";
 }else{
     echo "<script>alert('Algo ha fallado'); window.location.href='../views/horarios-admin.php'</script>";
 }

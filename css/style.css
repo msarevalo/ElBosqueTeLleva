@@ -563,13 +563,14 @@ a.control_next {
 
 #submenu{
     background: #FFFFFF;
+    border: rgba(158, 158, 158, 0.5) dotted;
 }
 
 #submenu li{
-    margin-left: 20px;
+    margin-left: 15px;
 }
 #submenu li:hover{
-    margin-left: 5px;
+    margin-left: 10px;
     border-bottom: 4px solid #11a8ab;
     text-decoration: none;
 }

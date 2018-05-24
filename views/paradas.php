@@ -56,8 +56,33 @@ include('../back/conection.php');
                     ?>
 
                 </li>
-                <li>
-                    <a class="header-menu-tab" href="rutas.php" style="border-bottom: 4px solid #11a8ab;"><span class="icon fontawesome-user scnd-font-color"></span>Rutas</a>
+                <li style="z-index: 2">
+                    <?php
+                    if (isset($_SESSION['username'])){
+                        if ($_SESSION['perfil']=="estudiante"){
+                            echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
+                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
+                        }else{
+                            if ($_SESSION['perfil']=="admin"){
+                                echo "<a class=\"header-menu-tab\" href='#'><span
+                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>
+                                    <ul id='submenu'>
+                                        <li><a href=\"#\">Rutas</a></li><br>
+                                        <li><a href=\"#\">Paradas</a></li>
+                                        <li><a href=\"#\">Vehiculos</a></li>
+                                        <li><a href=\"#\">Conductores</a></li>
+                                    </ul>";
+                            }else{
+                                echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
+                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
+                            }
+
+                        }
+                    }else {
+                        echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
+                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
+                    }
+                    ?>
                 </li>
                 <li>
                     <?php

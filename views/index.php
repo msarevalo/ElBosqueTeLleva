@@ -56,7 +56,7 @@ include('../back/conection.php');
                                     class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
                             }else{
                                 if ($_SESSION['perfil']=="admin"){
-                                    echo "<a class=\"header-menu-tab\" href=''><span
+                                    echo "<a class=\"header-menu-tab\" href='#'><span
                                     class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>
                                     <ul id='submenu'>
                                         <li><a href=\"#\">Rutas</a></li><br>
