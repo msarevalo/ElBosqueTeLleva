@@ -30,20 +30,20 @@ include('../back/conection.php');
                     <?php
                     if (isset($_SESSION['username'])){
                         if ($_SESSION['perfil']=="estudiante"){
-                            echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
+                            echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\" style=\"border-bottom: 4px solid #11a8ab;\"><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
                         }else{
                             if ($_SESSION['perfil']=="admin"){
                                 echo "<a class=\"header-menu-tab Setting\" href=\"horarios-admin.php\"><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
                             }else{
-                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
+                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\" style=\"border-bottom: 4px solid #11a8ab;\"><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
                             }
 
                         }
                     }else {
-                        echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
+                        echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\" style=\"border-bottom: 4px solid #11a8ab;\"><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
                     }
                     ?>
@@ -60,7 +60,7 @@ include('../back/conection.php');
                                 echo "<a class=\"header-menu-tab\" href='#'><span
                                     class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>
                                     <ul id='submenu'>
-                                        <li><a href=\"#\">Rutas</a></li><br>
+                                        <li><a href=\"rutas-admin.php\">Rutas</a></li><br>
                                         <li><a href=\"#\">Paradas</a></li>
                                         <li><a href=\"#\">Vehiculos</a></li>
                                         <li><a href=\"#\">Conductores</a></li>
@@ -108,8 +108,12 @@ include('../back/conection.php');
                                     class=\"icon entypo-cog scnd-font-color\"></span>Noticias y Novedades</a>";
                         }else{
                             if ($_SESSION['perfil']=="admin"){
-                                echo "<a class=\"header-menu-tab Setting\" href=\"contenido-admin.php\"><span
-                                    class=\"icon entypo-cog scnd-font-color\"></span>Contenido</a>";
+                                echo "<a class=\"header-menu-tab Setting\" href=\"#\"><span
+                                    class=\"icon entypo-cog scnd-font-color\"></span>Contenido</a>
+                                    <ul id='submenu-contenido'>
+                                        <li><a href=\"#\">Banners</a></li><br>
+                                        <li><a href=\"#\">Noticias</a></li>
+                                    </ul>";
                             }else{
                                 echo "<a class=\"header-menu-tab Setting\" href=\"news.php\"><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Noticias y Novedades</a>";

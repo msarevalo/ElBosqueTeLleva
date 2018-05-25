@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pagos | El Bosque Te LLeva</title>
+    <title>Horarios | El Bosque Te LLeva</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="application-name" content="Sistema de Reservas Universidad del Bosque">
@@ -37,21 +37,18 @@ include('../back/conection.php');
                     <?php
                     if (isset($_SESSION['username'])){
                         if ($_SESSION['perfil']=="estudiante"){
-                            echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
-                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                            Header("Location: index.php");
                         }else{
                             if ($_SESSION['perfil']=="admin"){
                                 echo "<a class=\"header-menu-tab Setting\" href=\"horarios-admin.php\"><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
                             }else{
-                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
-                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                                Header("Location: index.php");
                             }
 
                         }
                     }else {
-                        echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
-                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                        Header("Location: index.php");
                     }
                     ?>
 
@@ -60,12 +57,11 @@ include('../back/conection.php');
                     <?php
                     if (isset($_SESSION['username'])){
                         if ($_SESSION['perfil']=="estudiante"){
-                            echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
-                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
+                            Header("Location: index.php");
                         }else{
                             if ($_SESSION['perfil']=="admin"){
-                                echo "<a class=\"header-menu-tab\" href='#'><span
-                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>
+                                echo "<a class=\"header-menu-tab\" href='#' style=\"border-bottom: 4px solid #11a8ab;\"><span
+                                    class=\"icon fontawesome-user scnd-font-color\" ></span>Rutas</a>
                                     <ul id='submenu'>
                                         <li><a href=\"rutas-admin.php\">Rutas</a></li><br>
                                         <li><a href=\"#\">Paradas</a></li>
@@ -73,14 +69,12 @@ include('../back/conection.php');
                                         <li><a href=\"#\">Conductores</a></li>
                                     </ul>";
                             }else{
-                                echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
-                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
+                                Header("Location: index.php");
                             }
 
                         }
                     }else {
-                        echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
-                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
+                        Header("Location: index.php");
                     }
                     ?>
                 </li>
@@ -99,7 +93,7 @@ include('../back/conection.php');
                 <li>
                     <?php
                     if (isset($_SESSION['username'])){
-                        echo "<a class=\"header-menu-tab\" href=\"pagos.php\" style=\"border-bottom: 4px solid #11a8ab;\"><span
+                        echo "<a class=\"header-menu-tab\" href=\"pagos.php\"><span
                                     class=\"icon fontawesome-envelope scnd-font-color\"></span>Pagos</a>";
                     }else{
                         echo "<a class=\"header-menu-tab\" style='cursor: pointer;' onclick='sinLogueo()'><span
@@ -154,30 +148,3 @@ include('../back/conection.php');
             </div>
         </header>
     </div>
-    <div class="login-popup">
-        <i class="fa fa-times-circle close-icon" aria-hidden="true">X</i>
-        <div class="form-body">
-            <form method="post" action="../back/validar.php">
-                <div class="card">
-                    <a href="index.php"><img src="../img/Unbosque.jpg" style="width: 45%;" alt="UnBosque" class="img-logo"></a>
-                    <div class="field">
-                        <span class="header">El bosque te lleva</span>
-                        <div class="form-group">
-                            <input type="text" required="required" name="usuario"/>
-                            <label for="input" class="control-label">Usuario</label><i class="bar"></i>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" id="pass" name="pass" required="required" />
-                            <label for="input" class="control-label">Contraseña</label><i class="bar"></i>
-                        </div>
-                        <div>
-                            <img src="../img/eye.png" style="width: 8%; opacity: 0.5;" id="eye">
-                            <label id="mostrar" style="opacity: 0.5;">  Ver Contraseña</label><br><br>
-                        </div>
-                        <button id="entrar" type="submit">Entrar</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>

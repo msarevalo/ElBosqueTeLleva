@@ -566,16 +566,40 @@ a.control_next {
     border: rgba(158, 158, 158, 0.5) dotted;
 }
 
+#submenu-contenido{
+    background: #FFFFFF;
+    border: rgba(158, 158, 158, 0.5) dotted;
+    width: 130px;
+    margin-left: 10px;
+}
+
 #submenu li{
     margin-left: 15px;
 }
+
+#submenu-contenido li{
+    margin-left: 15px;
+}
+
 #submenu li:hover{
     margin-left: 10px;
     border-bottom: 4px solid #11a8ab;
     text-decoration: none;
 }
 
+#submenu-contenido li:hover{
+    margin-left: 10px;
+    border-bottom: 4px solid #11a8ab;
+    text-decoration: none;
+}
+
 #submenu a{
+    text-decoration: none;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #5a8c5a;
+}
+
+#submenu-contenido a{
     text-decoration: none;
     font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #5a8c5a;

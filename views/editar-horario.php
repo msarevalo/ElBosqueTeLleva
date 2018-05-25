@@ -77,7 +77,7 @@ $prueba = mysqli_fetch_array($consulta);
                                 echo "<a class=\"header-menu-tab\" href='#'><span
                                     class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>
                                     <ul id='submenu'>
-                                        <li><a href=\"#\">Rutas</a></li><br>
+                                        <li><a href=\"rutas-admin.php\">Rutas</a></li><br>
                                         <li><a href=\"#\">Paradas</a></li>
                                         <li><a href=\"#\">Vehiculos</a></li>
                                         <li><a href=\"#\">Conductores</a></li>
@@ -125,8 +125,12 @@ $prueba = mysqli_fetch_array($consulta);
                                     class=\"icon entypo-cog scnd-font-color\"></span>Noticias y Novedades</a>";
                         }else{
                             if ($_SESSION['perfil']=="admin"){
-                                echo "<a class=\"header-menu-tab Setting\" href=\"contenido-admin.php\"><span
-                                    class=\"icon entypo-cog scnd-font-color\"></span>Contenido</a>";
+                                echo "<a class=\"header-menu-tab Setting\" href=\"#\"><span
+                                    class=\"icon entypo-cog scnd-font-color\"></span>Contenido</a>
+                                    <ul id='submenu-contenido'>
+                                        <li><a href=\"#\">Banners</a></li><br>
+                                        <li><a href=\"#\">Noticias</a></li>
+                                    </ul>";
                             }else{
                                 echo "<a class=\"header-menu-tab Setting\" href=\"news.php\"><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Noticias y Novedades</a>";
