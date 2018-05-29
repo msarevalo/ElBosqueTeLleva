@@ -68,7 +68,7 @@ include('../back/conection.php');
                                     class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>
                                     <ul id='submenu'>
                                         <li><a href=\"rutas-admin.php\">Rutas</a></li><br>
-                                        <li><a href=\"#\">Paradas</a></li>
+                                        <li><a href=\"paradas-admin.php\">Paradas</a></li>
                                         <li><a href=\"#\">Vehiculos</a></li>
                                         <li><a href=\"#\">Conductores</a></li>
                                     </ul>";
