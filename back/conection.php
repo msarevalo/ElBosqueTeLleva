@@ -6,7 +6,7 @@ $con = mysqli_connect("localhost", "reservas","ninguna123.", "dbreservas");
 
 if (!$con){
     echo "<script>alert('Algo ha ocurrido'); window.location.href='../views/index.php'</script>";
-    //header("Location: index.php");
+    header("Location: error.php");
 }
 
 /*if (!isset($_SESSION['tiempo'])) {
