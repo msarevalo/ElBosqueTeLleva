@@ -15,7 +15,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="../img/icon-small.png">
 
 </head>
-<body>
+<body onload="noVolver()">
 <?php
 include('../back/conection.php');
 ?>
