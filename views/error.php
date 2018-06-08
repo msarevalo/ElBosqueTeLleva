@@ -1,28 +1,36 @@
-<html lang="en" class="">
+<?php
+if (!isset($_SERVER['HTTP_REFERER'])) {
+    header("Location: index.php");
+}
+?>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
     <title>Error | El Bosque Te LLeva</title>
-    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="../css/error.css" type="text/css" class="cp-pen-styles" rel="stylesheet">
-    <script rel="script" type="application/javascript" src="../js/error.js"></script>
+    <link href="../css/error.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="../img/icon-small.png">
 </head>
+
 <body>
-<div class="error">
-    <div class="container-floud">
-        <div class="col-xs-12 ground-color text-center">
-            <div class="container-error-404">
-                <div class="clip"><div class="shadow"><span class="digit thirdDigit"></span></div></div>
-                <div class="clip"><div class="shadow"><span class="digit secondDigit"></span></div></div>
-                <div class="clip"><div class="shadow"><span class="digit firstDigit"></span></div></div>
-                <div class="msg">Ups!<span class="triangle"></span></div>
-            </div>
-            <h2 class="h1">Algo ha pasado!</h2>
-            <a href="../back/cerrar.php"><button id="boton">Reintentar</button></a>
-        </div>
+<center>
+    <svg width="145" height="200">
+        <rect x="60" y="75" width="20" height="100" fill="#512920" />
+        <circle cx="45" cy="75" r="40" fill="#073f11" />
+        <circle cx="95" cy="75" r="40" fill="#0d6c1e" />
+        <circle cx="95" cy="35" r="30" fill="#15b732" />
+        <circle cx="60" cy="50" r="40" fill="#5dd166" />
+    </svg>
+    <div>
+        500
     </div>
-</div>
-<script>
-    var selector3 = document.querySelector('.thirdDigit'), selector2 = document.querySelector('.secondDigit'),
-        selector1 = document.querySelector('.firstDigit');
-</script>
-</body></html>
+    <p>
+        Whoops.
+    </p>
+    <p>
+        Algo ha pasado, intenta de nuevo mas tarde
+    </p><br>
+    <a href="../back/cerrar.php"><button id="intentar">Reintentar</button></a>
+</center>
+</body>
+</html>
+

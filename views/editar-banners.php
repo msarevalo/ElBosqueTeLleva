@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Rutas | El Bosque Te LLeva</title>
+    <title>Contenido | El Bosque Te LLeva</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="application-name" content="Sistema de Reservas Universidad del Bosque">
@@ -9,24 +9,29 @@
     <meta name="description" content="Proyecto De Grado">
     <!-- Estilos -->
     <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/horarios.css" rel="stylesheet">
+    <link href="../css/banners.css" rel="stylesheet">
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="application/javascript" src="../js/index.js"></script>
     <script type="application/javascript" src="../js/horarios.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="../img/icon-small.png">
-
-    <style>
-        #map {
-            height: 400px;
-            width: 80%;
-            margin-left: 10%;
-        }
-    </style>
 </head>
 <body>
 <?php
 include('../back/conection.php');
+
+if (isset($_GET['id'])){
+    $idBanner = $_GET['id'];
+}
+
+$consulta = mysqli_query($con,"SELECT * FROM `banners` WHERE id_img='" . $idBanner . "';");
+$banner = mysqli_fetch_array($consulta);
+
+/*for ($i=0; $i<=3; $i++){
+    echo $prueba[$i] . "<br>";
+}*/
+
+
 ?>
 <div>
     <div class="main-container">
@@ -37,21 +42,18 @@ include('../back/conection.php');
                     <?php
                     if (isset($_SESSION['username'])){
                         if ($_SESSION['perfil']=="estudiante"){
-                            echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
-                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                            Header("Location: index.php");
                         }else{
                             if ($_SESSION['perfil']=="admin"){
                                 echo "<a class=\"header-menu-tab Setting\" href=\"horarios-admin.php\"><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
                             }else{
-                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
-                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                                Header("Location: index.php");
                             }
 
                         }
                     }else {
-                        echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
-                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                        Header("Location: index.php");
                     }
                     ?>
 
@@ -60,7 +62,7 @@ include('../back/conection.php');
                     <?php
                     if (isset($_SESSION['username'])){
                         if ($_SESSION['perfil']=="estudiante"){
-                            echo "<a class=\"header-menu-tab\" href=\"rutas.php\" style=\"border-bottom: 4px solid #11a8ab;\"><span
+                            echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
                                     class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
                         }else{
                             if ($_SESSION['perfil']=="admin"){
@@ -73,13 +75,13 @@ include('../back/conection.php');
                                         <li><a href=\"#\">Conductores</a></li>
                                     </ul>";
                             }else{
-                                echo "<a class=\"header-menu-tab\" href=\"rutas.php\" style=\"border-bottom: 4px solid #11a8ab;\"><span
+                                echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
                                     class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
                             }
 
                         }
                     }else {
-                        echo "<a class=\"header-menu-tab\" href=\"rutas.php\" style=\"border-bottom: 4px solid #11a8ab;\"><span
+                        echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
                                     class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
                     }
                     ?>
@@ -115,7 +117,7 @@ include('../back/conection.php');
                                     class=\"icon entypo-cog scnd-font-color\"></span>Noticias y Novedades</a>";
                         }else{
                             if ($_SESSION['perfil']=="admin"){
-                                echo "<a class=\"header-menu-tab Setting\" href=\"#\"><span
+                                echo "<a class=\"header-menu-tab Setting\" href=\"#\" style=\"border-bottom: 4px solid #11a8ab;><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Contenido</a>
                                     <ul id='submenu-contenido'>
                                         <li><a href=\"banners.php\">Banners</a></li><br>
@@ -154,52 +156,67 @@ include('../back/conection.php');
             </div>
         </header>
     </div>
-<div id="map"></div>
-<script>
-    function initMap() {
-        var uluru = {lat: 4.711422, lng: -74.032368};
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 13,
-            center: uluru
-        });
-        var marker = new google.maps.Marker({
-            position: uluru,
-            map: map
-        });
-    }
-</script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCt1omiOFwL5HrtlC0T1ZlZFzOf9OXmEaI&callback=initMap">
-</script>
-<div>
-    <br><a href="paradas.php"><button id="entrar">Ver Paradas</button></a>
-</div>
-    <div class="login-popup">
-        <i class="fa fa-times-circle close-icon" aria-hidden="true">X</i>
-        <div class="form-body">
-            <form method="post" action="../back/validar.php">
-                <div class="card">
-                    <a href="index.php"><img src="../img/Unbosque.jpg" style="width: 45%;" alt="UnBosque" class="img-logo"></a>
-                    <div class="field">
-                        <span class="header">El bosque te lleva</span>
-                        <div class="form-group">
-                            <input type="text" required="required" name="usuario"/>
-                            <label for="input" class="control-label">Usuario</label><i class="bar"></i>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" id="pass" name="pass" required="required" />
-                            <label for="input" class="control-label">Contraseña</label><i class="bar"></i>
-                        </div>
-                        <div>
-                            <img src="../img/eye.png" style="width: 8%; opacity: 0.5;" id="eye">
-                            <label id="mostrar" style="opacity: 0.5;">  Ver Contraseña</label><br><br>
-                        </div>
-                        <button id="entrar" type="submit">Entrar</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+    <div>
+        <a href="horarios-admin.php" id="volver">Volver</a>
+        <header id="crear-header">Editar Banner</header>
+        <form method="post" action="../back/editarBanner.php" id="crear">
+            <label for="bannerName" class="titulos">Nombre Banner</label>
+                <?php
+                $_SESSION['idBanner']=$banner[0];
+                echo "<input required id='bannerName' name='bannerName' type='text' value='" . $banner[1] . "'>";
+                ?>
+            <br>
+            <label for="orden" class="titulos">Orden</label>
+            <?php
+            echo "<input required type='number' name='orden' id='orden' value='" . $banner[5] . "'>";
+            ?>
+            <br>
+            <label for="fecInicio" class="titulos">Fecha de Inicio</label>
+            <?php
+            echo "<input type='date' required name='fecInicio' id='fecInicio' value='" . $banner["fecha_inicio"] . "'>"
+            ?>
+            <br>
+            <label for="fecFinal" class="titulos">Fecha de Fin</label>
+            <?php
+            echo "<input type='date' required name='fecFinal' id='fecFinal' value='" . $banner["fecha_final"] . "'>"
+            ?>
+            <br>
+            <label class="file" title="">
+            <input id="imagen" name="imagen" size="30" type="file" />
+            </label><br><br>
+            <?php
+            echo "<img id='imgInicial' src='.." . $banner["ruta_imagen"] . $banner['nombre_img'] . "' style='width: 300px; z-index: 2; position: relative'>
+            <output id=\"list\"></output>
+
+            <script>
+                function archivo(evt) {
+                    var files = evt.target.files; // FileList object
+
+                    // Obtenemos la imagen del campo \"file\".
+                    for (var i = 0, f; f = files[i]; i++) {
+                        //Solo admitimos imágenes.
+                        if (!f.type.match('image.*')) {
+                            continue;
+                        }
+
+                        var reader = new FileReader();
+
+                        reader.onload = (function(theFile) {
+                            return function(e) {
+                                // Insertamos la imagen
+                                document.getElementById(\"list\").innerHTML = ['<img class=\"thumb\" src=\"', e.target.result,'\" style= \"width: 250px; z-index: 1; margin-left: -300px\" title=\"', escape(theFile.name), '\"/>'].join('');
+                                document.getElementById('imgInicial').style.visibility='hidden';
+                            };
+                        })(f);
+
+                        reader.readAsDataURL(f);
+                    }
+                }
+
+                document.getElementById('imagen').addEventListener('change', archivo, false);
+            </script>";
+            ?>
+            <br><br>
+            <input type="submit" id="btnBanner"><br><br>
+        </form>
     </div>
-</div>
-</body>
-</html>

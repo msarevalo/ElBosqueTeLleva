@@ -128,7 +128,7 @@ $prueba = mysqli_fetch_array($consulta);
                                 echo "<a class=\"header-menu-tab Setting\" href=\"#\"><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Contenido</a>
                                     <ul id='submenu-contenido'>
-                                        <li><a href=\"#\">Banners</a></li><br>
+                                        <li><a href=\"banners.php\">Banners</a></li><br>
                                         <li><a href=\"#\">Noticias</a></li>
                                     </ul>";
                             }else{
