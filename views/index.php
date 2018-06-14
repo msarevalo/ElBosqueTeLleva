@@ -191,23 +191,27 @@ include('../back/conection.php');
     $prueba = $ndia+1;
     $sumando = gmdate($fechaDia, time()+68400);
     //echo $sumando;
-    $horas = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '" . $hactual . "') AND (`orden`='" . $ndia . "') ORDER BY Hora");
-    $consultas = mysqli_fetch_array($horas);
-    if ($consultas[0]!=null){
-        $transporte = $consultas[3];
-        $horaSalida = $consultas[2];
-    }else{
-        $horas2 = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '00:00:00') AND (`orden`='" . $prueba . "') ORDER BY Hora");
-        $consultas2 = mysqli_fetch_array($horas2);
-        if ($consultas2[0]!=null) {
-            $transporte = $consultas2[3];
-            $horaSalida = $consultas2[2];
-            $fdia = $sumando;
+        if ($ndia <6) {
+            $horas = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '" . $hactual . "') AND (`orden`='" . $ndia . "') ORDER BY Hora");
+            $consultas = mysqli_fetch_array($horas);
+            if ($consultas[0] != null) {
+                $transporte = $consultas[3];
+                $horaSalida = $consultas[2];
+            } else {
+                $horas2 = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '00:00:00') AND (`orden`='" . $prueba . "') ORDER BY Hora");
+                $consultas2 = mysqli_fetch_array($horas2);
+                if ($consultas2[0] != null) {
+                    $transporte = $consultas2[3];
+                    $horaSalida = $consultas2[2];
+                    $fdia = $sumando;
+                }
+            }
+        }else {
+               echo "fallo"; exit();
         }
-    }
 
     //echo $hactual;
-    echo "<div><label>Proximo " . $transporte . " sale en:</label></div>
+    echo "<div><label>Proximo <strong>" . $transporte . " </strong>sale en:</label></div>
 <div id=\"reloj\">
     <div class='contorno'>
         <span class=\"horas\"></span>
