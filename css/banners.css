@@ -113,6 +113,12 @@ input{
     font-family: "Helvetica";
     text-align: center
 }
+select{
+    width: 150px;
+    height: 25px;
+    text-align: center;
+    
+}
 
 label.file input {position:absolute; width:0; overflow:hidden; opacity:0;}
 label.file {
@@ -195,4 +201,9 @@ label.file:after {
     background-color: rgb(13, 108, 30);;
     color: #fff;
     transform: translateY(-7px);
+}
+
+option {
+    font-family: "Helvetica";
+    line-height: 45px;
 }

@@ -159,7 +159,7 @@ $banner = mysqli_fetch_array($consulta);
     <div>
         <a href="horarios-admin.php" id="volver">Volver</a>
         <header id="crear-header">Editar Banner</header>
-        <form method="post" action="../back/editarBanner.php" id="crear">
+        <form method="post" action="../back/editarBanner.php" enctype="multipart/form-data" id="crear">
             <label for="bannerName" class="titulos">Nombre Banner</label>
                 <?php
                 $_SESSION['idBanner']=$banner[0];
@@ -181,8 +181,13 @@ $banner = mysqli_fetch_array($consulta);
             echo "<input type='date' required name='fecFinal' id='fecFinal' value='" . $banner["fecha_final"] . "'>"
             ?>
             <br>
+            <label for="actividad" class="titulos">Estado</label>
+            <select id="actividad" name="actividad">
+                <option value="1" selected>Activo</option>
+                <option value="0">Inactivo</option>
+            </select><br><br>
             <label class="file" title="">
-            <input id="imagen" name="imagen" size="30" type="file" />
+                <input id="imagenEdt" name="imagenEdt" size="30" type="file" />
             </label><br><br>
             <?php
             echo "<img id='imgInicial' src='.." . $banner["ruta_imagen"] . $banner['nombre_img'] . "' style='width: 300px; z-index: 2; position: relative'>
@@ -213,7 +218,7 @@ $banner = mysqli_fetch_array($consulta);
                     }
                 }
 
-                document.getElementById('imagen').addEventListener('change', archivo, false);
+                document.getElementById('imagenEdt').addEventListener('change', archivo, false);
             </script>";
             ?>
             <br><br>

@@ -604,3 +604,34 @@ a.control_next {
     font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #5a8c5a;
 }
+
+#reloj{
+    font-family: sans-serif;
+    color: #9e9e9e;
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    font-size: 23px;
+}
+
+#reloj > div{
+    padding: 10px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+#reloj div > span{
+    padding: 10px;
+    border-radius: 3px;
+    //background: #447d44;
+    display: inline-block;
+}
+
+.texto{
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+.contorno{
+    border: #fda415;
+}

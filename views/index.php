@@ -169,6 +169,108 @@ include('../back/conection.php');
 
         </ul>
     </div>
+    <div style="margin-top: 2px">
+        <?php
+        /*$dias = getdate();
+        print_r($dias[mday]);*/
+
+        $transporte = null;
+        $horaSalida = null;
+    $offset=-18000; //converting 5 hours to seconds.
+    $numeroDia="N";
+    $fechaDia="Y-m-d";
+    $horaActual="H:i:s";
+    $ndia=gmdate($numeroDia, time()+$offset);
+    $fdia=gmdate($fechaDia."+1 day", time()+$offset);
+    $hactual=gmdate($horaActual, time()+$offset);
+    //echo gmdate("l") . "<br>";
+    //echo $timeNdate . "<br>";
+    /*$formato = "%u";
+    $prueba = strftime($formato, time()+$offset);
+    echo $prueba;*/
+    $prueba = $ndia+1;
+    $sumando = gmdate($fechaDia, time()+68400);
+    //echo $sumando;
+    $horas = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '" . $hactual . "') AND (`orden`='" . $ndia . "') ORDER BY Hora");
+    $consultas = mysqli_fetch_array($horas);
+    if ($consultas[0]!=null){
+        $transporte = $consultas[3];
+        $horaSalida = $consultas[2];
+    }else{
+        $horas2 = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '00:00:00') AND (`orden`='" . $prueba . "') ORDER BY Hora");
+        $consultas2 = mysqli_fetch_array($horas2);
+        if ($consultas2[0]!=null) {
+            $transporte = $consultas2[3];
+            $horaSalida = $consultas2[2];
+            $fdia = $sumando;
+        }
+    }
+
+    //echo $hactual;
+    echo "<div><label>Proximo " . $transporte . " sale en:</label></div>
+<div id=\"reloj\">
+    <div class='contorno'>
+        <span class=\"horas\"></span>
+        <div class=\"texto\">Horas</div>
+    </div>
+    <div class='contorno'>
+        <span class=\"minutos\"></span>
+        <div class=\"texto\">Minutos</div>
+    </div>
+    <div class='contorno'>
+        <span class=\"segundos\"></span>
+        <div class=\"texto\">Segundos</div>
+    </div>
+</div>
+</div>
+
+<script>
+    function getTimeRemaining(endtime) {
+        var t = Date.parse(endtime) - Date.parse(new Date());
+        var segundos = Math.floor((t / 1000) % 60);
+        var minutos = Math.floor((t / 1000 / 60) % 60);
+        var horas = Math.floor((t / (1000 * 60 * 60)));
+
+        //if(meses>0){
+          
+        return {
+            'total': t,
+            'horas': horas,
+            'minutos': minutos,
+            'segundos': segundos}
+        
+    }
+
+    function initializeReloj(id, endtime) {
+        var reloj = document.getElementById(id);
+        var horaSpan = reloj.querySelector('.horas');
+        var minutoSpan = reloj.querySelector('.minutos');
+        var segundoSpan = reloj.querySelector('.segundos');
+
+        function updateReloj() {
+            var t = getTimeRemaining(endtime);
+            horaSpan.innerHTML = ('0' + t.horas).slice(-2);
+            minutoSpan.innerHTML = ('0' + t.minutos).slice(-2);
+            segundoSpan.innerHTML = ('0' + t.segundos).slice(-2);
+            if (t.total <= 0) {
+                clearInterval(timeinterval);
+            }
+        }
+        updateReloj();
+        var timeinterval = setInterval(updateReloj, 1000);
+    }
+
+    function noVolver() {
+        window.location.hash=\"no-back-button\";
+        window.location.hash=\"Again-No-back-button\" //chrome
+        window.onhashchange=function(){window.location.hash=\"\";}
+    }
+
+    var deadline = new Date(Date.parse(new Date('" . $fdia . " " . $horaSalida . " UTC/GMT -5')));
+    initializeReloj('reloj', deadline);
+</script>"
+    ?>
+    </div>
     <div class="login-popup">
         <i class="fa fa-times-circle close-icon" aria-hidden="true">X</i>
         <div class="form-body">
