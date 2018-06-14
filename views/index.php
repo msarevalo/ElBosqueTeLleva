@@ -181,33 +181,56 @@ include('../back/conection.php');
     $fechaDia="Y-m-d";
     $horaActual="H:i:s";
     $ndia=gmdate($numeroDia, time()+$offset);
-    $fdia=gmdate($fechaDia."+1 day", time()+$offset);
+    $fdia=gmdate($fechaDia, time()+$offset);
     $hactual=gmdate($horaActual, time()+$offset);
     //echo gmdate("l") . "<br>";
     //echo $timeNdate . "<br>";
     /*$formato = "%u";
     $prueba = strftime($formato, time()+$offset);
     echo $prueba;*/
-    $prueba = $ndia+1;
-    $sumando = gmdate($fechaDia, time()+68400);
+    $diaMas = $ndia+1;
+    $valorDia = 86400;
+    //$sumando = gmdate($fechaDia, time()+($valorDia - $offset));
     //echo $sumando;
+        //$ndia = 7;
         if ($ndia <6) {
             $horas = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '" . $hactual . "') AND (`orden`='" . $ndia . "') ORDER BY Hora");
             $consultas = mysqli_fetch_array($horas);
             if ($consultas[0] != null) {
                 $transporte = $consultas[3];
                 $horaSalida = $consultas[2];
+                $fdia=gmdate($fechaDia, time()+$offset);
             } else {
-                $horas2 = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '00:00:00') AND (`orden`='" . $prueba . "') ORDER BY Hora");
+                $horas2 = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '00:00:00') AND (`orden`='" . $diaMas . "') ORDER BY Hora");
                 $consultas2 = mysqli_fetch_array($horas2);
                 if ($consultas2[0] != null) {
                     $transporte = $consultas2[3];
                     $horaSalida = $consultas2[2];
-                    $fdia = $sumando;
+                    $fdia = gmdate($fechaDia, time()+($valorDia + $offset));
+                }else{
+                    exit();
                 }
             }
         }else {
-               echo "fallo"; exit();
+            $horas3 = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '00:00:00') AND (`orden`='1') ORDER BY Hora");
+            $consultas3 = mysqli_fetch_array($horas3);
+            if ($consultas3[0] != null) {
+                $transporte = $consultas3[3];
+                $horaSalida = $consultas3[2];
+                if ($ndia === 6){
+                    //echo "entro 6";
+                    $fdia = gmdate($fechaDia, time()+((2* $valorDia) + $offset));
+                }else{
+                    if ($ndia === 7){
+                        //echo "entro 7";
+                        $fdia = gmdate($fechaDia, time()+($valorDia + $offset));
+                    }else{
+                        exit();
+                    }
+                }
+            }else{
+                exit();
+            }
         }
 
     //echo $hactual;
