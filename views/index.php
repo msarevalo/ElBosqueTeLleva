@@ -234,7 +234,7 @@ include('../back/conection.php');
         }
 
     //echo $hactual;
-    echo "<div><label>Proximo <strong>" . $transporte . " </strong>sale en:</label></div>
+    echo "<div><label style='font-family: Helvetica; font-size: 18px; color: #9e9e9e;'>Proximo <strong style='font-size: 20px'>" . $transporte . " </strong>sale en:</label></div>
 <div id=\"reloj\">
     <div class='contorno'>
         <span class=\"horas\"></span>
@@ -264,9 +264,14 @@ include('../back/conection.php');
             'total': t,
             'horas': horas,
             'minutos': minutos,
-            'segundos': segundos}
+            'segundos': segundos
+        }
         
-    }
+        if (horas == 0 && minutos == 0 && segundos == 0){
+            location.reload(true);
+        } 
+        
+    } 
 
     function initializeReloj(id, endtime) {
         var reloj = document.getElementById(id);
@@ -285,12 +290,6 @@ include('../back/conection.php');
         }
         updateReloj();
         var timeinterval = setInterval(updateReloj, 1000);
-    }
-
-    function noVolver() {
-        window.location.hash=\"no-back-button\";
-        window.location.hash=\"Again-No-back-button\" //chrome
-        window.onhashchange=function(){window.location.hash=\"\";}
     }
 
     var deadline = new Date(Date.parse(new Date('" . $fdia . " " . $horaSalida . " UTC/GMT -5')));

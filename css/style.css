@@ -486,7 +486,7 @@ header {
 #slider {
     position: relative;
     overflow: hidden;
-    margin: 20px auto 0 auto;
+    margin: 20px auto 0px auto;
     border-radius: 4px;
     z-index: 1;
 }
@@ -618,6 +618,7 @@ a.control_next {
     padding: 10px;
     border-radius: 3px;
     display: inline-block;
+    background: #dddddd;
 }
 
 #reloj div > span{
