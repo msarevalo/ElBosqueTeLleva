@@ -267,10 +267,6 @@ include('../back/conection.php');
             'segundos': segundos
         }
         
-        if (horas == 0 && minutos == 0 && segundos == 0){
-            location.reload(true);
-        } 
-        
     } 
 
     function initializeReloj(id, endtime) {
@@ -286,6 +282,9 @@ include('../back/conection.php');
             segundoSpan.innerHTML = ('0' + t.segundos).slice(-2);
             if (t.total <= 0) {
                 clearInterval(timeinterval);
+            }
+            if (t.horas == 00 && t.minutos == 00 && t.segundos == 00){
+                location.reload(true);
             }
         }
         updateReloj();

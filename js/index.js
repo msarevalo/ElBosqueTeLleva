@@ -120,8 +120,3 @@ $(document).ready(function ($) {
 function sinLogueo() {
     $('.login-popup').fadeIn('fast');
 };
-
-function refresh()
-{
-    location.reload(true);
-}
