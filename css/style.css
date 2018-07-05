@@ -386,7 +386,7 @@ a:hover {
 }.main-container {
      font-family: 'Ubuntu', sans-serif;
      width: 950px;
-     margin: 2em auto;
+     margin: 2em 19%;
  }
 
 
@@ -486,7 +486,7 @@ header {
 #slider {
     position: relative;
     overflow: hidden;
-    margin: 20px auto 0px auto;
+    margin: 20px auto -1px auto;
     border-radius: 4px;
     z-index: 1;
 }
@@ -635,4 +635,11 @@ a.control_next {
 
 .contorno{
     border: #fda415;
+}
+
+#retroceso{
+    margin: 2px auto;
+    background: rgba(253, 164, 21, 0.24);
+    width: 1180px;
+    height: 120px;
 }

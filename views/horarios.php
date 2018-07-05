@@ -151,6 +151,23 @@ include('../back/conection.php');
         <label id="texto">Para filtrar por servicio, dale click a la opcion que desees</label><br><br>
         <img src="../img/bus-icon.png" id="bus">
         <img src="../img/tren-icon.png" id="tren">
+        <br><br>
+        <label>Filtrar por</label><br><br>
+        <label for="dias">Día</label>
+        <select id="dias">
+            <option>Seleccione</option>
+            <option>Lunes</option>
+            <option>Martes</option>
+            <option>Miercoles</option>
+            <option>Jueves</option>
+            <option>Viernes</option>
+        </select>
+        <label for="jornada">Jornada</label>
+        <select id="jornada">
+            <option>Seleccione</option>
+            <option>Día</option>
+            <option>Tarde</option>
+        </select>
     </div>
     <div id="horariosBus" style="display: none">
         <?php

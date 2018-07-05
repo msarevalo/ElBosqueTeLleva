@@ -169,7 +169,7 @@ include('../back/conection.php');
 
         </ul>
     </div>
-    <div style="margin-top: 2px">
+    <div id="retroceso">
         <?php
         /*$dias = getdate();
         print_r($dias[mday]);*/
