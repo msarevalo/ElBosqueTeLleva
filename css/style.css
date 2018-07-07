@@ -486,7 +486,7 @@ header {
 #slider {
     position: relative;
     overflow: hidden;
-    margin: 20px auto -1px auto;
+    margin: 20px auto 2px auto;
     border-radius: 4px;
     z-index: 1;
 }
@@ -639,7 +639,10 @@ a.control_next {
 
 #retroceso{
     margin: 2px auto;
-    background: rgba(253, 164, 21, 0.24);
-    width: 1180px;
-    height: 120px;
+    //background: rgba(253, 164, 21, 0.24);
+    width: 1200px;
+    height: auto;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
 }

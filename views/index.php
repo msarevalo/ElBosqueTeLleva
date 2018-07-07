@@ -176,24 +176,19 @@ include('../back/conection.php');
 
         $transporte = null;
         $horaSalida = null;
-    $offset=-18000; //converting 5 hours to seconds.
-    $numeroDia="N";
-    $fechaDia="Y-m-d";
-    $horaActual="H:i:s";
-    $ndia=gmdate($numeroDia, time()+$offset);
-    $fdia=gmdate($fechaDia, time()+$offset);
-    $hactual=gmdate($horaActual, time()+$offset);
-    //echo gmdate("l") . "<br>";
-    //echo $timeNdate . "<br>";
-    /*$formato = "%u";
-    $prueba = strftime($formato, time()+$offset);
-    echo $prueba;*/
-    $diaMas = $ndia+1;
-    $valorDia = 86400;
-    //$sumando = gmdate($fechaDia, time()+($valorDia - $offset));
-    //echo $sumando;
+        $offset=-18000; //UTC -5 horas Bogota, Lima, Quito
+        $numeroDia="N";
+        $fechaDia="Y-m-d";
+        $horaActual="H:i:s";
+        $ndia=gmdate($numeroDia, time()+$offset);
+        $fdia=gmdate($fechaDia, time()+$offset);
+        $hactual=gmdate($horaActual, time()+$offset);
+        $diaMas = $ndia+1;
+        $valorDia = 86400;
+        //$sumando = gmdate($fechaDia, time()+($valorDia - $offset));
+        //echo $sumando;
         //$ndia = 7;
-        if ($ndia <6) {
+        //if ($ndia <6) {
             $horas = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '" . $hactual . "') AND (`orden`='" . $ndia . "') ORDER BY Hora");
             $consultas = mysqli_fetch_array($horas);
             if ($consultas[0] != null) {
@@ -208,9 +203,9 @@ include('../back/conection.php');
                     $horaSalida = $consultas2[2];
                     $fdia = gmdate($fechaDia, time()+($valorDia + $offset));
                 }else{
-                    exit();
+                    //exit();
                 }
-            }
+            /*}
         }else {
             $horas3 = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '00:00:00') AND (`orden`='1') ORDER BY Hora");
             $consultas3 = mysqli_fetch_array($horas3);
@@ -219,18 +214,18 @@ include('../back/conection.php');
                 $horaSalida = $consultas3[2];
                 if ($ndia === 6){
                     //echo "entro 6";
-                    $fdia = gmdate($fechaDia, time()+((2* $valorDia) + $offset));
+                    $fdia = gmdate($fechaDia, time()+(($valorDia) + $offset));
                 }else{
                     if ($ndia === 7){
                         //echo "entro 7";
                         $fdia = gmdate($fechaDia, time()+($valorDia + $offset));
                     }else{
-                        exit();
+                        //exit();
                     }
                 }
             }else{
                 exit();
-            }
+            }*/
         }
 
     //echo $hactual;
@@ -247,10 +242,14 @@ include('../back/conection.php');
     <div class='contorno'>
         <span class=\"segundos\"></span>
         <div class=\"texto\">Segundos</div>
-    </div>
+    </div><br>";
+        if (isset($_SESSION['username'])){
+                            echo "<a href=\"reservas.php\" style='text-decoration: none; cursor: pointer;'><label>Reservar Ahora!</label></a>";
+                        }else{
+                            echo "<a style='cursor: pointer; text-decoration: none' onclick='sinLogueo(); arriba();'><label>Reservar Ahora!</label></a>";
+                        }
+echo "</div>
 </div>
-</div>
-
 <script>
     function getTimeRemaining(endtime) {
         var t = Date.parse(endtime) - Date.parse(new Date());

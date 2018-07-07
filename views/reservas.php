@@ -50,8 +50,7 @@ include('../back/conection.php');
 
                         }
                     }else {
-                        echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
-                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                        Header("Location: index.php");
                     }
                     ?>
 

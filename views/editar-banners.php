@@ -157,7 +157,7 @@ $banner = mysqli_fetch_array($consulta);
         </header>
     </div>
     <div>
-        <a href="horarios-admin.php" id="volver">Volver</a>
+        <a href="banners.php" id="volver">Volver</a>
         <header id="crear-header">Editar Banner</header>
         <form method="post" action="../back/editarBanner.php" enctype="multipart/form-data" id="crear">
             <label for="bannerName" class="titulos">Nombre Banner</label>
@@ -182,10 +182,23 @@ $banner = mysqli_fetch_array($consulta);
             ?>
             <br>
             <label for="actividad" class="titulos">Estado</label>
-            <select id="actividad" name="actividad">
+            <?php
+            if ($banner["activo"]==1){
+                echo "<select id=\"actividad\" name=\"actividad\">
+                        <option value=\"1\" selected>Activo</option>
+                        <option value=\"0\">Inactivo</option>
+                      </select><br><br>";
+            }else{
+                echo "<select id=\"actividad\" name=\"actividad\">
+                        <option value=\"1\">Activo</option>
+                        <option value=\"0\" selected>Inactivo</option>
+                      </select><br><br>";
+            }
+            ?>
+            <!--<select id="actividad" name="actividad">
                 <option value="1" selected>Activo</option>
                 <option value="0">Inactivo</option>
-            </select><br><br>
+            </select><br><br>-->
             <label class="file" title="">
                 <input id="imagenEdt" name="imagenEdt" size="30" type="file" />
             </label><br><br>

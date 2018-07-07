@@ -120,3 +120,7 @@ $(document).ready(function ($) {
 function sinLogueo() {
     $('.login-popup').fadeIn('fast');
 };
+
+function arriba() {
+    window.scroll(0,0);
+}
