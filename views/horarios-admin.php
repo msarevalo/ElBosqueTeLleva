@@ -153,6 +153,9 @@ include('../back/conection.php');
     </div>
     <div>
 <?php
+        $id_eliminar = null;
+        $dia_eliminar = null;
+        $hora_eliminar = null;
         echo "<div id=\"listado-admin\" name=\"listado-admin\">
         <header>Horarios</header>";
         $consulta = mysqli_query($con,"SELECT `IdHorario`, `dia`, `Hora`, `servicio` FROM `horarios` ORDER BY `orden`, `servicio`, `Hora`;");
@@ -164,19 +167,23 @@ include('../back/conection.php');
             echo "<tr>";
             for ($i = 1; $i <= 3; $i++){
                 if (strpos($lconsulta[$i], 'bus')!==false){
+                    $id_eliminar = $lconsulta[$contador];
                     echo "<td><label style='margin-left: 10px; text-transform: capitalize '>" . $lconsulta[$i] . "</label></td>
                           <td><a href='editar-horario.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
-                          <a href='../back/eliminarHorario.php?id={$lconsulta[$contador]}'><img src='../img/delete.png' style='width: 25%'></a></td>";
+                          <a class='cd-popup-trigger'><img src='../img/delete.png' style='width: 25%; cursor: pointer'></a></td>";
                     }else{
                         if (strpos($lconsulta[$i], 'tren') !== false){
+                            $id_eliminar = $lconsulta[$contador];
                             echo "<td><label style='margin-left: 8px; text-transform: capitalize ''>Tren</label></td>
                                   <td><a href='editar-horario.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
-                                  <a href='../back/eliminarHorario.php?id={$lconsulta[$contador]}'><img src='../img/delete.png' style='width: 25%'></a></td>";
+                                  <a class='cd-popup-trigger'><img src='../img/delete.png' style='width: 25%; cursor: pointer'></a></td>";
                             }else{
                                 echo "<td style='text-transform: capitalize'>" . $lconsulta[$i] . "</td>";
                                 }
                     }
             }
+            $dia_eliminar = $lconsulta['dia'];
+            $hora_eliminar = $lconsulta['Hora'];
             $contador++;
         }
 
@@ -187,3 +194,33 @@ include('../back/conection.php');
         <a href="importar-horario.php">Importar Horarios</a><br><br>
         <a href="../back/truncarHorarios.php">Vaciar Horarios</a>
     </div>
+
+    <div class="cd-popup" role="alert">
+        <div class="cd-popup-container">
+            <?php
+            echo "<p>Desea eliminar el horario del día <font style=\"text-transform: uppercase;\"><strong>" . $dia_eliminar . "</strong></font> hora <strong>" . $hora_eliminar . "</strong>?</p>";
+            ?>
+            <ul class="cd-buttons">
+                <?php
+                echo "<li><a href='../back/eliminarHorario.php?id={$id_eliminar}'>Confirmar</a></li>
+                <li><a href='horarios-admin.php'>Cancelar</a></li>"
+                ?>
+            </ul>
+            <a href="#0" class="cd-popup-close img-replace"></a>
+        </div> <!-- cd-popup-container -->
+    </div> <!-- cd-popup -->
+
+    <div class="cd-popup2" role="alert">
+        <div class="cd-popup-container2">
+            <?php
+            echo "<p>Desea eliminar </p>";
+            ?>
+            <ul class="cd-buttons2">
+                <?php
+                echo "<li><a href='../back/eliminarHorario.php?id={$id_eliminar}'>Confirmar</a></li>
+                <li><a href='horarios-admin.php'>Cancelar</a></li>"
+                ?>
+            </ul>
+            <a href="#0" class="cd-popup-close2 img-replace"></a>
+        </div> <!-- cd-popup-container -->
+    </div> <!-- cd-popup -->

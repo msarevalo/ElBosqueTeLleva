@@ -17,7 +17,7 @@
 </head>
 <body onload="noVolver()">
 <?php
-include('../back/conection.php');
+    include('../back/conection.php');
 ?>
 <div>
     <div class="main-container" style="z-index: 2">
@@ -148,6 +148,33 @@ include('../back/conection.php');
             </nav>
         </header>
     </div>
+</div>
+<div class="login-popup">
+    <i class="fa fa-times-circle close-icon" aria-hidden="true">X</i>
+    <div class="form-body">
+        <form method="post" action="../back/validar.php">
+            <div class="card">
+                <a href="index.php"><img src="../img/Unbosque.jpg" style="width: 45%;" alt="UnBosque" class="img-logo"></a>
+                <div class="field">
+                    <span class="header">El bosque te lleva</span>
+                    <div class="form-group">
+                        <input type="text" required="required" name="usuario"/>
+                        <label for="input" class="control-label">Usuario</label><i class="bar"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="pass" name="pass" required="required"/>
+                        <label for="input" class="control-label">Contraseña</label><i class="bar"></i>
+                    </div>
+                    <div>
+                        <img src="../img/eye.png" style="width: 8%; opacity: 0.5;" id="eye">
+                        <label id="mostrar" style="opacity: 0.5;"> Ver Contraseña</label><br><br>
+                    </div>
+                    <button id="entrar" type="submit">Entrar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
     <div id="slider" style="z-index: 1">
         <a href="#" class="control_next">></a>
         <a href="#" class="control_prev"><</a>
@@ -188,7 +215,7 @@ include('../back/conection.php');
         //$sumando = gmdate($fechaDia, time()+($valorDia - $offset));
         //echo $sumando;
         //$ndia = 7;
-        //if ($ndia <6) {
+        if ($ndia <6) {
             $horas = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '" . $hactual . "') AND (`orden`='" . $ndia . "') ORDER BY Hora");
             $consultas = mysqli_fetch_array($horas);
             if ($consultas[0] != null) {
@@ -203,9 +230,9 @@ include('../back/conection.php');
                     $horaSalida = $consultas2[2];
                     $fdia = gmdate($fechaDia, time()+($valorDia + $offset));
                 }else{
-                    //exit();
+                    exit();
                 }
-            /*}
+            }
         }else {
             $horas3 = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '00:00:00') AND (`orden`='1') ORDER BY Hora");
             $consultas3 = mysqli_fetch_array($horas3);
@@ -220,107 +247,85 @@ include('../back/conection.php');
                         //echo "entro 7";
                         $fdia = gmdate($fechaDia, time()+($valorDia + $offset));
                     }else{
-                        //exit();
+                        exit();
                     }
                 }
             }else{
                 exit();
-            }*/
+            }
         }
 
     //echo $hactual;
     echo "<div><label style='font-family: Helvetica; font-size: 18px; color: #9e9e9e;'>Proximo <strong style='font-size: 20px'>" . $transporte . " </strong>sale en:</label></div>
-<div id=\"reloj\">
-    <div class='contorno'>
-        <span class=\"horas\"></span>
-        <div class=\"texto\">Horas</div>
-    </div>
-    <div class='contorno'>
-        <span class=\"minutos\"></span>
-        <div class=\"texto\">Minutos</div>
-    </div>
-    <div class='contorno'>
-        <span class=\"segundos\"></span>
-        <div class=\"texto\">Segundos</div>
-    </div><br>";
-        if (isset($_SESSION['username'])){
-                            echo "<a href=\"reservas.php\" style='text-decoration: none; cursor: pointer;'><label>Reservar Ahora!</label></a>";
-                        }else{
-                            echo "<a style='cursor: pointer; text-decoration: none' onclick='sinLogueo(); arriba();'><label>Reservar Ahora!</label></a>";
-                        }
-echo "</div>
-</div>
-<script>
-    function getTimeRemaining(endtime) {
-        var t = Date.parse(endtime) - Date.parse(new Date());
-        var segundos = Math.floor((t / 1000) % 60);
-        var minutos = Math.floor((t / 1000 / 60) % 60);
-        var horas = Math.floor((t / (1000 * 60 * 60)));
-
-        //if(meses>0){
-          
-        return {
-            'total': t,
-            'horas': horas,
-            'minutos': minutos,
-            'segundos': segundos
-        }
-        
-    } 
-
-    function initializeReloj(id, endtime) {
-        var reloj = document.getElementById(id);
-        var horaSpan = reloj.querySelector('.horas');
-        var minutoSpan = reloj.querySelector('.minutos');
-        var segundoSpan = reloj.querySelector('.segundos');
-
-        function updateReloj() {
-            var t = getTimeRemaining(endtime);
-            horaSpan.innerHTML = ('0' + t.horas).slice(-2);
-            minutoSpan.innerHTML = ('0' + t.minutos).slice(-2);
-            segundoSpan.innerHTML = ('0' + t.segundos).slice(-2);
-            if (t.total <= 0) {
-                clearInterval(timeinterval);
-            }
-            if (t.horas == 00 && t.minutos == 00 && t.segundos == 00){
-                location.reload(true);
-            }
-        }
-        updateReloj();
-        var timeinterval = setInterval(updateReloj, 1000);
-    }
-
-    var deadline = new Date(Date.parse(new Date('" . $fdia . " " . $horaSalida . " UTC/GMT -5')));
-    initializeReloj('reloj', deadline);
-</script>"
-    ?>
-    </div>
-    <div class="login-popup">
-        <i class="fa fa-times-circle close-icon" aria-hidden="true">X</i>
-        <div class="form-body">
-            <form method="post" action="../back/validar.php">
-                <div class="card">
-                    <a href="index.php"><img src="../img/Unbosque.jpg" style="width: 45%;" alt="UnBosque" class="img-logo"></a>
-                    <div class="field">
-                        <span class="header">El bosque te lleva</span>
-                        <div class="form-group">
-                            <input type="text" required="required" name="usuario"/>
-                            <label for="input" class="control-label">Usuario</label><i class="bar"></i>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" id="pass" name="pass" required="required"/>
-                            <label for="input" class="control-label">Contraseña</label><i class="bar"></i>
-                        </div>
-                        <div>
-                            <img src="../img/eye.png" style="width: 8%; opacity: 0.5;" id="eye">
-                            <label id="mostrar" style="opacity: 0.5;"> Ver Contraseña</label><br><br>
-                        </div>
-                        <button id="entrar" type="submit">Entrar</button>
-                    </div>
+            <div id=\"reloj\">
+                <div class='contorno'>
+                    <span class=\"horas\"></span>
+                    <div class=\"texto\">Horas</div>
                 </div>
-            </form>
-        </div>
-    </div>
+                <div class='contorno'>
+                    <span class=\"minutos\"></span>
+                    <div class=\"texto\">Minutos</div>
+                </div>
+                <div class='contorno'>
+                    <span class=\"segundos\"></span>
+                    <div class=\"texto\">Segundos</div>
+                </div><br>";
+        if (isset($_SESSION['username'])){
+            if ($_SESSION['perfil']=='admin'){
+                //echo "<a style='cursor: pointer; text-decoration: none; color: #9e9e9e' href='#'><label>Reservar Ahora!</label></a>";
+                echo "<br>";
+            }else{
+                echo "<a style='cursor: pointer; text-decoration: none; color: #9e9e9e;' href='reservas.php'><label>Reservar Ahora!</label></a>";
+            }
+        }else{
+            echo "<a style='cursor: pointer; text-decoration: none; color: #9e9e9es' onclick='sinLogueo(); arriba();'><label>Reservar Ahora!</label></a>";
+        }
+    echo "</div>
+            </div>
+            <script>
+                function getTimeRemaining(endtime) {
+                    var t = Date.parse(endtime) - Date.parse(new Date());
+                    var segundos = Math.floor((t / 1000) % 60);
+                    var minutos = Math.floor((t / 1000 / 60) % 60);
+                    var horas = Math.floor((t / (1000 * 60 * 60)));
+            
+                    //if(meses>0){
+                      
+                    return {
+                        'total': t,
+                        'horas': horas,
+                        'minutos': minutos,
+                        'segundos': segundos
+                    }
+                    
+                } 
+            
+                function initializeReloj(id, endtime) {
+                    var reloj = document.getElementById(id);
+                    var horaSpan = reloj.querySelector('.horas');
+                    var minutoSpan = reloj.querySelector('.minutos');
+                    var segundoSpan = reloj.querySelector('.segundos');
+            
+                    function updateReloj() {
+                        var t = getTimeRemaining(endtime);
+                        horaSpan.innerHTML = ('0' + t.horas).slice(-2);
+                        minutoSpan.innerHTML = ('0' + t.minutos).slice(-2);
+                        segundoSpan.innerHTML = ('0' + t.segundos).slice(-2);
+                        if (t.total <= 0) {
+                            clearInterval(timeinterval);
+                        }
+                        if (t.horas == 00 && t.minutos == 00 && t.segundos == 00){
+                            location.reload(true);
+                        }
+                    }
+                    updateReloj();
+                    var timeinterval = setInterval(updateReloj, 1000);
+                }
+            
+            var deadline = new Date(Date.parse(new Date('" . $fdia . " " . $horaSalida . " UTC/GMT -5')));
+            initializeReloj('reloj', deadline);
+            </script>"
+    ?>
 </div>
 </body>
 </html>
