@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Horarios | El Bosque Te LLeva</title>
+    <title>Vehiculos | El Bosque Te LLeva</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="application-name" content="Sistema de Reservas Universidad del Bosque">
@@ -80,7 +80,8 @@ $vehiculo = mysqli_fetch_array($consulta);
                                         <li><a href=\"rutas-admin.php\">Rutas</a></li><br>
                                         <li><a href=\"paradas-admin.php\">Paradas</a></li>
                                         <li><a href=\"vehiculos-admin.php\">Vehiculos</a></li>
-                                        <li><a href=\"#\">Conductores</a></li>
+                                        <li><a href=\"conductores-admin.php\">Conductores</a></li>
+                                        <li><a href=\"empresas-admin.php\">Empresas</a></li>
                                     </ul>";
                             }else{
                                 echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
@@ -165,8 +166,8 @@ $vehiculo = mysqli_fetch_array($consulta);
         </header>
     </div>
     <div>
-        <a href="horarios-admin.php" id="volver">Volver</a>
-        <header id="crear-header">Editar Horarios</header>
+        <a href="vehiculos-admin.php" id="volver">Volver</a>
+        <header id="crear-header">Editar Vehiculo</header>
         <form method="post" action="../back/editarVehiculo.php" id="crear">
             <label for="placa" class="titulos">Placa</label>
             <?php

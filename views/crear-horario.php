@@ -67,7 +67,8 @@ include('../back/conection.php');
                                         <li><a href=\"rutas-admin.php\">Rutas</a></li><br>
                                         <li><a href=\"paradas-admin.php\">Paradas</a></li>
                                         <li><a href=\"vehiculos-admin.php\">Vehiculos</a></li>
-                                        <li><a href=\"#\">Conductores</a></li>
+                                        <li><a href=\"conductores-admin.php\">Conductores</a></li>
+                                        <li><a href=\"empresas-admin.php\">Empresas</a></li>
                                     </ul>";
                             }else{
                                 Header("Location: index.php");
@@ -113,7 +114,7 @@ include('../back/conection.php');
                                 echo "<a class=\"header-menu-tab Setting\" href=\"#\"><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Contenido</a>
                                     <ul id='submenu-contenido'>
-                                        <li><a href=\"#\">Banners</a></li><br>
+                                        <li><a href=\"banners.php\">Banners</a></li><br>
                                         <li><a href=\"#\">Noticias</a></li>
                                     </ul>";
                             }else{

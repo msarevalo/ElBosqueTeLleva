@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Horarios | El Bosque Te LLeva</title>
+    <title>Conductores | El Bosque Te LLeva</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="application-name" content="Sistema de Reservas Universidad del Bosque">
@@ -9,7 +9,7 @@
     <meta name="description" content="Proyecto De Grado">
     <!-- Estilos -->
     <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/banners.css" rel="stylesheet">
+    <link href="../css/horarios.css" rel="stylesheet">
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="application/javascript" src="../js/index.js"></script>
@@ -28,6 +28,18 @@
 <?php
 include('../back/conection.php');
 
+if (isset($_GET['id'])){
+    $idConductor = $_GET['id'];
+}
+
+$consulta = mysqli_query($con,"SELECT * FROM `conductores` WHERE IdConductor='" . $idConductor . "';");
+$conductor = mysqli_fetch_array($consulta);
+
+/*for ($i=0; $i<=3; $i++){
+    echo $prueba[$i] . "<br>";
+}*/
+
+
 ?>
 <div>
     <div class="main-container">
@@ -41,7 +53,7 @@ include('../back/conection.php');
                             Header("Location: index.php");
                         }else{
                             if ($_SESSION['perfil']=="admin"){
-                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios-admin.php\"><span
+                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios-admin.php\" style=\"border-bottom: 4px solid #11a8ab;\"><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
                             }else{
                                 Header("Location: index.php");
@@ -58,7 +70,8 @@ include('../back/conection.php');
                     <?php
                     if (isset($_SESSION['username'])){
                         if ($_SESSION['perfil']=="estudiante"){
-                            Header("Location: index.php");
+                            echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
+                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
                         }else{
                             if ($_SESSION['perfil']=="admin"){
                                 echo "<a class=\"header-menu-tab\" href='#'><span
@@ -71,12 +84,14 @@ include('../back/conection.php');
                                         <li><a href=\"empresas-admin.php\">Empresas</a></li>
                                     </ul>";
                             }else{
-                                Header("Location: index.php");
+                                echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
+                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
                             }
 
                         }
                     }else {
-                        Header("Location: index.php");
+                        echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
+                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
                     }
                     ?>
                 </li>
@@ -111,10 +126,10 @@ include('../back/conection.php');
                                     class=\"icon entypo-cog scnd-font-color\"></span>Noticias y Novedades</a>";
                         }else{
                             if ($_SESSION['perfil']=="admin"){
-                                echo "<a class=\"header-menu-tab Setting\" href=\"#\" style=\"border-bottom: 4px solid #11a8ab;\"><span
+                                echo "<a class=\"header-menu-tab Setting\" href=\"#\"><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Contenido</a>
                                     <ul id='submenu-contenido'>
-                                        <li><a href='banners.php'>Banners</a></li><br>
+                                        <li><a href=\"banners.php\">Banners</a></li><br>
                                         <li><a href=\"#\">Noticias</a></li>
                                     </ul>";
                             }else{
@@ -150,65 +165,83 @@ include('../back/conection.php');
             </div>
         </header>
     </div>
-    <div>
-        <?php
-        echo "<div id=\"listado-admin\" name=\"listado-admin\">
-        <header>Banners Activos</header>";
-        $consulta = mysqli_query($con,"SELECT * FROM `banners` WHERE `activo`=1 ORDER BY `orden`;");
-        //while ($row = mysqli_fetch_array($result)) {
-            /*almacenamos el nombre de la ruta en la variable $ruta_img*/
-            //echo  $row["ruta_imagen"] . $row['nombre_img'] . '<br>';
-
-        //}
-        /*$lconsulta = mysqli_fetch_array($consulta);
-        $long = count($lconsulta);*/
-        echo "<table id='horarios-bus'><thead><tr><th>Id</th><th>Nombre</th><th>Imagen</th><th>Acciones</th></tr></thead>";
-        while ($lconsulta = mysqli_fetch_array($consulta)){
-            $contador = 0;
-            echo "<tr>";
-            for ($i = 0; $i <= 1; $i++){
-                echo "<td><label style='margin-left: 10px; text-transform: capitalize '>" . $lconsulta[$i] . "</label></td>
-                      ";
-            }
-            echo "<td><img src='.." . $lconsulta["ruta_imagen"] . $lconsulta['nombre_img'] . "' style='width: 150px'><br></td>";
-            echo "<td><a href='editar-banners.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
-                      <a href='../back/eliminarHorario.php?id={$lconsulta[$contador]}'><img src='../img/delete.png' style='width: 25%'></a></td>";
-            $contador++;
-        }
-
-        echo "</tr>";
-        echo "</table>
-        </div>";?><br>
-        <a href="crear-banners.php">Crear Banner</a>
-        <?php
-        $consulta2 = mysqli_query($con,"SELECT * FROM `banners` WHERE `activo`=0 ORDER BY `orden`;");
-        if (mysqli_fetch_array($consulta2)!=0) {
-            echo "<div id=\"listado-admin\" name=\"listado-admin\">
-        <header>Banners Inactivos</header>";
-            //while ($row = mysqli_fetch_array($result)) {
-            /*almacenamos el nombre de la ruta en la variable $ruta_img*/
-            //echo  $row["ruta_imagen"] . $row['nombre_img'] . '<br>';
-
-            //}
-            /*$lconsulta = mysqli_fetch_array($consulta);
-            $long = count($lconsulta);*/
-            $consulta2 = mysqli_query($con,"SELECT * FROM `banners` WHERE `activo`=0 ORDER BY `orden`;");
-            echo "<table id='horarios-bus'><thead><tr><th>Id</th><th>Nombre</th><th>Imagen</th><th>Acciones</th></tr></thead>";
-            while ($lconsulta = mysqli_fetch_array($consulta2)) {
-                $contador = 0;
-                echo "<tr>";
-                for ($i = 0; $i <= 1; $i++) {
-                    echo "<td><label style='margin-left: 10px; text-transform: capitalize '>" . $lconsulta[$i] . "</label></td>
-                      ";
+    <div style="margin-left: 4%">
+        <a href="conductores-admin.php" id="volver">Volver</a>
+        <header id="crear-header">Editar Conductor</header>
+        <form method="post" action="../back/editarConductor.php" id="crear">
+            <label for="tdocumento" class="titulos">Tipo de Documento</label>
+            <select id="tdocumento" name="tdocumento" required>
+                <?php
+                $_SESSION['idConductor']=$conductor[0];
+                if ($conductor[1] == "CC"){
+                    echo "<option value='CC' selected>Cedula de Ciudadania</option>
+                            <option value='CE'>Cedula de Extranjeria</option>
+                            <option value='NUIP'>NUIP</option>";
+                }else{
+                if ($conductor[1] == "CE"){
+                    echo "<option value='CC'>Cedula de Ciudadania</option>
+                            <option value='CE' selected>Cedula de Extranjeria</option>
+                            <option value='NUIP'>NUIP</option>";
+                }else{
+                    if ($conductor[1] == "NUIP") {
+                        echo "<option value='CC'>Cedula de Ciudadania</option>
+                            <option value='CE'>Cedula de Extranjeria</option>
+                            <option value='NUIP' selected>NUIP</option>";
+                    }
                 }
-                echo "<td><img src='.." . $lconsulta["ruta_imagen"] . $lconsulta['nombre_img'] . "' style='width: 150px'><br></td>";
-                echo "<td><a href='editar-banners.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
-                      <a href='../back/eliminarHorario.php?id={$lconsulta[$contador]}'><img src='../img/delete.png' style='width: 25%'></a></td>";
-                $contador++;
-            }
-
-            echo "</tr>";
-            echo "</table>
-                </div>";
-        }?>
+                }
+                ?>
+            </select>
+            <br>
+            <label for="documento" class="titulos">Numero de Documento</label>
+            <?php
+            echo "<input required type='number' name='documento' id='documento' value='" . $conductor['NI'] . "'>"
+            ?>
+            <br>
+            <label for="nombre" class="titulos">Nombres</label>
+            <?php
+            echo "<input required type='text' name='nombre' id='nombre' placeholder='Nombres' value='" . $conductor['Nombres'] . "'>"
+            ?>
+            <br>
+            <label for="apellido" class="titulos">Apellidos</label>
+            <?php
+            echo "<input required type='text' name='apellido' id='apellido' placeholder='Apellidos' value='" . $conductor['Apellidos'] . "'>"
+            ?>
+            <br>
+            <label for="empresa" class="titulos">Empresa</label>
+            <select id="empresa" name="empresa" required>
+                <?php
+                $consulta = mysqli_query($con,"SELECT `IdEmpresa`,`NombreEmpresa` FROM `empresas` WHERE `Estado`=1");
+                while ($lconsulta = mysqli_fetch_array($consulta)){
+                    for ($i = 1; $i <= 1; $i++) {
+                        if ($lconsulta['IdEmpresa'] == $conductor['Empresa']) {
+                            echo "<option selected value='" . $lconsulta['IdEmpresa'] . "'>" . $lconsulta['NombreEmpresa'] . "</option>";
+                        } else {
+                            echo "<option value='" . $lconsulta['IdEmpresa'] . "'>" . $lconsulta['NombreEmpresa'] . "</option>";
+                        }
+                    }
+                }
+                ?>
+            </select>
+            <br>
+            <label for="telefono" class="titulos">Telefono</label>
+            <?php
+            echo "<input id='telefono' name='telefono' type='number' min='3000000000' max='3509999999' value='" . $conductor['Telefono'] . "'>";
+            ?>
+            <br>
+            <label for="estado" class="titulos">Estado</label>
+            <select id="estado" name="estado" required>
+                <?php
+                if ($conductor['Estado']==='1'){
+                    echo "<option value='1' selected>Activo</option>
+                    <option value='0'>Inactivo</option>";
+                }else{
+                    echo "<option value='1'>Activo</option>
+                    <option value='0' selected>Inactivo</option>";
+                }
+                ?>
+            </select>
+            <br><br>
+            <input type="submit" id="btnHorario"><br><br>
+        </form>
     </div>

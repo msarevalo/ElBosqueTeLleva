@@ -9,7 +9,7 @@
     <meta name="description" content="Proyecto De Grado">
     <!-- Estilos -->
     <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/banners.css" rel="stylesheet">
+    <link href="../css/horarios.css" rel="stylesheet">
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="application/javascript" src="../js/index.js"></script>
@@ -28,6 +28,18 @@
 <?php
 include('../back/conection.php');
 
+if (isset($_GET['id'])){
+    $idEmpresa = $_GET['id'];
+}
+
+$consulta = mysqli_query($con,"SELECT * FROM `empresas` WHERE IdEmpresa='" . $idEmpresa . "';");
+$empresa = mysqli_fetch_array($consulta);
+
+/*for ($i=0; $i<=3; $i++){
+    echo $prueba[$i] . "<br>";
+}*/
+
+
 ?>
 <div>
     <div class="main-container">
@@ -41,7 +53,7 @@ include('../back/conection.php');
                             Header("Location: index.php");
                         }else{
                             if ($_SESSION['perfil']=="admin"){
-                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios-admin.php\"><span
+                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios-admin.php\" style=\"border-bottom: 4px solid #11a8ab;\"><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
                             }else{
                                 Header("Location: index.php");
@@ -58,7 +70,8 @@ include('../back/conection.php');
                     <?php
                     if (isset($_SESSION['username'])){
                         if ($_SESSION['perfil']=="estudiante"){
-                            Header("Location: index.php");
+                            echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
+                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
                         }else{
                             if ($_SESSION['perfil']=="admin"){
                                 echo "<a class=\"header-menu-tab\" href='#'><span
@@ -71,12 +84,14 @@ include('../back/conection.php');
                                         <li><a href=\"empresas-admin.php\">Empresas</a></li>
                                     </ul>";
                             }else{
-                                Header("Location: index.php");
+                                echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
+                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
                             }
 
                         }
                     }else {
-                        Header("Location: index.php");
+                        echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
+                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
                     }
                     ?>
                 </li>
@@ -111,10 +126,10 @@ include('../back/conection.php');
                                     class=\"icon entypo-cog scnd-font-color\"></span>Noticias y Novedades</a>";
                         }else{
                             if ($_SESSION['perfil']=="admin"){
-                                echo "<a class=\"header-menu-tab Setting\" href=\"#\" style=\"border-bottom: 4px solid #11a8ab;\"><span
+                                echo "<a class=\"header-menu-tab Setting\" href=\"#\"><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Contenido</a>
                                     <ul id='submenu-contenido'>
-                                        <li><a href='banners.php'>Banners</a></li><br>
+                                        <li><a href=\"banners.php\">Banners</a></li><br>
                                         <li><a href=\"#\">Noticias</a></li>
                                     </ul>";
                             }else{
@@ -151,64 +166,33 @@ include('../back/conection.php');
         </header>
     </div>
     <div>
-        <?php
-        echo "<div id=\"listado-admin\" name=\"listado-admin\">
-        <header>Banners Activos</header>";
-        $consulta = mysqli_query($con,"SELECT * FROM `banners` WHERE `activo`=1 ORDER BY `orden`;");
-        //while ($row = mysqli_fetch_array($result)) {
-            /*almacenamos el nombre de la ruta en la variable $ruta_img*/
-            //echo  $row["ruta_imagen"] . $row['nombre_img'] . '<br>';
-
-        //}
-        /*$lconsulta = mysqli_fetch_array($consulta);
-        $long = count($lconsulta);*/
-        echo "<table id='horarios-bus'><thead><tr><th>Id</th><th>Nombre</th><th>Imagen</th><th>Acciones</th></tr></thead>";
-        while ($lconsulta = mysqli_fetch_array($consulta)){
-            $contador = 0;
-            echo "<tr>";
-            for ($i = 0; $i <= 1; $i++){
-                echo "<td><label style='margin-left: 10px; text-transform: capitalize '>" . $lconsulta[$i] . "</label></td>
-                      ";
-            }
-            echo "<td><img src='.." . $lconsulta["ruta_imagen"] . $lconsulta['nombre_img'] . "' style='width: 150px'><br></td>";
-            echo "<td><a href='editar-banners.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
-                      <a href='../back/eliminarHorario.php?id={$lconsulta[$contador]}'><img src='../img/delete.png' style='width: 25%'></a></td>";
-            $contador++;
-        }
-
-        echo "</tr>";
-        echo "</table>
-        </div>";?><br>
-        <a href="crear-banners.php">Crear Banner</a>
-        <?php
-        $consulta2 = mysqli_query($con,"SELECT * FROM `banners` WHERE `activo`=0 ORDER BY `orden`;");
-        if (mysqli_fetch_array($consulta2)!=0) {
-            echo "<div id=\"listado-admin\" name=\"listado-admin\">
-        <header>Banners Inactivos</header>";
-            //while ($row = mysqli_fetch_array($result)) {
-            /*almacenamos el nombre de la ruta en la variable $ruta_img*/
-            //echo  $row["ruta_imagen"] . $row['nombre_img'] . '<br>';
-
-            //}
-            /*$lconsulta = mysqli_fetch_array($consulta);
-            $long = count($lconsulta);*/
-            $consulta2 = mysqli_query($con,"SELECT * FROM `banners` WHERE `activo`=0 ORDER BY `orden`;");
-            echo "<table id='horarios-bus'><thead><tr><th>Id</th><th>Nombre</th><th>Imagen</th><th>Acciones</th></tr></thead>";
-            while ($lconsulta = mysqli_fetch_array($consulta2)) {
-                $contador = 0;
-                echo "<tr>";
-                for ($i = 0; $i <= 1; $i++) {
-                    echo "<td><label style='margin-left: 10px; text-transform: capitalize '>" . $lconsulta[$i] . "</label></td>
-                      ";
+        <a href="horarios-admin.php" id="volver">Volver</a>
+        <header id="crear-header">Editar Empresa</header>
+        <form method="post" action="../back/editarEmpresa.php" id="crear">
+            <label for="nombre" class="titulos">Nombre Empresa</label>
+            <?php
+            $_SESSION['idEmpresa']=$empresa['IdEmpresa'];
+            echo "<input type='text' id='nombre' name='nombre' required placeholder='Nombre Empresa' value='" . $empresa['NombreEmpresa'] . "'>";
+            ?>
+            <br>
+            <label for="nit" class="titulos">NIT</label>
+            <?php
+            echo "<input required type='number' name='nit' id='nit' value='" . $empresa['NIT'] ."'>"
+            ?>
+            <br>
+            <label for="tipo" class="titulos">Estado</label>
+            <select id="estado" name="estado" required>
+                <?php
+                if ($empresa['Estado']==='1'){
+                    echo "<option value='1' selected>Activo</option>
+                    <option value='0'>Inactivo</option>";
+                }else{
+                    echo "<option value='1'>Activo</option>
+                    <option value='0' selected>Inactivo</option>";
                 }
-                echo "<td><img src='.." . $lconsulta["ruta_imagen"] . $lconsulta['nombre_img'] . "' style='width: 150px'><br></td>";
-                echo "<td><a href='editar-banners.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
-                      <a href='../back/eliminarHorario.php?id={$lconsulta[$contador]}'><img src='../img/delete.png' style='width: 25%'></a></td>";
-                $contador++;
-            }
-
-            echo "</tr>";
-            echo "</table>
-                </div>";
-        }?>
+                ?>
+            </select>
+            <br><br>
+            <input type="submit" id="btnHorario"><br><br>
+        </form>
     </div>

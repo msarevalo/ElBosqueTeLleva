@@ -1,7 +1,15 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: SOPORTE COLOMBIA
+ * Date: 16/07/2018
+ * Time: 4:08 PM
+ */
+?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Horarios | El Bosque Te LLeva</title>
+    <title>Conductores | El Bosque Te LLeva</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="application-name" content="Sistema de Reservas Universidad del Bosque">
@@ -9,7 +17,7 @@
     <meta name="description" content="Proyecto De Grado">
     <!-- Estilos -->
     <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/banners.css" rel="stylesheet">
+    <link href="../css/horarios.css" rel="stylesheet">
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="application/javascript" src="../js/index.js"></script>
@@ -27,7 +35,6 @@
 <body>
 <?php
 include('../back/conection.php');
-
 ?>
 <div>
     <div class="main-container">
@@ -61,8 +68,8 @@ include('../back/conection.php');
                             Header("Location: index.php");
                         }else{
                             if ($_SESSION['perfil']=="admin"){
-                                echo "<a class=\"header-menu-tab\" href='#'><span
-                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>
+                                echo "<a class=\"header-menu-tab\" href='#' style=\"border-bottom: 4px solid #11a8ab;\"><span
+                                    class=\"icon fontawesome-user scnd-font-color\" ></span>Rutas</a>
                                     <ul id='submenu'>
                                         <li><a href=\"rutas-admin.php\">Rutas</a></li><br>
                                         <li><a href=\"paradas-admin.php\">Paradas</a></li>
@@ -111,10 +118,10 @@ include('../back/conection.php');
                                     class=\"icon entypo-cog scnd-font-color\"></span>Noticias y Novedades</a>";
                         }else{
                             if ($_SESSION['perfil']=="admin"){
-                                echo "<a class=\"header-menu-tab Setting\" href=\"#\" style=\"border-bottom: 4px solid #11a8ab;\"><span
+                                echo "<a class=\"header-menu-tab Setting\" href=\"#\"><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Contenido</a>
                                     <ul id='submenu-contenido'>
-                                        <li><a href='banners.php'>Banners</a></li><br>
+                                        <li><a href=\"banners.php\">Banners</a></li><br>
                                         <li><a href=\"#\">Noticias</a></li>
                                     </ul>";
                             }else{
@@ -150,65 +157,71 @@ include('../back/conection.php');
             </div>
         </header>
     </div>
-    <div>
-        <?php
-        echo "<div id=\"listado-admin\" name=\"listado-admin\">
-        <header>Banners Activos</header>";
-        $consulta = mysqli_query($con,"SELECT * FROM `banners` WHERE `activo`=1 ORDER BY `orden`;");
-        //while ($row = mysqli_fetch_array($result)) {
-            /*almacenamos el nombre de la ruta en la variable $ruta_img*/
-            //echo  $row["ruta_imagen"] . $row['nombre_img'] . '<br>';
+    <a href="crear-conductor.php">Crear Conductor</a>
+    <?php
+    $conductorEliminar = null;
+    echo "<div id=\"listado-admin\" name=\"listado-admin\" style='margin-left: 22%'>
+        <header>Conductores</header>";
+    $consulta = mysqli_query($con,"SELECT `IdConductor`,`NI`, concat(`Nombres`, ' ',`Apellidos`), `Telefono` FROM `conductores` WHERE `Estado`=1");
+    /*$lconsulta = mysqli_fetch_array($consulta);
+    $long = count($lconsulta);*/
+    echo "<table id='horarios-bus'><thead><tr><th>Documento</th><th>Nombres y Apellidos</th><th>Telefono</th><th>Acciones</th></tr></thead>";
+    while ($lconsulta = mysqli_fetch_array($consulta)){
+        $contador = 0;
+        echo "<tr>";
+        for ($i = 1; $i <= 3; $i++){
+            $id_eliminar = $lconsulta[$contador];
+                echo "<td style='text-transform: capitalize'>" . $lconsulta[$i] . "</td>";
+            }
+            echo "<td><a href='editar-conductores.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
+                          <a class='cd-popup-trigger'><img src='../img/delete.png' style='width: 25%; cursor: pointer'></a></td>";
+        $conductorEliminar = $lconsulta[2];
+        $contador++;
+    }
 
-        //}
+    echo "</tr>";
+    echo "</table>
+        </div>";?>
+    <br>
+
+    <?php
+    $consulta2 = mysqli_query($con,"SELECT `IdConductor`,`NI`, concat(`Nombres`, ' ',`Apellidos`), `Telefono` FROM `conductores` WHERE `Estado`=0");
+    if (mysqli_fetch_array($consulta2)!=0) {
+        echo "<div id=\"listado-admin\" name=\"listado-admin\" style='margin-left: 22%'>
+        <header>Conductores - Inactivos</header>";
+        $consulta2 = mysqli_query($con,"SELECT `IdConductor`,`NI`, concat(`Nombres`, ' ',`Apellidos`), `Telefono` FROM `conductores` WHERE `Estado`=0");
         /*$lconsulta = mysqli_fetch_array($consulta);
         $long = count($lconsulta);*/
-        echo "<table id='horarios-bus'><thead><tr><th>Id</th><th>Nombre</th><th>Imagen</th><th>Acciones</th></tr></thead>";
-        while ($lconsulta = mysqli_fetch_array($consulta)){
+        echo "<table id='horarios-bus'><thead><tr><th>Documento</th><th>Nombres y Apellidos</th><th>Telefono</th><th>Acciones</th></tr></thead>";
+        while ($lconsulta2 = mysqli_fetch_array($consulta2)) {
             $contador = 0;
             echo "<tr>";
-            for ($i = 0; $i <= 1; $i++){
-                echo "<td><label style='margin-left: 10px; text-transform: capitalize '>" . $lconsulta[$i] . "</label></td>
-                      ";
+            for ($i = 1; $i <= 3; $i++){
+                $id_eliminar = $lconsulta[$contador];
+                echo "<td style='text-transform: capitalize'>" . $lconsulta2[$i] . "</td>";
             }
-            echo "<td><img src='.." . $lconsulta["ruta_imagen"] . $lconsulta['nombre_img'] . "' style='width: 150px'><br></td>";
-            echo "<td><a href='editar-banners.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
-                      <a href='../back/eliminarHorario.php?id={$lconsulta[$contador]}'><img src='../img/delete.png' style='width: 25%'></a></td>";
+            echo "<td><a href='editar-conductores.php?id={$lconsulta2[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
+                          <a class='cd-popup-trigger'><img src='../img/delete.png' style='width: 25%; cursor: pointer'></a></td>";
+            $conductorEliminar = $lconsulta2[2];
             $contador++;
         }
 
         echo "</tr>";
         echo "</table>
-        </div>";?><br>
-        <a href="crear-banners.php">Crear Banner</a>
-        <?php
-        $consulta2 = mysqli_query($con,"SELECT * FROM `banners` WHERE `activo`=0 ORDER BY `orden`;");
-        if (mysqli_fetch_array($consulta2)!=0) {
-            echo "<div id=\"listado-admin\" name=\"listado-admin\">
-        <header>Banners Inactivos</header>";
-            //while ($row = mysqli_fetch_array($result)) {
-            /*almacenamos el nombre de la ruta en la variable $ruta_img*/
-            //echo  $row["ruta_imagen"] . $row['nombre_img'] . '<br>';
-
-            //}
-            /*$lconsulta = mysqli_fetch_array($consulta);
-            $long = count($lconsulta);*/
-            $consulta2 = mysqli_query($con,"SELECT * FROM `banners` WHERE `activo`=0 ORDER BY `orden`;");
-            echo "<table id='horarios-bus'><thead><tr><th>Id</th><th>Nombre</th><th>Imagen</th><th>Acciones</th></tr></thead>";
-            while ($lconsulta = mysqli_fetch_array($consulta2)) {
-                $contador = 0;
-                echo "<tr>";
-                for ($i = 0; $i <= 1; $i++) {
-                    echo "<td><label style='margin-left: 10px; text-transform: capitalize '>" . $lconsulta[$i] . "</label></td>
-                      ";
-                }
-                echo "<td><img src='.." . $lconsulta["ruta_imagen"] . $lconsulta['nombre_img'] . "' style='width: 150px'><br></td>";
-                echo "<td><a href='editar-banners.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
-                      <a href='../back/eliminarHorario.php?id={$lconsulta[$contador]}'><img src='../img/delete.png' style='width: 25%'></a></td>";
-                $contador++;
-            }
-
-            echo "</tr>";
-            echo "</table>
-                </div>";
-        }?>
-    </div>
+        </div>";
+    }
+    ?>
+    <div class="cd-popup" role="alert">
+        <div class="cd-popup-container">
+            <?php
+            echo "<p>Desea eliminar el conductor <font style=\"text-transform: uppercase;\"><strong>" . $conductorEliminar . "</strong></font>?</p>";
+            ?>
+            <ul class="cd-buttons">
+                <?php
+                echo "<li><a href='../back/eliminarConductor.php?id={$id_eliminar}'>Confirmar</a></li>
+                <li><a href='conductores-admin.php'>Cancelar</a></li>"
+                ?>
+            </ul>
+            <a href="#0" class="cd-popup-close img-replace"></a>
+        </div> <!-- cd-popup-container -->
+    </div> <!-- cd-popup -->
