@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pagos | El Bosque Te LLeva</title>
+    <title>Horarios | El Bosque Te LLeva</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="application-name" content="Sistema de Reservas Universidad del Bosque">
@@ -27,6 +27,19 @@
 <body>
 <?php
 include('../back/conection.php');
+
+if (isset($_GET['id'])){
+    $idVehiculo = $_GET['id'];
+}
+
+$consulta = mysqli_query($con,"SELECT * FROM `vehiculos` WHERE IdVehiculo='" . $idVehiculo . "';");
+$vehiculo = mysqli_fetch_array($consulta);
+
+/*for ($i=0; $i<=3; $i++){
+    echo $prueba[$i] . "<br>";
+}*/
+
+
 ?>
 <div>
     <div class="main-container">
@@ -37,21 +50,18 @@ include('../back/conection.php');
                     <?php
                     if (isset($_SESSION['username'])){
                         if ($_SESSION['perfil']=="estudiante"){
-                            echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
-                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                            Header("Location: index.php");
                         }else{
                             if ($_SESSION['perfil']=="admin"){
-                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios-admin.php\"><span
+                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios-admin.php\" style=\"border-bottom: 4px solid #11a8ab;\"><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
                             }else{
-                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
-                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                                Header("Location: index.php");
                             }
 
                         }
                     }else {
-                        echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
-                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                        Header("Location: index.php");
                     }
                     ?>
 
@@ -99,7 +109,7 @@ include('../back/conection.php');
                 <li>
                     <?php
                     if (isset($_SESSION['username'])){
-                        echo "<a class=\"header-menu-tab\" href=\"pagos.php\" style=\"border-bottom: 4px solid #11a8ab;\"><span
+                        echo "<a class=\"header-menu-tab\" href=\"pagos.php\"><span
                                     class=\"icon fontawesome-envelope scnd-font-color\"></span>Pagos</a>";
                     }else{
                         echo "<a class=\"header-menu-tab\" style='cursor: pointer;' onclick='sinLogueo()'><span
@@ -154,30 +164,34 @@ include('../back/conection.php');
             </div>
         </header>
     </div>
-    <div class="login-popup">
-        <i class="fa fa-times-circle close-icon" aria-hidden="true">X</i>
-        <div class="form-body">
-            <form method="post" action="../back/validar.php">
-                <div class="card">
-                    <a href="index.php"><img src="../img/Unbosque.jpg" style="width: 45%;" alt="UnBosque" class="img-logo"></a>
-                    <div class="field">
-                        <span class="header">El bosque te lleva</span>
-                        <div class="form-group">
-                            <input type="text" required="required" name="usuario"/>
-                            <label for="input" class="control-label">Usuario</label><i class="bar"></i>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" id="pass" name="pass" required="required" />
-                            <label for="input" class="control-label">Contraseña</label><i class="bar"></i>
-                        </div>
-                        <div>
-                            <img src="../img/eye.png" style="width: 8%; opacity: 0.5;" id="eye">
-                            <label id="mostrar" style="opacity: 0.5;">  Ver Contraseña</label><br><br>
-                        </div>
-                        <button id="entrar" type="submit">Entrar</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+    <div>
+        <a href="horarios-admin.php" id="volver">Volver</a>
+        <header id="crear-header">Editar Horarios</header>
+        <form method="post" action="../back/editarVehiculo.php" id="crear">
+            <label for="placa" class="titulos">Placa</label>
+            <?php
+            $_SESSION['idVehiculo']=$vehiculo['IdVehiculo'];
+            echo "<input type='text' id='placa' name='placa' required placeholder='XXX000' value='" . $vehiculo['Placa'] . "'>";
+            ?>
+            <br>
+            <label for="puesto" class="titulos">Puestos</label>
+            <?php
+            echo "<input required type='number' name='puesto' id='puesto' value='" . $vehiculo['CantidadPuestos'] . "'>";
+            ?>
+            <br>
+            <label for="tipo" class="titulos">Estado</label>
+            <select id="estado" name="estado" required>
+                <?php
+                if ($vehiculo['Estado']==='1'){
+                    echo "<option value='1' selected>Activo</option>
+                    <option value='0'>Inactivo</option>";
+                }else{
+                    echo "<option value='1'>Activo</option>
+                    <option value='0' selected>Inactivo</option>";
+                }
+                ?>
+            </select>
+            <br>
+            <input type="submit" id="btnHorario"><br><br>
+        </form>
     </div>
-</div>

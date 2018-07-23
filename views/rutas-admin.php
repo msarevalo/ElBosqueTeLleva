@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Horarios | El Bosque Te LLeva</title>
+    <title>Rutas | El Bosque Te LLeva</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="application-name" content="Sistema de Reservas Universidad del Bosque">
-    <meta name="author" content="Manuel Arevalo - Lina Avila - Diego Vargas - Juan VIllamil">
+    <meta name="author" content="Manuel Arevalo - Lina Avila - Diego Vargas - Juan Villamil">
     <meta name="description" content="Proyecto De Grado">
     <!-- Estilos -->
     <link href="../css/style.css" rel="stylesheet">
@@ -15,14 +15,6 @@
     <script type="application/javascript" src="../js/index.js"></script>
     <script type="application/javascript" src="../js/horarios.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="../img/icon-small.png">
-
-    <style>
-        #map {
-            height: 400px;
-            width: 80%;
-            margin-left: 10%;
-        }
-    </style>
 </head>
 <body>
 <?php
@@ -65,7 +57,7 @@ include('../back/conection.php');
                                     <ul id='submenu'>
                                         <li><a href=\"rutas-admin.php\">Rutas</a></li><br>
                                         <li><a href=\"paradas-admin.php\">Paradas</a></li>
-                                        <li><a href=\"#\">Vehiculos</a></li>
+                                        <li><a href=\"vehiculos-admin.php\">Vehiculos</a></li>
                                         <li><a href=\"#\">Conductores</a></li>
                                     </ul>";
                             }else{

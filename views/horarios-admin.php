@@ -66,7 +66,7 @@ include('../back/conection.php');
                                     <ul id='submenu'>
                                         <li><a href=\"rutas-admin.php\">Rutas</a></li><br>
                                         <li><a href=\"paradas-admin.php\">Paradas</a></li>
-                                        <li><a href=\"#\">Vehiculos</a></li>
+                                        <li><a href=\"vehiculos-admin.php\">Vehiculos</a></li>
                                         <li><a href=\"#\">Conductores</a></li>
                                     </ul>";
                             }else{
@@ -152,6 +152,8 @@ include('../back/conection.php');
         </header>
     </div>
     <div>
+        <a href="crear-horario.php">Crear horario</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="importar-horario.php">Importar Horarios</a>
 <?php
         $id_eliminar = null;
         $dia_eliminar = null;
@@ -192,7 +194,7 @@ include('../back/conection.php');
         </div>";?><br>
         <a href="crear-horario.php">Crear horario</a><br>
         <a href="importar-horario.php">Importar Horarios</a><br><br>
-        <a href="../back/truncarHorarios.php">Vaciar Horarios</a>
+        <a class="cd-popup-trigger2">Vaciar Horarios</a>
     </div>
 
     <div class="cd-popup" role="alert">
@@ -213,14 +215,14 @@ include('../back/conection.php');
     <div class="cd-popup2" role="alert">
         <div class="cd-popup-container2">
             <?php
-            echo "<p>Desea eliminar </p>";
+            echo "<p>Desea eliminar todos los horarios?</p>";
             ?>
             <ul class="cd-buttons2">
                 <?php
-                echo "<li><a href='../back/eliminarHorario.php?id={$id_eliminar}'>Confirmar</a></li>
+                echo "<li><a href='../back/truncarHorarios.php'>Confirmar</a></li>
                 <li><a href='horarios-admin.php'>Cancelar</a></li>"
                 ?>
             </ul>
-            <a href="#0" class="cd-popup-close2 img-replace"></a>
+            <a href="#0" class="cd-popup-close2 img-replace2"></a>
         </div> <!-- cd-popup-container -->
     </div> <!-- cd-popup -->

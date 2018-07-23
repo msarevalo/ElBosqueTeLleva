@@ -1,7 +1,15 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: SOPORTE COLOMBIA
+ * Date: 16/07/2018
+ * Time: 4:08 PM
+ */
+?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pagos | El Bosque Te LLeva</title>
+    <title>Vehiculos | El Bosque Te LLeva</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="application-name" content="Sistema de Reservas Universidad del Bosque">
@@ -37,21 +45,18 @@ include('../back/conection.php');
                     <?php
                     if (isset($_SESSION['username'])){
                         if ($_SESSION['perfil']=="estudiante"){
-                            echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
-                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                            Header("Location: index.php");
                         }else{
                             if ($_SESSION['perfil']=="admin"){
                                 echo "<a class=\"header-menu-tab Setting\" href=\"horarios-admin.php\"><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
                             }else{
-                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
-                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                                Header("Location: index.php");
                             }
 
                         }
                     }else {
-                        echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
-                                    class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
+                        Header("Location: index.php");
                     }
                     ?>
 
@@ -60,12 +65,11 @@ include('../back/conection.php');
                     <?php
                     if (isset($_SESSION['username'])){
                         if ($_SESSION['perfil']=="estudiante"){
-                            echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
-                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
+                            Header("Location: index.php");
                         }else{
                             if ($_SESSION['perfil']=="admin"){
-                                echo "<a class=\"header-menu-tab\" href='#'><span
-                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>
+                                echo "<a class=\"header-menu-tab\" href='#' style=\"border-bottom: 4px solid #11a8ab;\"><span
+                                    class=\"icon fontawesome-user scnd-font-color\" ></span>Rutas</a>
                                     <ul id='submenu'>
                                         <li><a href=\"rutas-admin.php\">Rutas</a></li><br>
                                         <li><a href=\"paradas-admin.php\">Paradas</a></li>
@@ -73,14 +77,12 @@ include('../back/conection.php');
                                         <li><a href=\"#\">Conductores</a></li>
                                     </ul>";
                             }else{
-                                echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
-                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
+                                Header("Location: index.php");
                             }
 
                         }
                     }else {
-                        echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
-                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
+                        Header("Location: index.php");
                     }
                     ?>
                 </li>
@@ -99,7 +101,7 @@ include('../back/conection.php');
                 <li>
                     <?php
                     if (isset($_SESSION['username'])){
-                        echo "<a class=\"header-menu-tab\" href=\"pagos.php\" style=\"border-bottom: 4px solid #11a8ab;\"><span
+                        echo "<a class=\"header-menu-tab\" href=\"pagos.php\"><span
                                     class=\"icon fontawesome-envelope scnd-font-color\"></span>Pagos</a>";
                     }else{
                         echo "<a class=\"header-menu-tab\" style='cursor: pointer;' onclick='sinLogueo()'><span
@@ -154,30 +156,79 @@ include('../back/conection.php');
             </div>
         </header>
     </div>
-    <div class="login-popup">
-        <i class="fa fa-times-circle close-icon" aria-hidden="true">X</i>
-        <div class="form-body">
-            <form method="post" action="../back/validar.php">
-                <div class="card">
-                    <a href="index.php"><img src="../img/Unbosque.jpg" style="width: 45%;" alt="UnBosque" class="img-logo"></a>
-                    <div class="field">
-                        <span class="header">El bosque te lleva</span>
-                        <div class="form-group">
-                            <input type="text" required="required" name="usuario"/>
-                            <label for="input" class="control-label">Usuario</label><i class="bar"></i>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" id="pass" name="pass" required="required" />
-                            <label for="input" class="control-label">Contraseña</label><i class="bar"></i>
-                        </div>
-                        <div>
-                            <img src="../img/eye.png" style="width: 8%; opacity: 0.5;" id="eye">
-                            <label id="mostrar" style="opacity: 0.5;">  Ver Contraseña</label><br><br>
-                        </div>
-                        <button id="entrar" type="submit">Entrar</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+    <a href="crear-vehiculo.php">Crear Vehiculo</a>
+<?php
+$placa_eliminar = null;
+echo "<div id=\"listado-admin\" name=\"listado-admin\">
+        <header>Vehiculos</header>";
+$consulta = mysqli_query($con,"SELECT `IdVehiculo`,`Placa`, `CantidadPuestos`, `Estado` FROM `vehiculos` WHERE `Estado`=1");
+/*$lconsulta = mysqli_fetch_array($consulta);
+$long = count($lconsulta);*/
+echo "<table id='horarios-bus'><thead><tr><th>Placa</th><th># Puestos</th><th>Estado</th><th>Acciones</th></tr></thead>";
+while ($lconsulta = mysqli_fetch_array($consulta)){
+    $contador = 0;
+    echo "<tr>";
+    for ($i = 1; $i <= 3; $i++){
+        $id_eliminar = $lconsulta[$contador];
+        if ($lconsulta[$i]!=='1'){
+            echo "<td style='text-transform: capitalize'>" . $lconsulta[$i] . "</td>";
+        }else {
+            echo "<td style='text-transform: capitalize'>Activo</td>
+                    <td><a href='editar-vehiculo.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
+                          <a class='cd-popup-trigger'><img src='../img/delete.png' style='width: 25%; cursor: pointer'></a></td>";
+        }
+    }
+    $placa_eliminar = $lconsulta['Placa'];
+    $contador++;
+}
+
+echo "</tr>";
+echo "</table>
+        </div>";?>
+<br>
+
+<?php
+$consulta2 = mysqli_query($con,"SELECT `IdVehiculo`,`Placa`, `CantidadPuestos`, `Estado` FROM `vehiculos` WHERE `Estado`=0");
+if (mysqli_fetch_array($consulta2)!=0) {
+    echo "<div id=\"listado-admin\" name=\"listado-admin\">
+        <header>Vehiculos - Inactivos</header>";
+    $consulta2 = mysqli_query($con,"SELECT `IdVehiculo`,`Placa`, `CantidadPuestos`, `Estado` FROM `vehiculos` WHERE `Estado`=0");
+    /*$lconsulta = mysqli_fetch_array($consulta);
+    $long = count($lconsulta);*/
+    echo "<table id='horarios-bus'><thead><tr><th>Placa</th><th># Puestos</th><th>Estado</th><th>Acciones</th></tr></thead>";
+    while ($lconsulta2 = mysqli_fetch_array($consulta2)) {
+        $contador = 0;
+        echo "<tr>";
+        for ($i = 1; $i <= 3; $i++) {
+            $id_eliminar = $lconsulta2[$contador];
+            if ($lconsulta2[$i] !== '0') {
+                echo "<td style='text-transform: capitalize'>" . $lconsulta2[$i] . "</td>";
+            } else {
+                echo "<td style='text-transform: capitalize'>Inactivo</td>
+                    <td><a href='editar-vehiculo.php?id={$lconsulta2[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
+                          <a class='cd-popup-trigger'><img src='../img/delete.png' style='width: 25%; cursor: pointer'></a></td>";
+            }
+        }
+        $placa_eliminar = $lconsulta2['Placa'];
+        $contador++;
+    }
+
+    echo "</tr>";
+    echo "</table>
+        </div>";
+}
+?>
+    <div class="cd-popup" role="alert">
+        <div class="cd-popup-container">
+            <?php
+            echo "<p>Desea eliminar el vehiculo con placa <font style=\"text-transform: uppercase;\"><strong>" . $placa_eliminar . "</strong></font>?</p>";
+            ?>
+            <ul class="cd-buttons">
+                <?php
+                echo "<li><a href='../back/eliminarVehiculo.php?id={$id_eliminar}'>Confirmar</a></li>
+                <li><a href='vehiculos-admin.php'>Cancelar</a></li>"
+                ?>
+            </ul>
+            <a href="#0" class="cd-popup-close img-replace"></a>
+        </div> <!-- cd-popup-container -->
+    </div> <!-- cd-popup -->

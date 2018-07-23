@@ -62,7 +62,7 @@ include('../back/conection.php');
                                     <ul id='submenu'>
                                         <li><a href=\"rutas-admin.php\">Rutas</a></li><br>
                                         <li><a href=\"paradas-admin.php\">Paradas</a></li>
-                                        <li><a href=\"#\">Vehiculos</a></li>
+                                        <li><a href=\"vehiculos-admin.php\">Vehiculos</a></li>
                                         <li><a href=\"#\">Conductores</a></li>
                                     </ul>";
                             }else{
@@ -152,22 +152,27 @@ include('../back/conection.php');
         <img src="../img/bus-icon.png" id="bus">
         <img src="../img/tren-icon.png" id="tren">
         <br><br>
+        <form>
         <label>Filtrar por</label><br><br>
         <label for="dias">Día</label>
         <select id="dias">
-            <option>Seleccione</option>
-            <option>Lunes</option>
-            <option>Martes</option>
-            <option>Miercoles</option>
-            <option>Jueves</option>
-            <option>Viernes</option>
+            <option value="0">Seleccione</option>
+            <option value="1">Lunes</option>
+            <option value="2">Martes</option>
+            <option value="3">Miercoles</option>
+            <option value="4">Jueves</option>
+            <option value="5">Viernes</option>
+            <option value="6">Sabado</option>
+            <option value="7">Domingo</option>
         </select>
         <label for="jornada">Jornada</label>
         <select id="jornada">
-            <option>Seleccione</option>
-            <option>Día</option>
-            <option>Tarde</option>
-        </select>
+            <option value="0">Seleccione</option>
+            <option value="1">Día</option>
+            <option value="2">Tarde</option>
+        </select><br>
+        <input type="submit" value="Filtrar" onclick="">
+        </form>
     </div>
     <div id="horariosBus" style="display: none">
         <?php

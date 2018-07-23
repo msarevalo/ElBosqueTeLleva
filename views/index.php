@@ -12,14 +12,21 @@
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="application/javascript" src="../js/index.js"></script>
+    <!-- icono de pestaña-->
     <link rel="shortcut icon" type="image/x-icon" href="../img/icon-small.png">
 
 </head>
 <body onload="noVolver()">
 <?php
+    /*
+     * conexion a base de datos *
+     */
     include('../back/conection.php');
 ?>
 <div>
+    <!--
+    menu principal de la pagina
+    -->
     <div class="main-container" style="z-index: 2">
         <header class="block">
             <nav>
@@ -27,6 +34,9 @@
                 <ul class="header-menu horizontal-list">
                     <li>
                         <?php
+                        /*
+                         * Condicional de acuerdo al perfil del usuario link Horarios*
+                         */
                         if (isset($_SESSION['username'])){
                             if ($_SESSION['perfil']=="estudiante"){
                                 echo "<a class=\"header-menu-tab Setting\" href=\"horarios.php\"><span
@@ -50,6 +60,9 @@
                     </li>
                     <li style="z-index: 2">
                         <?php
+                        /*
+                         * Condicional de acuerdo al perfil del usuario link Rutas*
+                         */
                         if (isset($_SESSION['username'])){
                             if ($_SESSION['perfil']=="estudiante"){
                                 echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
@@ -61,7 +74,7 @@
                                     <ul id='submenu'>
                                         <li><a href=\"rutas-admin.php\">Rutas</a></li><br>
                                         <li><a href=\"paradas-admin.php\">Paradas</a></li>
-                                        <li><a href=\"#\">Vehiculos</a></li>
+                                        <li><a href=\"vehiculos-admin.php\">Vehiculos</a></li>
                                         <li><a href=\"#\">Conductores</a></li>
                                     </ul>";
                                 }else{
@@ -78,6 +91,9 @@
                     </li>
                     <li>
                         <?php
+                        /*
+                         * Condicional sesion iniciada link Reservas *
+                         */
                         if (isset($_SESSION['username'])){
                             echo "<a class=\"header-menu-tab\" href=\"reservas.php\"><span
                                     class=\"icon fontawesome-envelope scnd-font-color\"></span>Reservas</a>";
@@ -90,6 +106,9 @@
                     </li>
                     <li>
                         <?php
+                        /*
+                         * Condicional sesion iniciada link Pagos *
+                         */
                         if (isset($_SESSION['username'])){
                             echo "<a class=\"header-menu-tab\" href=\"pagos.php\"><span
                                     class=\"icon fontawesome-envelope scnd-font-color\"></span>Pagos</a>";
@@ -101,6 +120,9 @@
                     </li>
                     <li style="z-index: 2">
                         <?php
+                        /*
+                         * Condicional de acuerdo al perfil del usuario link Noticias / contenido*
+                         */
                         if (isset($_SESSION['username'])){
                             if ($_SESSION['perfil']=="estudiante"){
                                 echo "<a class=\"header-menu-tab Setting\" href=\"news.php\"><span
@@ -130,9 +152,9 @@
                 </ul>
                 <div class="profile-menu">
                   <?php
-                  //session_start();
-                  //include('../back/conection.php');
-                  //$_SESSION['username'] = null;
+                  /*
+                   * Boton Login / Nombre usuario si la sesion esta iniciada
+                   */
                   if(isset($_SESSION['username'])){
                       if($_SESSION['username']!= null){
                       echo "<a><label style='cursor: pointer'>" . $_SESSION['username'] . "</label></a>
@@ -149,6 +171,9 @@
         </header>
     </div>
 </div>
+<!--
+Pop up de inicio de sesion
+-->
 <div class="login-popup">
     <i class="fa fa-times-circle close-icon" aria-hidden="true">X</i>
     <div class="form-body">
@@ -175,6 +200,9 @@
         </form>
     </div>
 </div>
+<!--
+Slider de la pagina principal
+-->
     <div id="slider" style="z-index: 1">
         <a href="#" class="control_next">></a>
         <a href="#" class="control_prev"><</a>
@@ -185,10 +213,14 @@
             <li><img src="../img/slider3.png"></li>
             <li><img src="../img/slider4.png"></li>-->
             <?php
-            //include('../back/conection.php');
+            /*
+             * consulta a base de datos de los banners activos.
+             */
             $result = mysqli_query($con, "SELECT * FROM banners WHERE activo='1' ORDER BY orden;");
+            /*
+             * Se muestran los banners de la consulta
+             */
             while ($row = mysqli_fetch_array($result)) {
-                /*almacenamos el nombre de la ruta en la variable $ruta_img*/
                 //echo  $row["ruta_imagen"] . $row['nombre_img'] . '<br>';
                 echo "<li><img src='.." . $row["ruta_imagen"] . $row['nombre_img'] . "'></li>";
             }
@@ -198,42 +230,57 @@
     </div>
     <div id="retroceso">
         <?php
-        /*$dias = getdate();
-        print_r($dias[mday]);*/
-
+        /*
+         * declaracion de variables.
+         */
         $transporte = null;
         $horaSalida = null;
-        $offset=-18000; //UTC -5 horas Bogota, Lima, Quito
-        $numeroDia="N";
-        $fechaDia="Y-m-d";
-        $horaActual="H:i:s";
-        $ndia=gmdate($numeroDia, time()+$offset);
-        $fdia=gmdate($fechaDia, time()+$offset);
-        $hactual=gmdate($horaActual, time()+$offset);
-        $diaMas = $ndia+1;
-        $valorDia = 86400;
+        $offset=-18000; //UTC -5 horas Bogota, Lima, Quito (3.600s * -5 horas)
+        $numeroDia="N"; //Formato día para el gmdate (muestra el numero del dia)
+        $fechaDia="Y-m-d"; //formato fecha
+        $horaActual="H:i:s"; //formato hora
+        $ndia=gmdate($numeroDia, time()+$offset); //numero del dia dentro de la semana
+        //$fdia=gmdate($fechaDia, time()+$offset); //fecha del dia actual
+        $fdia=null;
+        $hactual=gmdate($horaActual, time()+$offset); //hora actual
+        $diaMas = $ndia+1; //dia siguiente en formato numero del dia dentro de la semana
+        $valorDia = 86400; //valor de un dia en segundos
         //$sumando = gmdate($fechaDia, time()+($valorDia - $offset));
-        //echo $sumando;
-        //$ndia = 7;
+        /*
+         * comparamos si el dia actual es menor a 6 (antes de sabado)
+         */
+        //$ndia=7;
         if ($ndia <6) {
+            /*
+             * consulta a base de datos donde la hora sea mayor a la hora actual y el dia sea igual al actual.
+             */
             $horas = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '" . $hactual . "') AND (`orden`='" . $ndia . "') ORDER BY Hora");
             $consultas = mysqli_fetch_array($horas);
+            /*
+             * se compara si el primer registro consultado es diferente de nulo.
+             */
             if ($consultas[0] != null) {
                 $transporte = $consultas[3];
                 $horaSalida = $consultas[2];
-                $fdia=gmdate($fechaDia, time()+$offset);
+                $fdia=gmdate($fechaDia, time()+$offset);//fecha del dia actual
             } else {
+                /*
+                 * si el resultado es nulo, se consulta nuevamente la base de datos donde el dia sea el actual mas 1
+                 */
                 $horas2 = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '00:00:00') AND (`orden`='" . $diaMas . "') ORDER BY Hora");
                 $consultas2 = mysqli_fetch_array($horas2);
                 if ($consultas2[0] != null) {
                     $transporte = $consultas2[3];
                     $horaSalida = $consultas2[2];
-                    $fdia = gmdate($fechaDia, time()+($valorDia + $offset));
+                    $fdia = gmdate($fechaDia, time()+($valorDia + $offset)); //fecha del dia inmediatamente siguiente
                 }else{
                     exit();
                 }
             }
         }else {
+            /*
+             * Se realiza por ultima vez la consulta donde el dia sea el dia lunes
+             */
             $horas3 = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '00:00:00') AND (`orden`='1') ORDER BY Hora");
             $consultas3 = mysqli_fetch_array($horas3);
             if ($consultas3[0] != null) {
@@ -241,10 +288,16 @@
                 $horaSalida = $consultas3[2];
                 if ($ndia === 6){
                     //echo "entro 6";
-                    $fdia = gmdate($fechaDia, time()+(($valorDia) + $offset));
+                    /*
+                     * si es el dia sabado (6)se asigna 2 dias mas como valor del día.
+                     */
+                    $fdia = gmdate($fechaDia, time()+((2*$valorDia) + $offset));
                 }else{
                     if ($ndia === 7){
                         //echo "entro 7";
+                        /*
+                         * si es el dia domingo (7)se asigna 1 dias mas como valor del día.
+                         */
                         $fdia = gmdate($fechaDia, time()+($valorDia + $offset));
                     }else{
                         exit();
@@ -256,6 +309,9 @@
         }
 
     //echo $hactual;
+        /*
+         * seccion de cuenta regresiva.
+         */
     echo "<div><label style='font-family: Helvetica; font-size: 18px; color: #9e9e9e;'>Proximo <strong style='font-size: 20px'>" . $transporte . " </strong>sale en:</label></div>
             <div id=\"reloj\">
                 <div class='contorno'>
