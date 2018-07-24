@@ -180,6 +180,22 @@ $vehiculo = mysqli_fetch_array($consulta);
             echo "<input required type='number' name='puesto' id='puesto' value='" . $vehiculo['CantidadPuestos'] . "'>";
             ?>
             <br>
+            <label for="vehiculo" class="titulos">Tipo de Vehiculo</label>
+            <select id="vehiculo" name="vehiculo" style="text-transform: capitalize" required>
+            <?php
+            $consulta2 = mysqli_query($con,"SELECT * FROM `tipovehiculo` ORDER BY `TipoVehiculo` ASC");
+            while ($lconsulta2 = mysqli_fetch_array($consulta2)){
+                for ($i = 1; $i <= 1; $i++){
+                    if ($lconsulta2['IdTipoVehiculo']==$vehiculo['TipoVehiculo']){
+                        echo "<option selected value='" . $lconsulta2['IdTipoVehiculo'] . "' style='text-transform: capitalize'>" . $lconsulta2['TipoVehiculo'] . "</option>";
+                    }else {
+                        echo "<option value='" . $lconsulta2['IdTipoVehiculo'] . "' style='text-transform: capitalize'>" . $lconsulta2['TipoVehiculo'] . "</option>";
+                    }
+                }
+            }
+            ?>
+            </select>
+            <br>
             <label for="tipo" class="titulos">Estado</label>
             <select id="estado" name="estado" required>
                 <?php

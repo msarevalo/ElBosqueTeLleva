@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Horarios | El Bosque Te LLeva</title>
+    <title>Conductores | El Bosque Te LLeva</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="application-name" content="Sistema de Reservas Universidad del Bosque">
@@ -173,7 +173,7 @@ include('../back/conection.php');
             <label for="empresa" class="titulos">Empresa</label>
             <select id="empresa" name="empresa" required>
                 <?php
-                $consulta = mysqli_query($con,"SELECT `IdEmpresa`,`NombreEmpresa` FROM `empresas` WHERE `Estado`=1");
+                $consulta = mysqli_query($con,"SELECT `IdEmpresa`,`NombreEmpresa` FROM `empresas` WHERE `Estado`=1 ORDER BY `NombreEmpresa` ASC;");
                 while ($lconsulta = mysqli_fetch_array($consulta)){
                     for ($i = 1; $i <= 1; $i++){
                         echo "<option value='" . $lconsulta['IdEmpresa'] . "'>" . $lconsulta['NombreEmpresa'] . "</option>";

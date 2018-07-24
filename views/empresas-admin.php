@@ -176,7 +176,7 @@ include('../back/conection.php');
             }else {
                 echo "<td style='text-transform: capitalize'>Activo</td>
                     <td><a href='editar-empresa.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
-                          <a class='cd-popup-trigger'><img src='../img/delete.png' style='width: 25%; cursor: pointer'></a></td>";
+                          <a onclick='alertaEmpresa(" . $lconsulta[$contador] . ")'><img src='../img/delete.png' style='width: 25%; cursor: pointer'></a></td>";
             }
         }
         $nombre_eliminar = $lconsulta['NombreEmpresa'];
@@ -207,7 +207,7 @@ include('../back/conection.php');
                 } else {
                     echo "<td style='text-transform: capitalize'>Inactivo</td>
                     <td><a href='editar-empresa.php?id={$lconsulta2[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
-                          <a class='cd-popup-trigger'><img src='../img/delete.png' style='width: 25%; cursor: pointer'></a></td>";
+                          <a onclick='alertaEmpresa(" . $lconsulta2[$contador] . ")'><img src='../img/delete.png' style='width: 25%; cursor: pointer'></a></td>";
                 }
             }
             $nombre_eliminar = $lconsulta2['NombreEmpresa'];
@@ -219,17 +219,3 @@ include('../back/conection.php');
         </div>";
     }
     ?>
-    <div class="cd-popup" role="alert">
-        <div class="cd-popup-container">
-            <?php
-            echo "<p>Desea eliminar la empresa <font style=\"text-transform: uppercase;\"><strong>" . $nombre_eliminar . "</strong></font>?</p>";
-            ?>
-            <ul class="cd-buttons">
-                <?php
-                echo "<li><a href='../back/eliminarEmpresa.php?id={$id_eliminar}'>Confirmar</a></li>
-                <li><a href='empresas-admin.php'>Cancelar</a></li>"
-                ?>
-            </ul>
-            <a href="#0" class="cd-popup-close img-replace"></a>
-        </div> <!-- cd-popup-container -->
-    </div> <!-- cd-popup -->

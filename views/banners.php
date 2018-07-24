@@ -172,7 +172,7 @@ include('../back/conection.php');
             }
             echo "<td><img src='.." . $lconsulta["ruta_imagen"] . $lconsulta['nombre_img'] . "' style='width: 150px'><br></td>";
             echo "<td><a href='editar-banners.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
-                      <a href='../back/eliminarHorario.php?id={$lconsulta[$contador]}'><img src='../img/delete.png' style='width: 25%'></a></td>";
+                      <a style='cursor: pointer' onclick='alertaBanners(" . $lconsulta[$contador] . ")'><img src='../img/delete.png' style='width: 25%'></a></td>";
             $contador++;
         }
 
@@ -203,10 +203,10 @@ include('../back/conection.php');
                 }
                 echo "<td><img src='.." . $lconsulta["ruta_imagen"] . $lconsulta['nombre_img'] . "' style='width: 150px'><br></td>";
                 echo "<td><a href='editar-banners.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
-                      <a href='../back/eliminarHorario.php?id={$lconsulta[$contador]}'><img src='../img/delete.png' style='width: 25%'></a></td>";
+                      <a style='cursor: pointer' onclick='alertaBanners(" . $lconsulta[$contador] . ")'><img src='../img/delete.png' style='width: 25%'></a></td>";
                 $contador++;
             }
-
+//href='../back/eliminarHorario.php?id={$lconsulta[$contador]}'
             echo "</tr>";
             echo "</table>
                 </div>";

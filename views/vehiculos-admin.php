@@ -162,23 +162,19 @@ include('../back/conection.php');
 $placa_eliminar = null;
 echo "<div id=\"listado-admin\" name=\"listado-admin\">
         <header>Vehiculos</header>";
-$consulta = mysqli_query($con,"SELECT `IdVehiculo`,`Placa`, `CantidadPuestos`, `Estado` FROM `vehiculos` WHERE `Estado`=1");
+$consulta = mysqli_query($con,"SELECT vehiculos.IdVehiculo, vehiculos.Placa, vehiculos.CantidadPuestos, tipovehiculo.TipoVehiculo FROM vehiculos INNER JOIN tipovehiculo ON tipovehiculo.IdTipoVehiculo=vehiculos.TipoVehiculo WHERE vehiculos.Estado=1");
 /*$lconsulta = mysqli_fetch_array($consulta);
 $long = count($lconsulta);*/
-echo "<table id='horarios-bus'><thead><tr><th>Placa</th><th># Puestos</th><th>Estado</th><th>Acciones</th></tr></thead>";
+echo "<table id='horarios-bus'><thead><tr><th>Placa</th><th># Puestos</th><th>Tipo Vehiculo</th><th>Acciones</th></tr></thead>";
 while ($lconsulta = mysqli_fetch_array($consulta)){
     $contador = 0;
     echo "<tr>";
     for ($i = 1; $i <= 3; $i++){
         $id_eliminar = $lconsulta[$contador];
-        if ($lconsulta[$i]!=='1'){
             echo "<td style='text-transform: capitalize'>" . $lconsulta[$i] . "</td>";
-        }else {
-            echo "<td style='text-transform: capitalize'>Activo</td>
-                    <td><a href='editar-vehiculo.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
-                          <a class='cd-popup-trigger'><img src='../img/delete.png' style='width: 25%; cursor: pointer'></a></td>";
-        }
     }
+    echo "<td><a href='editar-vehiculo.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
+                          <a onclick='alertaVehiculo(" . $lconsulta[$contador] . ")'><img src='../img/delete.png' style='width: 25%; cursor: pointer'></a></td>";
     $placa_eliminar = $lconsulta['Placa'];
     $contador++;
 }
@@ -189,27 +185,23 @@ echo "</table>
 <br>
 
 <?php
-$consulta2 = mysqli_query($con,"SELECT `IdVehiculo`,`Placa`, `CantidadPuestos`, `Estado` FROM `vehiculos` WHERE `Estado`=0");
+$consulta2 = mysqli_query($con,"SELECT vehiculos.IdVehiculo, vehiculos.Placa, vehiculos.CantidadPuestos, tipovehiculo.TipoVehiculo FROM vehiculos INNER JOIN tipovehiculo ON tipovehiculo.IdTipoVehiculo=vehiculos.TipoVehiculo WHERE vehiculos.Estado=0");
 if (mysqli_fetch_array($consulta2)!=0) {
     echo "<div id=\"listado-admin\" name=\"listado-admin\">
         <header>Vehiculos - Inactivos</header>";
-    $consulta2 = mysqli_query($con,"SELECT `IdVehiculo`,`Placa`, `CantidadPuestos`, `Estado` FROM `vehiculos` WHERE `Estado`=0");
+    $consulta2 = mysqli_query($con,"SELECT vehiculos.IdVehiculo, vehiculos.Placa, vehiculos.CantidadPuestos, tipovehiculo.TipoVehiculo FROM vehiculos INNER JOIN tipovehiculo ON tipovehiculo.IdTipoVehiculo=vehiculos.TipoVehiculo WHERE vehiculos.Estado=0");
     /*$lconsulta = mysqli_fetch_array($consulta);
     $long = count($lconsulta);*/
-    echo "<table id='horarios-bus'><thead><tr><th>Placa</th><th># Puestos</th><th>Estado</th><th>Acciones</th></tr></thead>";
+    echo "<table id='horarios-bus'><thead><tr><th>Placa</th><th># Puestos</th><th>Tipo Vehiculo</th><th>Acciones</th></tr></thead>";
     while ($lconsulta2 = mysqli_fetch_array($consulta2)) {
         $contador = 0;
         echo "<tr>";
         for ($i = 1; $i <= 3; $i++) {
             $id_eliminar = $lconsulta2[$contador];
-            if ($lconsulta2[$i] !== '0') {
                 echo "<td style='text-transform: capitalize'>" . $lconsulta2[$i] . "</td>";
-            } else {
-                echo "<td style='text-transform: capitalize'>Inactivo</td>
-                    <td><a href='editar-vehiculo.php?id={$lconsulta2[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
-                          <a class='cd-popup-trigger'><img src='../img/delete.png' style='width: 25%; cursor: pointer'></a></td>";
-            }
         }
+        echo "<td><a href='editar-vehiculo.php?id={$lconsulta2[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
+                          <a onclick='alertaVehiculo(" . $lconsulta2[$contador] . ")'><img src='../img/delete.png' style='width: 25%; cursor: pointer'></a></td>";
         $placa_eliminar = $lconsulta2['Placa'];
         $contador++;
     }
@@ -219,17 +211,3 @@ if (mysqli_fetch_array($consulta2)!=0) {
         </div>";
 }
 ?>
-    <div class="cd-popup" role="alert">
-        <div class="cd-popup-container">
-            <?php
-            echo "<p>Desea eliminar el vehiculo con placa <font style=\"text-transform: uppercase;\"><strong>" . $placa_eliminar . "</strong></font>?</p>";
-            ?>
-            <ul class="cd-buttons">
-                <?php
-                echo "<li><a href='../back/eliminarVehiculo.php?id={$id_eliminar}'>Confirmar</a></li>
-                <li><a href='vehiculos-admin.php'>Cancelar</a></li>"
-                ?>
-            </ul>
-            <a href="#0" class="cd-popup-close img-replace"></a>
-        </div> <!-- cd-popup-container -->
-    </div> <!-- cd-popup -->

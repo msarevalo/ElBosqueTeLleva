@@ -211,7 +211,7 @@ $conductor = mysqli_fetch_array($consulta);
             <label for="empresa" class="titulos">Empresa</label>
             <select id="empresa" name="empresa" required>
                 <?php
-                $consulta = mysqli_query($con,"SELECT `IdEmpresa`,`NombreEmpresa` FROM `empresas` WHERE `Estado`=1");
+                $consulta = mysqli_query($con,"SELECT `IdEmpresa`,`NombreEmpresa` FROM `empresas` WHERE `Estado`=1 ORDER BY `NombreEmpresa` ASC;");
                 while ($lconsulta = mysqli_fetch_array($consulta)){
                     for ($i = 1; $i <= 1; $i++) {
                         if ($lconsulta['IdEmpresa'] == $conductor['Empresa']) {

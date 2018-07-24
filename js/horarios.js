@@ -167,3 +167,20 @@ jQuery(document).ready(function($){
         }
     });
 });
+
+function alertaHorario(ideliminar) {
+    var eliminar = ideliminar;
+    var r = confirm('Desdea eliminar el horario?');
+    if (r == true){
+        location.href="../back/eliminarHorario.php?id=" + ideliminar;
+    }else {
+        //alert('Falso');
+    }}
+
+function vaciarHorario() {
+    var r = confirm('Desdea eliminar TODOS los horarios?');
+    if (r == true){
+        location.href="../back/truncarHorarios.php";
+    }else {
+        //alert('Falso');
+    }}

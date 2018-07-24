@@ -16,9 +16,12 @@ if (isset($_POST['puesto'])){
 if (isset($_POST['estado'])){
     $estado = $_POST['estado'];
 }
+if (isset($_POST['vehiculo'])){
+    $vehiculo = $_POST['vehiculo'];
+}
 
 
-$consulta = mysqli_query($con,"UPDATE `vehiculos` SET `Placa`='" . $placa . "',`CantidadPuestos`='" . $puesto . "',`Estado`='" . $estado . "' WHERE `IdVehiculo`='" . $id . "';");
+$consulta = mysqli_query($con,"UPDATE `vehiculos` SET `Placa`='" . $placa . "',`CantidadPuestos`='" . $puesto . "',`Estado`='" . $estado . "', `TipoVehiculo`='" . $vehiculo . "' WHERE `IdVehiculo`='" . $id . "';");
 
 if ($consulta){
     echo "<script>alert('Se edito el vehiculo con exito'); window.location.href='../views/vehiculos-admin.php'</script>";

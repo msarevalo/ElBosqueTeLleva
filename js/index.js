@@ -124,3 +124,44 @@ function sinLogueo() {
 function arriba() {
     window.scroll(0,0);
 }
+
+function alertaBanners(ideliminar) {
+    var eliminarBanner = ideliminar;
+    var r = confirm("Desea eliminar el banner?");
+    if (r == true){
+        alert(eliminarBanner);
+    } else {
+        //alert('Canceló');
+    }
+
+}
+
+function alertaConductores(ideliminar) {
+    var eliminarConductor = ideliminar;
+    var r = confirm("Desea eliminar el Conductor?");
+    if (r == true){
+        location.href = "../back/eliminarConductor.php?id=" + eliminarConductor;
+    } else {
+        //alert('false');
+    }
+}
+
+function alertaEmpresa(ideliminar) {
+    var eliminarEmpresa = ideliminar;
+    var r = confirm("Desea eliminar la Empresa?");
+    if (r == true){
+        location.href = "../back/eliminarEmpresa.php?id=" + eliminarEmpresa;
+    } else {
+        //alert('cancelo');
+    }
+}
+
+function alertaVehiculo(ideliminar) {
+    var eliminarVehiculo = ideliminar;
+    var  r = confirm("Desea eliminar el Vehiculo?");
+    if (r == true){
+        location.href = "../back/eliminarVehiculo.php?id=" + eliminarVehiculo;
+    } else {
+        alert("cancelo");
+    }
+}
