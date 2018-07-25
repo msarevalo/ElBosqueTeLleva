@@ -1,11 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: SOPORTE COLOMBIA
- * Date: 16/07/2018
- * Time: 4:08 PM
- */
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,6 +27,7 @@
 <body>
 <?php
 include('../back/conection.php');
+
 ?>
 <div>
     <div class="main-container">
@@ -48,7 +41,7 @@ include('../back/conection.php');
                             Header("Location: index.php");
                         }else{
                             if ($_SESSION['perfil']=="admin"){
-                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios-admin.php\"><span
+                                echo "<a class=\"header-menu-tab Setting\" href=\"horarios-admin.php\" style=\"border-bottom: 4px solid #11a8ab;\"><span
                                     class=\"icon entypo-cog scnd-font-color\"></span>Horarios</a>";
                             }else{
                                 Header("Location: index.php");
@@ -68,8 +61,8 @@ include('../back/conection.php');
                             Header("Location: index.php");
                         }else{
                             if ($_SESSION['perfil']=="admin"){
-                                echo "<a class=\"header-menu-tab\" href='#' style=\"border-bottom: 4px solid #11a8ab;\"><span
-                                    class=\"icon fontawesome-user scnd-font-color\" ></span>Rutas</a>
+                                echo "<a class=\"header-menu-tab\" href='#'><span
+                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>
                                     <ul id='submenu'>
                                         <li><a href=\"rutas-admin.php\">Rutas</a></li><br>
                                         <li><a href=\"paradas-admin.php\">Paradas</a></li>
@@ -158,65 +151,20 @@ include('../back/conection.php');
             </div>
         </header>
     </div>
-    <a href="crear-tvehiculo.php">Crear Tipo de Vehiculo</a>
-    <?php
-    $tvehiculo_eliminar = null;
-    echo "<div id=\"listado-admin\" name=\"listado-admin\" style='margin-left: 30.5%;'>
-        <header>Tipo de Vehiculos</header>";
-    $consulta = mysqli_query($con,"SELECT `IdTipoVehiculo`,`TipoVehiculo`,`Estado` FROM `tipovehiculo` WHERE `Estado`=1 ORDER BY `TipoVehiculo` ASC");
-    /*$lconsulta = mysqli_fetch_array($consulta);
-    $long = count($lconsulta);*/
-    echo "<table id='horarios-bus'><thead><tr><th>Nombre</th><th>Estado</th><th>Acciones</th></tr></thead>";
-    while ($lconsulta = mysqli_fetch_array($consulta)){
-        $contador = 0;
-        echo "<tr>";
-        for ($i = 1; $i <= 2; $i++){
-            $id_eliminar = $lconsulta[$contador];
-            if ($lconsulta[$i]!=='1'){
-                echo "<td style='text-transform: capitalize'>" . $lconsulta[$i] . "</td>";
-            }else {
-                echo "<td style='text-transform: capitalize'>Activo</td>
-                    <td><a href='editar-tvehiculo.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
-                          <a onclick='alertaTvehiculo(" . $lconsulta[$contador] . ")'><img src='../img/delete.png' style='width: 25%; cursor: pointer'></a></td>";
-            }
-        }
-        $tvehiculo_eliminar = $lconsulta['IdTipoVehiculo'];
-        $contador++;
-    }
-
-    echo "</tr>";
-    echo "</table>
-        </div>";?>
-    <br>
-
-    <?php
-    $consulta2 = mysqli_query($con,"SELECT `IdTipoVehiculo`,`TipoVehiculo`,`Estado` FROM `tipovehiculo` WHERE `Estado`=0");
-    if (mysqli_fetch_array($consulta2)!=0) {
-        echo "<div id=\"listado-admin\" name=\"listado-admin\" style='margin-left: 30.5%'>
-        <header>Tipo de Vehiculos - Inactivos</header>";
-        $consulta2 = mysqli_query($con,"SELECT `IdTipoVehiculo`,`TipoVehiculo`,`Estado` FROM `tipovehiculo` WHERE `Estado`=0");
-        /*$lconsulta = mysqli_fetch_array($consulta);
-        $long = count($lconsulta);*/
-        echo "<table id='horarios-bus'><thead><tr><th>Nombre</th><th>Estado</th><th>Acciones</th></tr></thead>";
-        while ($lconsulta2 = mysqli_fetch_array($consulta2)) {
-            $contador = 0;
-            echo "<tr>";
-            for ($i = 1; $i <= 2; $i++) {
-                $id_eliminar = $lconsulta2[$contador];
-                if ($lconsulta2[$i]!=='0'){
-                    echo "<td style='text-transform: capitalize'>" . $lconsulta2[$i] . "</td>";
-                }else {
-                    echo "<td style='text-transform: capitalize'>Inactivo</td>
-                    <td><a href='editar-tvehiculo.php?id={$lconsulta2[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
-                          <a onclick='alertaTvehiculo(" . $lconsulta2[$contador] . ")'><img src='../img/delete.png' style='width: 25%; cursor: pointer'></a></td>";
-                }
-            }
-            $tvehiculo_eliminar = $lconsulta2['IdTipoVehiculo'];
-            $contador++;
-        }
-
-        echo "</tr>";
-        echo "</table>
-        </div>";
-    }
-    ?>
+    <div>
+        <a href="tipov-admin.php" id="volver">Volver</a>
+        <header id="crear-header">Crear Tipo de Vehiculo</header>
+        <form method="post" action="../back/crearTvehiculo.php" id="crear">
+            <label for="nombre" class="titulos">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Nombre">
+            <br>
+            <label for="tipo" class="titulos">Estado</label>
+            <select id="estado" name="estado" required>
+                <option value='1'>Activo</option>
+                <option value='0'>Inactivo</option>
+            </select>
+            <br><br>
+            <input type="submit" id="btnHorario"><br><br>
+            <!--<button class="button">Submit</button>-->
+        </form>
+    </div>

@@ -164,7 +164,7 @@ include('../back/conection.php');
             <label for="vehiculo" class="titulos">Tipo de Vehiculo</label>
             <select id="vehiculo" name="vehiculo" style="text-transform: capitalize" required>
                 <?php
-                $consulta = mysqli_query($con,"SELECT * FROM `tipovehiculo` ORDER BY `TipoVehiculo` ASC");
+                $consulta = mysqli_query($con,"SELECT * FROM `tipovehiculo` WHERE `Estado`=1 ORDER BY `TipoVehiculo` ASC");
                 while ($lconsulta = mysqli_fetch_array($consulta)){
                     for ($i = 1; $i <= 1; $i++){
                         echo "<option value='" . $lconsulta['IdTipoVehiculo'] . "' style='text-transform: capitalize'>" . $lconsulta['TipoVehiculo'] . "</option>";

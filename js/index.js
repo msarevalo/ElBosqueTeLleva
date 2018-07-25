@@ -165,3 +165,13 @@ function alertaVehiculo(ideliminar) {
         alert("cancelo");
     }
 }
+
+function alertaTvehiculo(ideliminar) {
+    var eliminarTvehiculo = ideliminar;
+    var r = confirm("Desea eliminar el tipo de vehiculo?");
+    if (r == true){
+        location.href = "../back/eliminarTvehiculo.php?id=" + eliminarTvehiculo;
+    }else {
+        //alert('cancelo');
+    }
+}

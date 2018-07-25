@@ -2,32 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8f90e52-8638-4f3c-8d5e-82e0211e276b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/banners.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/banners.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/conductores-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/conductores-admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/crear-banners.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/crear-banners.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/crear-conductor.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/crear-conductor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/crear-empresa.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/crear-empresa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/crear-horario.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/crear-horario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/crear-vehiculo.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/crear-vehiculo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/editar-banners.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/editar-banners.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/editar-conductores.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/editar-conductores.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/editar-empresa.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/editar-empresa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/editar-horario.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/editar-horario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/editar-vehiculo.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/editar-vehiculo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/empresas-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/empresas-admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/horarios-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/horarios-admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/horarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/horarios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/importar-horario.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/importar-horario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/news.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/news.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pagos.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pagos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/paradas-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/paradas-admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/paradas.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/paradas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/reservas.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/reservas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/rutas-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/rutas-admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/rutas.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/rutas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/vehiculos-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/vehiculos-admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/tipov-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/tipov-admin.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,24 +29,72 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="vehiculos-admin.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/vehiculos-admin.php">
+      <file leaf-file-name="tipov-admin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/tipov-admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="76" column="95" selection-start-line="76" selection-start-column="95" selection-end-line="76" selection-end-column="95" />
+            <state relative-caret-position="312">
+              <caret line="210" column="54" selection-start-line="210" selection-start-column="54" selection-end-line="210" selection-end-column="54" />
               <folding>
-                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#td#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#1;n#td#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#td#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#1;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#td#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#1;n#td#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#td#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#1;n#td#1;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="479">
+              <caret line="174" column="10" selection-start-line="174" selection-start-column="10" selection-end-line="174" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="eliminarTvehiculo.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back/eliminarTvehiculo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="90" selection-start-line="14" selection-start-column="90" selection-end-line="14" selection-end-column="90" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="eliminarVehiculo.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back/eliminarVehiculo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="18" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editar-tvehiculo.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/editar-tvehiculo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="174" column="39" selection-start-line="174" selection-start-column="39" selection-end-line="174" selection-end-column="39" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editarTvehiculo.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back/editarTvehiculo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="124" selection-start-line="17" selection-start-column="124" selection-end-line="17" selection-end-column="124" />
             </state>
           </provider>
         </entry>
@@ -86,7 +111,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>move</find>
       <find>copy</find>
       <find>number</find>
       <find>ra</find>
@@ -116,6 +140,7 @@
       <find>GET</find>
       <find>$_SESSION['idHorario']</find>
       <find>submen</find>
+      <find>$vehiculo</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -128,12 +153,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/back/editarHorario.php" />
-        <option value="$PROJECT_DIR$/back/truncarHorarios.php" />
-        <option value="$PROJECT_DIR$/views/info.php" />
-        <option value="$PROJECT_DIR$/back/importarHorario.php" />
-        <option value="$PROJECT_DIR$/js/error.js" />
-        <option value="$PROJECT_DIR$/css/error.css" />
         <option value="$PROJECT_DIR$/views/error.php" />
         <option value="$PROJECT_DIR$/css/banners.css" />
         <option value="$PROJECT_DIR$/back/editarBanner.php" />
@@ -150,7 +169,6 @@
         <option value="$PROJECT_DIR$/back/editarConductor.php" />
         <option value="$PROJECT_DIR$/back/eliminarConductor.php" />
         <option value="$PROJECT_DIR$/js/horarios.js" />
-        <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/back/crearVehiculo.php" />
         <option value="$PROJECT_DIR$/back/editarVehiculo.php" />
         <option value="$PROJECT_DIR$/views/banners.php" />
@@ -160,7 +178,6 @@
         <option value="$PROJECT_DIR$/views/crear-conductor.php" />
         <option value="$PROJECT_DIR$/views/crear-empresa.php" />
         <option value="$PROJECT_DIR$/views/crear-horario.php" />
-        <option value="$PROJECT_DIR$/views/crear-vehiculo.php" />
         <option value="$PROJECT_DIR$/views/editar-banners.php" />
         <option value="$PROJECT_DIR$/views/editar-conductores.php" />
         <option value="$PROJECT_DIR$/views/editar-empresa.php" />
@@ -179,6 +196,14 @@
         <option value="$PROJECT_DIR$/views/rutas.php" />
         <option value="$PROJECT_DIR$/views/rutas-admin.php" />
         <option value="$PROJECT_DIR$/views/vehiculos-admin.php" />
+        <option value="$PROJECT_DIR$/views/crear-tvehiculo.php" />
+        <option value="$PROJECT_DIR$/back/crearTvehiculo.php" />
+        <option value="$PROJECT_DIR$/views/editar-tvehiculo.php" />
+        <option value="$PROJECT_DIR$/back/editarTvehiculo.php" />
+        <option value="$PROJECT_DIR$/views/crear-vehiculo.php" />
+        <option value="$PROJECT_DIR$/views/tipov-admin.php" />
+        <option value="$PROJECT_DIR$/back/eliminarTvehiculo.php" />
+        <option value="$PROJECT_DIR$/js/index.js" />
       </list>
     </option>
   </component>
@@ -343,12 +368,12 @@
       <workItem from="1531511112164" duration="3955000" />
       <workItem from="1531772009502" duration="4291000" />
       <workItem from="1531950785704" duration="599000" />
-      <workItem from="1532359662672" duration="34753000" />
+      <workItem from="1532359662672" duration="37015000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="371113000" />
+    <option name="totallyTimeSpent" value="373375000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -395,41 +420,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/error.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/banners.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="119" column="4" lean-forward="true" selection-start-line="119" selection-start-column="4" selection-end-line="119" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/cargarImagen.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/editarBanner.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="54" column="90" selection-start-line="54" selection-start-column="90" selection-end-line="54" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/conection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/horarios.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -454,13 +444,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/back/eliminarHorario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="18" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/eliminarVehiculo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="18" selection-end-column="2" />
@@ -509,30 +492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="162" column="78" selection-start-line="162" selection-start-column="78" selection-end-line="162" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/crearVehiculo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="108" selection-start-line="17" selection-start-column="94" selection-end-line="17" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/editarVehiculo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="172" selection-start-line="23" selection-start-column="172" selection-end-line="23" selection-end-column="172" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/tipov-admin.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/horarios.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -559,21 +518,6 @@
             <element signature="n#style#0;n#img#0;n#td#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#1;n#td#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#1;n#td#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/conductores-admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="76" column="95" selection-start-line="76" selection-start-column="95" selection-end-line="76" selection-end-column="95" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#1;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#td#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -625,16 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/crear-vehiculo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="69" column="95" selection-start-line="69" selection-start-column="95" selection-end-line="69" selection-end-column="95" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/editar-banners.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -668,36 +602,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/editar-vehiculo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="82" column="95" selection-start-line="82" selection-start-column="95" selection-end-line="82" selection-end-column="95" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/editar-horario.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="82" column="95" selection-start-line="82" selection-start-column="95" selection-end-line="82" selection-end-column="95" />
           <folding>
             <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/empresas-admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="76" column="95" selection-start-line="76" selection-start-column="95" selection-end-line="76" selection-end-column="95" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#1;n#td#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -723,27 +633,6 @@
             <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#td#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/horarios-admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="69" column="95" selection-start-line="69" selection-start-column="95" selection-end-line="69" selection-end-column="95" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#td#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#1;n#td#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#td#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#1;n#td#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -875,23 +764,162 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/empresas-admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="180" column="13" lean-forward="true" selection-start-line="174" selection-start-column="12" selection-end-line="180" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/horarios-admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="69" column="95" selection-start-line="69" selection-start-column="95" selection-end-line="69" selection-end-column="95" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/conductores-admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="873">
+          <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#1;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#1;n#td#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/crearVehiculo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="23" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/crearTvehiculo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="80" selection-start-line="16" selection-start-column="80" selection-end-line="16" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/vehiculos-admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="76" column="95" selection-start-line="76" selection-start-column="95" selection-end-line="76" selection-end-column="95" />
+        <state relative-caret-position="771">
+          <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/crear-tvehiculo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="164" column="21" lean-forward="true" selection-start-line="157" selection-start-column="12" selection-end-line="164" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/editarVehiculo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="172" selection-end-line="29" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/editar-vehiculo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="174" column="12" lean-forward="true" selection-start-line="174" selection-start-column="12" selection-end-line="174" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/editar-tvehiculo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="174" column="39" selection-start-line="174" selection-start-column="39" selection-end-line="174" selection-end-column="39" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/editarTvehiculo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="124" selection-start-line="17" selection-start-column="124" selection-end-line="17" selection-end-column="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/crear-vehiculo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="166" column="92" selection-start-line="166" selection-start-column="92" selection-end-line="166" selection-end-column="92" />
           <folding>
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#1;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#1;n#td#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/tipov-admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="210" column="54" selection-start-line="210" selection-start-column="54" selection-end-line="210" selection-end-column="54" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#td#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#1;n#td#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#td#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#1;n#td#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/eliminarVehiculo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="18" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/eliminarTvehiculo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="90" selection-start-line="14" selection-start-column="90" selection-end-line="14" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="174" column="10" selection-start-line="174" selection-start-column="10" selection-end-line="174" selection-end-column="10" />
         </state>
       </provider>
     </entry>
