@@ -80,6 +80,7 @@ $conductor = mysqli_fetch_array($consulta);
                                         <li><a href=\"rutas-admin.php\">Rutas</a></li><br>
                                         <li><a href=\"paradas-admin.php\">Paradas</a></li>
                                         <li><a href=\"vehiculos-admin.php\">Vehiculos</a></li>
+                                        <li><a href=\"tipov-admin.php\">Tipo Vehiculos</a></li>
                                         <li><a href=\"conductores-admin.php\">Conductores</a></li>
                                         <li><a href=\"empresas-admin.php\">Empresas</a></li>
                                     </ul>";
