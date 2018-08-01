@@ -72,16 +72,29 @@ try {
                         }
                     }
                 }
-                if (strpos($servicio, 'tren') || strpos($servicio, 'bus')) {
+                if (strpos($servicio, 'tren') || strpos($servicio, 'bus') || strpos($servicio, '1') || strpos($servicio, '2')) {
                     echo "<script>alert('Archivo con servicios no permitidos'); window.location.href='../views/importar-horario.php'</script>";
                     break;
                 }
+                if (strpos($servicio, 'tren')!== false){
+                    $servicio = 2;
+                }
+                if (strpos($servicio, 'bus') !== false){
+                    $servicio = 1;
+                }
+                if (strpos($servicio, '1') !== false){
+                    $servicio = 1;
+                }
+                if (strpos($servicio, '2') !== false){
+                    $servicio = 2;
+                }
+                echo $servicio;
                 //guardamos en base de datos la línea leida
                 $insersion = mysqli_query($con, "INSERT INTO `horarios` (`dia`, `Hora`, `servicio`, `orden`) VALUES ('" . $dia . "', '" . $hora . "', '" . $servicio . "', '" . $orden . "');");
                 if ($insersion) {
                     echo "<script>alert('Se importo el archivo correctamente');window.location.href='../views/horarios-admin.php'</script>";
                 } else {
-                    echo "<script>alert('Algo ha fallado'); window.location.href='../views/importar-horario.php'</script>";
+                    //echo "<script>alert('Algo ha fallado'); window.location.href='../views/importar-horario.php'</script>";
                 }
                 //cerramos condición
             }

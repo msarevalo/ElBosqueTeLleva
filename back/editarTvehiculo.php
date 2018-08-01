@@ -20,5 +20,5 @@ $consulta = mysqli_query($con,"UPDATE `tipovehiculo` SET `TipoVehiculo`='" . $no
 if ($consulta){
     echo "<script>alert('Se edito el tipo de vehiculo con exito'); window.location.href='../views/tipov-admin.php'</script>";
 }else{
-    echo "<script>alert('Algo ha fallado'); window.location.href='../views/tipov-admin.php'</script>";
+    echo "<script>alert('Algo ha fallado'); window.location.href='../views/editar-tvehiculo.php?id=" . $id . "'</script>";
 }

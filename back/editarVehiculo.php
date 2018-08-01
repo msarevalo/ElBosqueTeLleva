@@ -26,5 +26,5 @@ $consulta = mysqli_query($con,"UPDATE `vehiculos` SET `Placa`='" . $placa . "',`
 if ($consulta){
     echo "<script>alert('Se edito el vehiculo con exito'); window.location.href='../views/vehiculos-admin.php'</script>";
 }else{
-    echo "<script>alert('Algo ha fallado'); window.location.href='../views/vehiculos-admin.php'</script>";
+    echo "<script>alert('Algo ha fallado'); window.location.href='../views/editar-vehiculo.php?id=" . $id . "'</script>";
 }

@@ -12,16 +12,16 @@ if (isset($_SESSION['idHorario'])){
 }
 if (isset($_POST['dias'])){
     $dia = $_POST['dias'];
-    if ($dia=="Lunes"){
+    if ($dia=="lunes"){
         $orden = 1;
     }else{
-        if ($dia=="Martes"){
+        if ($dia=="martes"){
             $orden = 2;
         }else{
-            if ($dia=="Miercoles"){
+            if ($dia=="miercoles"){
                 $orden = 3;
             }else{
-                if ($orden=="Jueves"){
+                if ($orden=="jueves"){
                     $orden = 4;
                 }else{
                     $orden = 5;

@@ -646,3 +646,61 @@ a.control_next {
     border-style: solid;
     border-radius: 10px;
 }
+
+.select {
+    width: auto;
+    margin: 0;
+    padding: .25em 1.5em;
+    outline: none;
+    cursor: pointer;
+    /*border: 1;*/
+    border-radius: 0;
+    background-color: transparent;
+    /* Styling the select text color */
+    color: #9c99a2;
+    text-transform: capitalize;
+
+    /* removes the fucking native down arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+}
+
+select::-ms-expand
+ {
+     display: none;
+ }
+
+
+select:after
+ {
+     position: absolute;
+     top: 1.25em;
+     right: 1em;
+     /* Styling the down arrow */
+     width: 0;
+     height: 0;
+     padding: 0;
+     content: '';
+     border-left: .25em solid transparent;
+     border-right: .25em solid transparent;
+     border-top: .375em solid #ede7ea;
+     pointer-events: none;
+ }
+
+
+@-moz-document url-prefix()
+{
+    .custom-select select
+    {
+        padding-right: 1.75em;
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .custom-select select
+    {
+        padding-right: 2em;
+    }
+}

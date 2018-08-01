@@ -23,5 +23,5 @@ $consulta = mysqli_query($con,"UPDATE `empresas` SET `NombreEmpresa`='" . $nombr
 if ($consulta){
     echo "<script>alert('Se edito la empresa con exito'); window.location.href='../views/empresas-admin.php'</script>";
 }else{
-    echo "<script>alert('Algo ha fallado'); window.location.href='../views/empresas-admin.php'</script>";
+    echo "<script>alert('Algo ha fallado'); window.location.href='../views/editar-empresa.php?id=" . $id . "'</script>";
 }

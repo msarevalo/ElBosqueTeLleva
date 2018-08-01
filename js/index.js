@@ -175,3 +175,85 @@ function alertaTvehiculo(ideliminar) {
         //alert('cancelo');
     }
 }
+
+function alertaRuta(ideliminar) {
+    var eliminarRuta = ideliminar;
+    var r = confirm("Desea eliminar la ruta?");
+    if (r == true){
+        location.href = "../back/eliminarRuta.php?id=" + eliminarRuta;
+    }else {
+        //alert('cancelo');
+    }
+}
+
+function ajaxhorario(val)
+{
+    $.ajax({
+        type: 'post',
+        url: '../back/select_data.php',
+        data: {
+            get_option:val
+        },
+        success: function (response) {
+            document.getElementById("horas").innerHTML=response;
+        }
+    });
+}
+
+function ajaxhorario(val)
+{
+    $.ajax({
+        type: 'post',
+        url: '../back/select_data.php',
+        data: {
+            get_option:val
+        },
+        success: function (response) {
+            document.getElementById("horas").innerHTML=response;
+        }
+    });
+}
+
+function ajaxvehiculo(val)
+{
+    $.ajax({
+        type: 'post',
+        url: '../back/selectvehiculos.php',
+        data: {
+            get_option:val
+        },
+        success: function (response) {
+            document.getElementById("placas").innerHTML=response;
+        }
+    });
+}
+
+function ajaxconductor(val)
+{
+    if (val.length >= 2) {
+        $.ajax({
+            type: 'post',
+            url: '../back/selectconductores.php',
+            data: {
+                get_option: val
+            },
+            success: function (response) {
+                document.getElementById("conductor").innerHTML = response;
+            }
+        })
+    };
+}function ajaxconductor(val)
+{
+    if (val.length >= 2) {
+        $.ajax({
+            type: 'post',
+            url: '../back/selectconductores.php',
+            data: {
+                get_option: val
+            },
+            success: function (response) {
+                document.getElementById("conductor").innerHTML = response;
+            }
+        })
+    };
+}

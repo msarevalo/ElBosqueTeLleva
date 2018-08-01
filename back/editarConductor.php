@@ -35,5 +35,5 @@ $consulta = mysqli_query($con,"UPDATE `conductores` SET `tipoDocumento`='" . $td
 if ($consulta){
     echo "<script>alert('Se edito el conductor con exito'); window.location.href='../views/conductores-admin.php'</script>";
 }else{
-    echo "<script>alert('Algo ha fallado'); window.location.href='../views/conductores-admin.php'</script>";
+    echo "<script>alert('Algo ha fallado'); window.location.href='../views/editar-conductores.php?id=" . $id . "'</script>";
 }

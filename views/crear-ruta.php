@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Horarios | El Bosque Te LLeva</title>
+    <title>Rutas | El Bosque Te LLeva</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="application-name" content="Sistema de Reservas Universidad del Bosque">
@@ -27,18 +27,6 @@
 <body>
 <?php
 include('../back/conection.php');
-
-if (isset($_GET['id'])){
-    $idHorario = $_GET['id'];
-}
-
-$consulta = mysqli_query($con,"SELECT * FROM `horarios` WHERE IdHorario='" . $idHorario . "';");
-$prueba = mysqli_fetch_array($consulta);
-
-    /*for ($i=0; $i<=3; $i++){
-        echo $prueba[$i] . "<br>";
-    }*/
-
 
 ?>
 <div>
@@ -70,8 +58,7 @@ $prueba = mysqli_fetch_array($consulta);
                     <?php
                     if (isset($_SESSION['username'])){
                         if ($_SESSION['perfil']=="estudiante"){
-                            echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
-                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
+                            Header("Location: index.php");
                         }else{
                             if ($_SESSION['perfil']=="admin"){
                                 echo "<a class=\"header-menu-tab\" href='#'><span
@@ -85,14 +72,12 @@ $prueba = mysqli_fetch_array($consulta);
                                         <li><a href=\"empresas-admin.php\">Empresas</a></li>
                                     </ul>";
                             }else{
-                                echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
-                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
+                                Header("Location: index.php");
                             }
 
                         }
                     }else {
-                        echo "<a class=\"header-menu-tab\" href=\"rutas.php\"><span
-                                    class=\"icon fontawesome-user scnd-font-color\"></span>Rutas</a>";
+                        Header("Location: index.php");
                     }
                     ?>
                 </li>
@@ -167,105 +152,65 @@ $prueba = mysqli_fetch_array($consulta);
         </header>
     </div>
     <div>
-        <a href="horarios-admin.php" id="volver">Volver</a>
-        <header id="crear-header">Editar Horarios</header>
-        <form method="post" action="../back/editarHorario.php" id="crear">
-            <label for="dias" class="titulos">Día</label>
-            <select id="dias" name="dias">
+        <a href="rutas-admin.php" id="volver">Volver</a>
+        <header id="crear-header">Crear Ruta</header>
+        <form method="post" action="../back/crearRuta.php" id="crear">
+            <label for="dias" class="titulos">Horario</label>
+            <select onchange="ajaxhorario(this.value);" required id="dias" name="dias" class="select">
+                <option disabled selected value="">Seleccione día</option>
                 <?php
-                    $_SESSION['idHorario']=$prueba[0];
-                    if ($prueba[1] == "lunes"){
-                        echo "<option value=\"lunes\" selected>Lunes</option>
-                                <option value=\"martes\">Martes</option>
-                                <option value=\"miercoles\">Miercoles</option>
-                                <option value=\"jueves\">Jueves</option>
-                                <option value=\"viernes\">Viernes</option>
-                                <option value=\"sabado\">Sabado</option>
-                                <option value=\"domingo\">Domingo</option>";
-                    }else{
-                        if ($prueba[1] == "martes"){
-                            echo "<option value=\"lunes\">Lunes</option>
-                                <option value=\"martes\" selected>Martes</option>
-                                <option value=\"miercoles\">Miercoles</option>
-                                <option value=\"jueves\">Jueves</option>
-                                <option value=\"viernes\">Viernes</option>
-                                <option value=\"sabado\">Sabado</option>
-                                <option value=\"domingo\">Domingo</option>";
-                        }else{
-                            if ($prueba[1] == "miercoles"){
-                                echo "<option value=\"lunes\">Lunes</option>
-                                <option value=\"martes\">Martes</option>
-                                <option value=\"miercoles\" selected>Miercoles</option>
-                                <option value=\"jueves\">Jueves</option>
-                                <option value=\"viernes\">Viernes</option>
-                                <option value=\"sabado\">Sabado</option>
-                                <option value=\"domingo\">Domingo</option>";
-                            }else{
-                                if ($prueba[1] == "jueves"){
-                                    echo "<option value=\"lunes\">Lunes</option>
-                                    <option value=\"martes\">Martes</option>
-                                    <option value=\"miercoles\" >Miercoles</option>
-                                    <option value=\"jueves\" selected>Jueves</option>
-                                    <option value=\"viernes\">Viernes</option>
-                                    <option value=\"sabado\">Sabado</option>
-                                    <option value=\"domingo\">Domingo</option>";
-                                    }else{
-                                    if ($prueba[1] == "viernes"){
-                                        echo "<option value=\"lunes\">Lunes</option>
-                                    <option value=\"martes\">Martes</option>
-                                    <option value=\"miercoles\" >Miercoles</option>
-                                    <option value=\"jueves\">Jueves</option>
-                                    <option value=\"viernes\" selected>Viernes</option>
-                                    <option value=\"sabado\">Sabado</option>
-                                    <option value=\"domingo\">domingo</option>";
-                                    }else{
-                                        if ($prueba[1] == "sabado") {
-                                            echo "<option value=\"lunes\">Lunes</option>
-                                            <option value=\"martes\">Martes</option>
-                                            <option value=\"miercoles\" >Miercoles</option>
-                                            <option value=\"jueves\">Jueves</option>
-                                            <option value=\"viernes\">Viernes</option>
-                                            <option value=\"sabado\" selected>Sabado</option>
-                                            <option value=\"domingo\">Domingo</option>";
-                                        }else{
-                                            echo "<option value=\"lunes\">Lunes</option>
-                                            <option value=\"martes\">Martes</option>
-                                            <option value=\"miercoles\" >Miercoles</option>
-                                            <option value=\"jueves\">Jueves</option>
-                                            <option value=\"viernes\">Viernes</option>
-                                            <option value=\"sabado\">Sabado</option>
-                                            <option value=\"domingo\" selected>Domingo</option>";
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                ?>
-            </select>
-            <br>
-            <label for="hora" class="titulos">Hora</label>
-            <?php
-            echo "<input required type='time' name='hora' id='hora' value='" . $prueba[2] . "'>";
-            ?>
-            <br>
-            <label for="tipo" class="titulos">Tipo de servicio</label>
-            <select id="tipo" name="tipo" required style="text-transform: capitalize">
-                <?php
-                $consulta = mysqli_query($con,"SELECT * FROM `tipovehiculo` WHERE `Estado`=1 ORDER BY `TipoVehiculo` ASC");
-                while ($lconsulta = mysqli_fetch_array($consulta)){
-                    for ($i = 1; $i <= 1; $i++){
-                        //echo "<option value='" . $lconsulta['IdTipoVehiculo'] . "' style='text-transform: capitalize'>" . $lconsulta['TipoVehiculo'] . "</option>";
-                        if ($prueba[3]==$lconsulta['IdTipoVehiculo']){
-                            echo "<option selected value='" . $lconsulta['IdTipoVehiculo'] . "' style='text-transform: capitalize'>" . $lconsulta['TipoVehiculo'] . "</option>";
-                        }else{
-                            echo "<option value='" . $lconsulta['IdTipoVehiculo'] . "' style='text-transform: capitalize'>" . $lconsulta['TipoVehiculo'] . "</option>";
-                        }
-                    }
+                $horario =mysqli_query($con, "SELECT `dia` FROM `horarios` GROUP BY `dia` ORDER BY `orden` ASC");
+                while($row=mysqli_fetch_array($horario))
+                {
+                    echo "<option value='" . $row['dia'] . "' style='text-transform: capitalize'>" . $row['dia'] . "</option>";
+
                 }
                 ?>
             </select>
+            <select id="horas" name="horas" required class="select">
+                <option disabled selected value="">Seleccione Hora</option>
+            </select>
             <br>
+            <label class="titulos">Vehiculo</label>
+            <select id="vehiculo" name="vehiculo" onchange="ajaxvehiculo(this.value);" required class="select">
+                <option disabled selected value="">Seleccione Vehiculo</option>
+                <?php
+                $tvehiculo =mysqli_query($con, "SELECT `IdTipoVehiculo`, `TipoVehiculo` FROM `tipovehiculo` WHERE `Estado`=1");
+                while($row=mysqli_fetch_array($tvehiculo))
+                {
+                    echo "<option value='" . $row['IdTipoVehiculo'] . "' style='text-transform: capitalize'>" . $row['TipoVehiculo'] . "</option>";
+                }
+                ?>
+            </select>
+            <select id="placas" name="placas" required class="select">
+                <option disabled selected value="">Seleccione Placa</option>
+            </select>
+            <br>
+            <label for="buscar" class="titulos">Conductor</label>
+            <input id="buscar" placeholder="Buscar..." onchange="ajaxconductor(this.value)">
+            <select id="conductor" name="conductor" class="select">
+                <option disabled selected value="">Seleccione Conductor</option>
+            </select>
+            <br>
+            <label for="origen" class="titulos">Origen-Destino</label>
+            <select id="origen" name="origen" required class="select">
+                <option disabled selected value="">Seleccione origen</option>
+                <option value="bogota">Campus Bogota</option>
+                <option value="chia">Campus Chía</option>
+            </select>
+            <select id="destino" name="destino" required class="select">
+                <option disabled selected value="">Seleccione destino</option>
+                <option value="bogota">Campus Bogota</option>
+                <option value="chia">Campus Chía</option>
+            </select>
+            <br>
+            <label for="estado" class="titulos">Estado</label>
+            <select id="estado" name="estado" class="select">
+                <option value="1">Activo</option>
+                <option value="0">Inactivo</option>
+            </select>
+            <br><br>
             <input type="submit" id="btnHorario"><br><br>
+            <!--<button class="button">Submit</button>-->
         </form>
     </div>

@@ -142,3 +142,60 @@ include('../back/conection.php');
             </div>
         </header>
     </div>
+    <div>
+        <a href="crear-ruta.php">Crear Ruta</a>
+        <?php
+        $ruta_eliminar = null;
+        echo "<div id=\"listado-admin\" name=\"listado-admin\" style='margin-left: 23%;'>
+        <header>Rutas</header>";
+        $consulta = mysqli_query($con,"SELECT rutas.IdRuta, horarios.dia, concat(rutas.Origen, '-', rutas.Destino), rutas.Disponibilidad FROM rutas INNER JOIN horarios ON horarios.IdHorario=rutas.IdHorario AND rutas.Estado='1' ORDER BY horarios.orden");
+        /*$lconsulta = mysqli_fetch_array($consulta);
+        $long = count($lconsulta);*/
+        echo "<table id='horarios-bus'><thead><tr><th>Día</th><th>Origen-Destino</th><th>Disponibilidad</th><th>Acciones</th></tr></thead>";
+        while ($lconsulta = mysqli_fetch_array($consulta)){
+            $contador = 0;
+            echo "<tr>";
+            for ($i = 1; $i <= 3; $i++){
+                $id_eliminar = $lconsulta[$contador];
+                echo "<td style='text-transform: capitalize'>" . $lconsulta[$i] . "</td>";
+            }
+            echo "<td><a href='editar-ruta.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
+                          <a onclick='alertaRuta(" . $lconsulta[$contador] . ")'><img src='../img/delete.png' style='width: 25%; cursor: pointer'></a></td>";
+            //$ruta_eliminar = $lconsulta['Placa'];
+            $contador++;
+        }
+
+        echo "</tr>";
+        echo "</table>
+        </div>";?>
+        <br>
+    </div>
+
+<?php
+$ruta_eliminar = null;
+$consulta2 = mysqli_query($con,"SELECT rutas.IdRuta, horarios.dia, concat(rutas.Origen, '-', rutas.Destino), rutas.Disponibilidad FROM rutas INNER JOIN horarios ON horarios.IdHorario=rutas.IdHorario AND rutas.Estado='0' ORDER BY horarios.orden");
+if (mysqli_fetch_array($consulta2)!=0) {
+    echo "<div id=\"listado-admin\" name=\"listado-admin\" style='margin-left: 23%;'>
+        <header>Rutas - Inactivas</header>";
+    $consulta = mysqli_query($con, "SELECT rutas.IdRuta, horarios.dia, concat(rutas.Origen, '-', rutas.Destino), rutas.Disponibilidad FROM rutas INNER JOIN horarios ON horarios.IdHorario=rutas.IdHorario AND rutas.Estado='0' ORDER BY horarios.orden");
+    /*$lconsulta = mysqli_fetch_array($consulta);
+    $long = count($lconsulta);*/
+    echo "<table id='horarios-bus'><thead><tr><th>Día</th><th>Origen-Destino</th><th>Disponibilidad</th><th>Acciones</th></tr></thead>";
+    while ($lconsulta = mysqli_fetch_array($consulta)) {
+        $contador = 0;
+        echo "<tr>";
+        for ($i = 1; $i <= 3; $i++) {
+            $id_eliminar = $lconsulta[$contador];
+            echo "<td style='text-transform: capitalize'>" . $lconsulta[$i] . "</td>";
+        }
+        echo "<td><a href='editar-ruta.php?id={$lconsulta[$contador]}'><img src='../img/edit.png' style='width: 35%'></a>
+                          <a onclick='alertaRuta(" . $lconsulta[$contador] . ")'><img src='../img/delete.png' style='width: 25%; cursor: pointer'></a></td>";
+        //$ruta_eliminar = $lconsulta['Placa'];
+        $contador++;
+    }
+
+    echo "</tr>";
+    echo "</table>
+        </div>";
+}
+?>

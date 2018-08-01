@@ -170,9 +170,15 @@ include('../back/conection.php');
             <input required type='time' name='hora' id='hora'>
             <br>
             <label for="tipo" class="titulos">Tipo de servicio</label>
-            <select id="tipo" name="tipo" required>
-                <option value='bus'>Bus</option>
-                <option value='tren'>Tren</option>
+            <select id="tipo" name="tipo" required style="text-transform: capitalize">
+                <?php
+                $consulta = mysqli_query($con,"SELECT * FROM `tipovehiculo` WHERE `Estado`=1 ORDER BY `TipoVehiculo` ASC");
+                while ($lconsulta = mysqli_fetch_array($consulta)){
+                    for ($i = 1; $i <= 1; $i++){
+                        echo "<option value='" . $lconsulta['IdTipoVehiculo'] . "' style='text-transform: capitalize'>" . $lconsulta['TipoVehiculo'] . "</option>";
+                    }
+                }
+                ?>
             </select>
             <br><br>
             <input type="submit" id="btnHorario"><br><br>

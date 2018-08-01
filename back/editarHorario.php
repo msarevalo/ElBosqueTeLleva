@@ -43,6 +43,6 @@ $consulta = mysqli_query($con,"UPDATE `horarios` SET `dia`='" . $dia . "',`Hora`
 if ($consulta){
     echo "<script>alert('Se edito el horario con exito'); window.location.href='../views/horarios-admin.php'</script>";
 }else{
-    echo "<script>alert('Algo ha fallado'); window.location.href='../views/horarios-admin.php'</script>";
+    echo "<script>alert('Algo ha fallado'); window.location.href='../views/editar-horario.php?id=" . $id . "'</script>";
 }
 

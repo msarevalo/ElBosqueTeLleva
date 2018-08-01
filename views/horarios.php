@@ -154,7 +154,7 @@ include('../back/conection.php');
         <img src="../img/bus-icon.png" id="bus">
         <img src="../img/tren-icon.png" id="tren">
         <br><br>
-        <form>
+        <!--<form>
         <label>Filtrar por</label><br><br>
         <label for="dias">Día</label>
         <select id="dias">
@@ -174,41 +174,23 @@ include('../back/conection.php');
             <option value="2">Tarde</option>
         </select><br>
         <input type="submit" value="Filtrar" onclick="">
-        </form>
+        </form>-->
     </div>
     <div id="horariosBus" style="display: none">
         <?php
             //include('../back/conection.php');
             echo "<div id=\"listado\" name=\"listado\">
             <header>Horarios Bus</header>";
-            $consulta = mysqli_query($con,"SELECT `dia`, `Hora` FROM `horarios` WHERE `servicio` like '%bus%' ORDER BY `dia`, `Hora`;");
+            $consulta = mysqli_query($con,"SELECT horarios.dia, horarios.Hora, tipovehiculo.TipoVehiculo
+        FROM horarios INNER JOIN tipovehiculo ON (tipovehiculo.IdTipoVehiculo = horarios.servicio AND tipovehiculo.Estado = 1 AND horarios.servicio=1) 
+        ORDER BY horarios.orden, horarios.Hora");
             /*$lconsulta = mysqli_fetch_array($consulta);
             $long = count($lconsulta);*/
             echo "<table id='horarios-bus'><thead><tr><th>Día</th><th>Hora</th></tr></thead>";
             while ($lconsulta = mysqli_fetch_array($consulta)){
                 echo "<tr>";
                 for ($i = 0; $i <= 1; $i++){
-                    if ($lconsulta[$i] == '1'){
-                        echo "<td>Lunes</td>";
-                    }else{
-                        if ($lconsulta[$i] == '2'){
-                            echo "<td>Martes</td>";
-                        }else{
-                            if ($lconsulta[$i] == '3'){
-                                echo "<td>Miercoles</td>";
-                            }else{
-                                if ($lconsulta[$i] == '4'){
-                                    echo "<td>Jueves</td>";
-                                }else{
-                                    if ($lconsulta[$i] == '5'){
-                                        echo "<td>Viernes</td>";
-                                    }else {
-                                        echo "<td>" . $lconsulta[$i] . "</td>";
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    echo "<td style='text-transform: capitalize'>" . $lconsulta[$i] . "</td>";
                 }
                 echo "</tr>";
             }
@@ -220,35 +202,18 @@ include('../back/conection.php');
         <?php
         echo "<div id=\"listado\" name=\"listado\">
         <header>Horarios Tren</header>";
-        $consulta = mysqli_query($con,"SELECT `dia`, `Hora` FROM `horarios` WHERE `servicio` like '%tren%' ORDER BY `orden`, `Hora`;");
+        $consulta = mysqli_query($con,"SELECT horarios.dia, horarios.Hora, tipovehiculo.TipoVehiculo
+        FROM horarios INNER JOIN tipovehiculo ON (tipovehiculo.IdTipoVehiculo = horarios.servicio AND tipovehiculo.Estado = 1 AND horarios.servicio=2) 
+        ORDER BY horarios.orden, horarios.Hora");
         /*$lconsulta = mysqli_fetch_array($consulta);
         $long = count($lconsulta);*/
         echo "<table id='horarios-bus'><thead><tr><th>Día</th><th>Hora</th></tr></thead>";
         while ($lconsulta = mysqli_fetch_array($consulta)){
             echo "<tr>";
             for ($i = 0; $i <= 1; $i++){
-                if ($lconsulta[$i] == '1'){
-                    echo "<td>Lunes</td>";
-                }else{
-                    if ($lconsulta[$i] == '2'){
-                        echo "<td>Martes</td>";
-                    }else{
-                        if ($lconsulta[$i] == '3'){
-                            echo "<td>Miercoles</td>";
-                        }else{
-                            if ($lconsulta[$i] == '4'){
-                                echo "<td>Jueves</td>";
-                            }else{
-                                if ($lconsulta[$i] == '5'){
-                                    echo "<td>Viernes</td>";
-                                }else {
-                                    echo "<td>" . $lconsulta[$i] . "</td>";
-                                }
-                            }
-                        }
-                    }
-                }
+                echo "<td style='text-transform: capitalize'>" . $lconsulta[$i] . "</td>";
             }
+
             echo "</tr>";
         }
         echo "</table>
@@ -259,42 +224,25 @@ include('../back/conection.php');
         <?php
         echo "<div id=\"listado\" name=\"listado\">
         <header>Horarios</header>";
-        $consulta = mysqli_query($con,"SELECT `dia`, `Hora`, `servicio` FROM `horarios` ORDER BY `orden`, `Hora`;");
+        $consulta = mysqli_query($con,"SELECT horarios.dia, horarios.Hora, tipovehiculo.TipoVehiculo
+        FROM horarios INNER JOIN tipovehiculo ON (tipovehiculo.IdTipoVehiculo = horarios.servicio AND tipovehiculo.Estado = 1) 
+        ORDER BY horarios.orden, horarios.Hora");
         /*$lconsulta = mysqli_fetch_array($consulta);
         $long = count($lconsulta);*/
         echo "<table id='horarios-bus'><thead><tr><th>Día</th><th>Hora</th><th>Servicio</th></tr></thead>";
         while ($lconsulta = mysqli_fetch_array($consulta)){
             echo "<tr>";
             for ($i = 0; $i <= 2; $i++){
-                if ($lconsulta[$i] == '1'){
-                    echo "<td>Lunes</td>";
+                if (strpos($lconsulta[$i], 'bus') !== false){
+                    echo "<td class='bus-img' style='cursor: pointer'><img src='../img/bus-icon.png' style='width: 80%;'><br><label style='margin-left: 10px; cursor: pointer'>Bus</label></td>";
                 }else{
-                    if ($lconsulta[$i] == '2'){
-                        echo "<td>Martes</td>";
+                    if (strpos($lconsulta[$i], 'tren') !== false){
+                        echo "<td class='tren-img' style='cursor: pointer'><img src='../img/tren-icon.png' style='width: 80%;'><br><label style='margin-left: 8px; cursor: pointer'>Tren</label></td>";
                     }else{
-                        if ($lconsulta[$i] == '3'){
-                            echo "<td>Miercoles</td>";
-                        }else{
-                            if ($lconsulta[$i] == '4'){
-                                echo "<td>Jueves</td>";
-                            }else{
-                                if ($lconsulta[$i] == '5'){
-                                    echo "<td>Viernes</td>";
-                                }else {
-                                    if (strpos($lconsulta[$i], 'bus') !== false){
-                                        echo "<td class='bus-img' style='cursor: pointer'><img src='../img/bus-icon.png' style='width: 80%;'><br><label style='margin-left: 10px'>Bus</label></td>";
-                                    }else{
-                                        if (strpos($lconsulta[$i], 'tren') !== false){
-                                            echo "<td class='tren-img' style='cursor: pointer'><img src='../img/tren-icon.png' style='width: 80%;'><br><label style='margin-left: 8px'>Tren</label></td>";
-                                        }else{
-                                            echo "<td style='text-transform: capitalize'>" . $lconsulta[$i] . "</td>";
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        echo "<td style='text-transform: capitalize'>" . $lconsulta[$i] . "</td>";
                     }
                 }
+
             }
 
             echo "</tr>";

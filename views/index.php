@@ -256,7 +256,10 @@ Slider de la pagina principal
             /*
              * consulta a base de datos donde la hora sea mayor a la hora actual y el dia sea igual al actual.
              */
-            $horas = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '" . $hactual . "') AND (`orden`='" . $ndia . "') ORDER BY Hora");
+            //$horas = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '" . $hactual . "') AND (`orden`='" . $ndia . "') ORDER BY Hora");
+            $horas = mysqli_query($con, "SELECT horarios.IdHorario, horarios.dia, horarios.Hora, tipovehiculo.TipoVehiculo, horarios.orden
+        FROM horarios INNER JOIN tipovehiculo ON (tipovehiculo.IdTipoVehiculo = horarios.servicio AND tipovehiculo.Estado = 1 and  horarios.Hora>'" . $hactual . "' AND horarios.orden='" . $ndia ."') 
+        ORDER BY horarios.orden, horarios.Hora");
             $consultas = mysqli_fetch_array($horas);
             /*
              * se compara si el primer registro consultado es diferente de nulo.
@@ -269,7 +272,10 @@ Slider de la pagina principal
                 /*
                  * si el resultado es nulo, se consulta nuevamente la base de datos donde el dia sea el actual mas 1
                  */
-                $horas2 = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '00:00:00') AND (`orden`='" . $diaMas . "') ORDER BY Hora");
+                //$horas2 = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '00:00:00') AND (`orden`='" . $diaMas . "') ORDER BY Hora");
+                $horas2 = mysqli_query($con, "SELECT horarios.IdHorario, horarios.dia, horarios.Hora, tipovehiculo.TipoVehiculo, horarios.orden
+        FROM horarios INNER JOIN tipovehiculo ON (tipovehiculo.IdTipoVehiculo = horarios.servicio AND tipovehiculo.Estado = 1 and  horarios.Hora>'00:00:00' AND horarios.orden='" . $diaMas ."') 
+        ORDER BY horarios.orden, horarios.Hora");
                 $consultas2 = mysqli_fetch_array($horas2);
                 if ($consultas2[0] != null) {
                     $transporte = $consultas2[3];
@@ -283,7 +289,10 @@ Slider de la pagina principal
             /*
              * Se realiza por ultima vez la consulta donde el dia sea el dia lunes
              */
-            $horas3 = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '00:00:00') AND (`orden`='1') ORDER BY Hora");
+            //$horas3 = mysqli_query($con, "SELECT * FROM horarios WHERE (`Hora` > '00:00:00') AND (`orden`='1') ORDER BY Hora");
+            $horas3 = mysqli_query($con, "SELECT horarios.IdHorario, horarios.dia, horarios.Hora, tipovehiculo.TipoVehiculo, horarios.orden
+        FROM horarios INNER JOIN tipovehiculo ON (tipovehiculo.IdTipoVehiculo = horarios.servicio AND tipovehiculo.Estado = 1 and  horarios.Hora>'00:00:00' AND horarios.orden='1') 
+        ORDER BY horarios.orden, horarios.Hora");
             $consultas3 = mysqli_fetch_array($horas3);
             if ($consultas3[0] != null) {
                 $transporte = $consultas3[3];
@@ -309,6 +318,7 @@ Slider de la pagina principal
                 exit();
             }
         }
+        //  Proximo 2 sale enecho $ndia;
 
     //echo $hactual;
         /*
