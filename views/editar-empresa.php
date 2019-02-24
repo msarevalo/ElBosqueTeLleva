@@ -167,7 +167,7 @@ $empresa = mysqli_fetch_array($consulta);
         </header>
     </div>
     <div>
-        <a href="horarios-admin.php" id="volver">Volver</a>
+        <a href="empresas-admin.php" id="volver">Volver</a>
         <header id="crear-header">Editar Empresa</header>
         <form method="post" action="../back/editarEmpresa.php" id="crear">
             <label for="nombre" class="titulos">Nombre Empresa</label>

@@ -175,7 +175,7 @@ include('../back/conection.php');
             <select id="vehiculo" name="vehiculo" onchange="ajaxvehiculo(this.value);" required class="select">
                 <option disabled selected value="">Seleccione Vehiculo</option>
                 <?php
-                $tvehiculo =mysqli_query($con, "SELECT `IdTipoVehiculo`, `TipoVehiculo` FROM `tipovehiculo` WHERE `Estado`=1");
+                $tvehiculo =mysqli_query($con, "SELECT `IdTipoVehiculo`, `TipoVehiculo` FROM `tipovehiculo` WHERE `Estado`=1 ORDER BY `TipoVehiculo` ASC");
                 while($row=mysqli_fetch_array($tvehiculo))
                 {
                     echo "<option value='" . $row['IdTipoVehiculo'] . "' style='text-transform: capitalize'>" . $row['TipoVehiculo'] . "</option>";

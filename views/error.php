@@ -1,7 +1,7 @@
 <?php
-if (!isset($_SERVER['HTTP_REFERER'])) {
+/*if (!isset($_SERVER['HTTP_REFERER'])) {
     header("Location: index.php");
-}
+}*/
 ?>
 <html lang="en">
 <head>

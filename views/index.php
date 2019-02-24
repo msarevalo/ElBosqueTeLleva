@@ -304,14 +304,14 @@ Slider de la pagina principal
                      */
                     $fdia = gmdate($fechaDia, time()+((2*$valorDia) + $offset));
                 }else{
-                    if ($ndia === 7){
+                    if ($ndia == 7){
                         //echo "entro 7";
                         /*
                          * si es el dia domingo (7)se asigna 1 dias mas como valor del día.
                          */
                         $fdia = gmdate($fechaDia, time()+($valorDia + $offset));
                     }else{
-                        exit();
+                        //exit();
                     }
                 }
             }else{
@@ -346,7 +346,7 @@ Slider de la pagina principal
                 echo "<a style='cursor: pointer; text-decoration: none; color: #9e9e9e;' href='reservas.php'><label>Reservar Ahora!</label></a>";
             }
         }else{
-            echo "<a style='cursor: pointer; text-decoration: none; color: #9e9e9es' onclick='sinLogueo(); arriba();'><label>Reservar Ahora!</label></a>";
+            echo "<a style='cursor: pointer; text-decoration: none; color: #9e9e9e' onclick='sinLogueo(); arriba();'><label>Reservar Ahora!</label></a>";
         }
     echo "</div>
             </div>
